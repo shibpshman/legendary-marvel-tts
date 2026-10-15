@@ -40,5 +40,5 @@ copy it to `TTS_work` too (or fix the scripts to use one root; see Open items).
 
 - Replace hardcoded paths with a single `paths.py` / config root so scripts run from the repo.
 - `E:\Legendary_TTS_Assets\scripts\` is an older copy of four scripts; retire it once confirmed.
-- Decide whether the cloud session transcript should be exported for decision history.
+- Decision history and status: `docs/decisions.md` (from `docs/cloud-session-transcript.txt`, which covers only the later part of the cloud session).
 - Large generated saves are not versioned; consider tracking only the release save.

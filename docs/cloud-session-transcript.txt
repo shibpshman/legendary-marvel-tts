@@ -1,0 +1,1455 @@
+ ▐▛███▛█   Claude Code v2.1.278
+▝▜██████▀  claude-sonnet-5-5 · Claude Pro
+  ▝▝ ▝▝    ~\private
+
+  Opus 5.5 is now your default model and it draws down usage faster than Sonnet 5. Switch anytime with /model.
+  ⎿  Read ../../../tmp/claude-0/-home-user-private/b3e277d9-fb15-5a5d-843f-3c5fd
+     f6a631e/scratchpad/lua/icon_review.py (103 lines)
+  ⎿  Referenced file ../../../tmp/claude-0/-home-user-private/b3e277d9-fb15-5a5d
+     -843f-3c5fdf6a631e/scratchpad/lua/build_icons.py
+
+● pdf_extract.py is already in your downloads. It turns the scenarios PDF into a
+  small text file that I can read.
+
+  python C:\Users\steph\pdf_extract.py "E:\Media\Board Games\Marvel Legendary 
+  Cards\Rules 
+  etc\Marvel_History_Scenarios_v1.4_-_Venom_Dimensions_and_Revelations.pdf"
+
+  The script prints a timestamped line per page and a summary at the end. If a
+  page has no usable text layer, it falls back to OCR for that page. Output goes
+  to:
+
+  E:\Media\Board Games\TTS_work\pdf_text\Marvel_History_Scenarios_v1.4_-_Venom_D
+  imensions_and_Revelations.txt
+
+  Upload that .txt. Pages are marked ===== PAGE n =====, so I can map each
+  scenario to its page.
+
+  From the text I need to know:
+  - Scenario count and grouping: how many scenarios there are, and whether they
+    form series or campaigns.
+  - Fixed setup per scenario: the Mastermind, scheme, Villain Groups, Henchmen
+    and Hero requirements.
+  - Special rules: any setup or victory text that changes normal play.
+  - Solo support: whether a scenario carries a solo variant or a difficulty
+    setting.
+
+  The browser will be a menu panel with a list or filter of scenarios, a detail
+  view, and a one-click "Set up this scenario". The setup button will reuse the
+  existing Automatic Setup path, so it picks the same Mastermind, scheme and
+  groups the scenario names.
+
+  Any card a scenario names that is not in the frozen library (the 10 known
+  missing cards, or something new from this PDF) will be flagged in the detail
+  view and not set up silently.
+
+  Before you upload, open the .txt and check that the scenario names are
+  readable text and not garbled. If they are garbled, tell me and I'll tune the
+  OCR path.
+
+❯ @"/root/.claude/uploads/b3e277d9-fb15-5a5d-843f-3c5fdf6a631e/eb422c1d-Marvel_ 
+  History_Scenarios_v1.4_-_Venom_Dimensions_and_Revelations.txt"                
+
+  Ran 5 shell commands (ctrl+o to expand)
+
+● I'm parsing the 780 scenarios out of the PDF text and reading how the mod's
+  setup picks heroes and villains, so the browser can force them.
+
+  Ran 6 shell commands (ctrl+o to expand)
+
+● Parsing is done: all 780 scenarios split into fields, with the eras counted
+  correctly. I'm now checking which of their named cards exist in the library.
+
+  Ran 1 shell command (ctrl+o to expand)
+  ⎿  Error: No such tool available: bash. Tool names are case-sensitive: call 
+     Bash instead.
+
+  Ran 33 shell commands (ctrl+o to expand)
+
+● Background command "cd /tmp/claude-0/-home-user-private/b3e277d9-fb15-5a5d-843
+f-3c5fdf6a631e/scratchpad/lua; cat > dbg.py <<'EOF'
+import harness, lua_patch as P, json
+orig = open('orig.lua', encoding='utf-8').read(); new,_=P.patch_global(orig)
+exec(open('test_scenarios.py').read().split("print('S1")[0].split("DATA = ")[0])
+EOF
+python3 - <<'EOF' 2>&1 | grep -v "^\[" | head -30
+import re
+src=open('test_scenarios.py').read()
+head=src.split("print('S1 data")[0]
+exec(head)
+L = fresh()
+idx = [i for i, s in enumerate(DATA, 1) if s['title'] == 'The Death of
+Hitler'][0]
+L.execute('''
+setPool("8c9c24", {"Angel Noir", "Human Torch", "Iron Man Noir", "Namor The Sub
+Mariner", "Patriot", "Spider Man", "Hulk", "Wolverine", "XForce Wolverine",
+"Black Widow"}, {"Hero"})
+setPool("403851", {"Hydra", "Masters Of Evil WWII", "Zolas Creations",
+"Skrulls", "Brotherhood"}, {"Villain"})
+setPool("e34dbf", {"Hydra Base", "Sentinel", "Maggia Goons"}, {"Henchman"})
+ALL["0869c9"].contents = {mmDeck("Baron Heinrich Zemo"), mmDeck("Red Skull")}
+ALL["a99d9d"].contents = {schemeCard("Change The Outcome Of WWII"),
+schemeCard("Midtown Bank Robbery")}
+SB.pool = nil
+SB.sel = %d
+drive(scnSetupRun)
+runSetupOnly()
+for _, o in pairs(ALL) do if o.alive and (o.name == "Hero Deck" or
+o.name=="Angel Noir") then local t={} for _,c in ipairs(o.contents or {}) do
+t[#t+1]=c.name end print(o.name, o.kind, o.pos and "pos" or "nopos",
+table.concat(t,",")) end end
+for _,p in ipairs(PRINTS) do print(p) end
+''' % idx)
+print(*[str(x) for x in L.eval('PRINTS')] if False else '')
+for i in range(1,int(L.eval('#PRINTS'))+1): print(L.eval('PRINTS[%d]'%i))
+EOF" failed with exit code 144
+
+  Ran 11 shell commands (ctrl+o to expand)
+
+● The scenario browser is built and tested in a Lua mock of TTS, not in TTS
+  itself. Setup against real bags, the new panel's layout and the expansion
+  switching are untested until you run it. The package is the zip I just sent.
+  The mock tests pass: 38 scenario checks, the existing menu suite, and 606
+  setups with 0 failures.
+
+  Install and build
+  Expand-Archive -Force "$env:USERPROFILE\Downloads\legendary_install.zip"
+  "$env:TEMP\legendary_install"
+  python "$env:TEMP\legendary_install\install.py"
+  python C:\Users\steph\build_save.py
+  The scenario data ships inside the zip, so you don't need to run
+  build_scenarios.py. It reads the PDF text if the PDF changes.
+
+  What it does
+  - Data: the PDF text parsed to 780 scenarios, with Mastermind, Scheme, Villain
+    groups, Henchmen, Heroes, Notes and PDF page. It covers 9 sections (Golden
+    Age through 2010s, Marvel Noir, Secret Wars 2015). 173 are Solo.
+  - Browser: a new Scenarios button in the left bar opens the panel. You can
+    search by title, hero, villain, Mastermind or Scheme, filter by era and Solo
+    only, and filter to what the pools hold now.
+  - Row colours: yellow means an expansion is off. Red means a card is not in
+    this library.
+  - Set up scenario:
+    - It switches on any expansion the scenario needs.
+    - It picks the player count from the lists: Solo or 3 Heroes means 1 player,
+      otherwise it follows the Villain and Henchmen group counts.
+    - It sets the Mastermind and Scheme.
+    - It makes setup() draw exactly the listed Heroes, Villain groups and
+      Henchmen.
+  - Fallbacks: if a card is missing, Set up stops and names it, and Set up 
+    anyway fills the gap at random. Normal Setup is unchanged.
+  - Card text: opens the Scheme's reference text.
+  - Library audit: counts how many scenarios are ready, need an expansion, or
+    are not possible.
+
+  What this library can actually run
+  With every expansion on, 278 of 780 scenarios are fully playable, 47 of them
+  Solo. The rest name cards this mod does not contain. The most common:
+  - Heroes: Peter Parker Homecoming (38), Deadpool Mercs for Money (26), Tony
+    Stark (23), Magneto (22), Sabretooth (16), Loki (14).
+  - Henchmen groups: Hammer Drone Army (26), SHIELD Assault Squad (23),
+    Asgardian Warrior (21), Cops (19).
+  - Villain groups: Chitauri (27), Avengers (25), Iron Foes (18).
+  - Schemes and Masterminds: about 38 Schemes and 49 Masterminds that the mod
+    lacks.
+
+  This extends your earlier list of 10 missing library cards, and it is a gap in
+  the cards, not a fault in the browser.
+
+  Limits
+  - Custom Villain Decks: 34 scenarios build the deck from individual cards of
+    several groups ("Moonstone's Gang (Blackout x2…)"). The browser shows the
+    lists and refuses to auto-set them up.
+  - Notes: anything besides "Solo" (extra Hero in the Villain Deck, Villain Mat,
+    KO pile tricks) is a manual step shown in the detail. I did not automate
+    it.
+  - Name matching: names match with case, punctuation, "&" and "the" ignored. I
+    added aliases only where the deck tags prove the match (Wolverine X-Men is
+    Core Wolverine, Beast Illuminati is the Secret Wars V2 Beast) and for typos
+    in the PDF. Ambiguous ones like Peter Parker Homecoming stay unmatched,
+    because a wrong alias would silently draw the wrong Hero.
+
+  What to check in TTS
+  1. Open Scenarios and pick one with a green row, for example "The Death of
+     Hitler" (3 players). Press Set up scenario and confirm the chat lists
+     exactly the Heroes, Villain groups and Henchmen shown in the panel.
+  2. Pick a yellow row. It should switch the expansion on, wait, then set up.
+  3. Press Library audit. If the "ready" count or the unknown-name lists look
+     wrong, send me a screenshot.
+
+[Image #121]
+
+● The audit ran in TTS and the panel rendered, so the browser itself works. The
+  audit figures match my offline calculation exactly: 43 Hero names, 44 Villain
+  groups, 18 Henchmen groups, 49 Masterminds and 38 Schemes absent from this
+  library. That agreement means name matching behaves the same in TTS as in my
+  Python test, and the lists are the real gap between the scenario PDF and the
+  mod. With every expansion on, 278 of 780 scenarios are playable.
+
+  The long tails in the screenshot are not worth chasing. For example, "Clan
+  Akkaba" and "Ghosts of the Masters of Evil" are one-off custom groups, and
+  many of the single-use Mastermind entries are compound ones like "Dr. Doom and
+  Hood".
+
+  Five names in the screenshot might be library cards under different names,
+  which I can't tell from the card data. If any of these are, an alias fixes
+  every scenario that uses them, and the first four together cover about 100
+  hero slots:
+  - Peter Parker Homecoming (38): could be the library's "Peter Parker" (Civil
+    War).
+  - Deadpool Mercs for Money (26): could be "Deadpool Deadpool" (Mercs For Money
+    tag).
+  - Daredevil Iron Fist (7): could be "Danny Rand Daredevil".
+  - Dr. Octopus (12): could be an existing library Hero under another name.
+  - Asgardian Warrior (21), Hydra Pilots (13), Hydra Spies (12): could be
+    Henchmen under another name. I found no close match in the library for them.
+
+  Tell me which ones are the same card as an existing deck, and I'll add them to
+  the alias list.
+
+  The 49 absent Masterminds are the biggest block, covering Professor X (12),
+  Nick Fury (11), Adrian Toomes (10) and Iron Monger (10). They need the actual
+  cards in the library, as do the 38 missing Schemes. That is the same gap as
+  the earlier 10 missing library cards, and the browser can't fill it.
+
+❯ look online for a card catalog                                                
+  ⎿  Did 1 search in 6s
+  ⎿  Did 1 search in 6s
+
+● Fetch(https://boardgamegeek.com/wiki/page/Legendary_Marvel_Complete_Card_Text_
+       -_Henchmen_and_Backup_Adversaries)
+  ⎿  Error: getaddrinfo ENOTFOUND boardgamegeek.com
+
+● Fetch(https://videogamegeek.com/wiki/page/Legendary_Marvel_Complete_Card_Text_
+       -_Henchmen_and_Backup_Adversaries)
+  ⎿  Error: getaddrinfo ENOTFOUND videogamegeek.com
+  ⎿  Did 1 search in 5s
+
+● Fetch(https://rpggeek.com/wiki/page/Legendary_Marvel_Complete_Card_Text)
+  ⎿  Error: getaddrinfo ENOTFOUND rpggeek.com
+
+● I found a catalog, but I can't read it from this session.
+
+  What exists
+  - BoardGameGeek wiki, "Legendary Marvel Complete Card Text":
+    community-maintained, every set, split into subpages (Heroes, Villains and
+    Adversaries, Henchmen and Backup Adversaries, Bystanders). The same pages
+    are mirrored on VideoGameGeek and RPGGeek.
+  - Upper Deck's official site, legendarycardgame.com: the Core Set review I
+    found says its card scans come from there.
+  - The outside confirmation of the gap: the Henchmen subpage lists Hammer Drone
+    Army under "Marvel Studios Phase 1". The Spider-Man Homecoming expansion
+    adds five Heroes, two Villain groups, two Masterminds and four Schemes, and
+    Peter Parker and Tony Stark are named in its description. Neither set is in
+    your mod's 22 bags, which fits the Hammer Drone Army and Peter Parker
+    Homecoming misses.
+
+  What failed
+  Fetching the wiki pages gives getaddrinfo ENOTFOUND for boardgamegeek.com,
+  videogamegeek.com and rpggeek.com. This session's network policy blocks those
+  hosts. I only have search-result excerpts, not the card lists.
+
+  Two ways forward
+  1. You save the pages. Open the three subpages above in a browser, save each
+     as "Webpage, HTML only", and upload them. I'll parse them into a catalog of
+     set, type and card name.
+  2. I write fetch_catalog.py for your PC. It would download the pages, parse
+     them and write TTS_work\catalog.json, with the usual progress lines. If BGG
+     blocks scripted requests, you'd fall back to option 1.
+
+  A catalog would let the browser say which set a missing card is in, so "Peter
+  Parker Homecoming" would show as "needs Spider-Man Homecoming". It would also
+  let me match name variants like Dr. Octopus or Asgardian Warrior against the
+  official spellings. It can't add cards to the mod. Those sets would still need
+  their TTS assets from somewhere else, such as the Workshop or your own scans.
+
+  Which option do you want?
+❯ @"/root/.claude/uploads/b3e277d9-fb15-5a5d-843f-3c5fdf6a631e/197f09ba-Legenda 
+  ry_Marvel_Complete_Card_Text_-_Villains_and_Adversaries.txt"                  
+  @"/root/.claude/uploads/b3e277d9-fb15-5a5d-843f-3c5fdf6a631e/55f57ff9-Legenda 
+  ry_Marvel_Complete_Card_Text_-_Heroes_And_Allies.txt"                         
+  @"/root/.claude/uploads/b3e277d9-fb15-5a5d-843f-3c5fdf6a631e/ac7a440f-Legenda 
+  ry_Marvel_Complete_Card_Text.txt"                                             
+  @"/root/.claude/uploads/b3e277d9-fb15-5a5d-843f-3c5fdf6a631e/3018897c-Legenda 
+  ry_Marvel_Complete_Card_Text_-_Henchmen_and_Backup_Adversaries.txt"           
+  ⎿  Referenced /root/.claude/uploads/b3e277d9-fb15-5a5d-843f-3c5fdf6a631e/55f57
+     ff9-Legendary_Marvel_Complete_Card_Text_-_Heroes_And_Allies.txt (not read)
+  ⎿  Referenced /root/.claude/uploads/b3e277d9-fb15-5a5d-843f-3c5fdf6a631e/ac7a4
+     40f-Legendary_Marvel_Complete_Card_Text.txt (not read)
+  ⎿  Read 
+     ../../../root/.claude/uploads/b3e277d9-fb15-5a5d-843f-3c5fdf6a631e/3018897c
+     -Legendary_Marvel_Complete_Card_Text_-_Henchmen_and_Backup_Adversaries.txt 
+     (425 lines)
+
+  Ran 4 shell commands (ctrl+o to expand)
+
+● CRLF line endings. I'll normalize and look at the structure.
+
+  Ran 6 shell commands (ctrl+o to expand)
+
+● I'm checking why my catalog parser misses some sets (Fantastic Four heroes,
+  Schemes, Masterminds) before building the final catalog.
+
+  Ran 19 shell commands (ctrl+o to expand)
+
+● I used the four BGG wiki pages you uploaded to build a card catalog, and it
+  answers the missing-card question. The catalog parser is tested only on those
+  four pages. The browser changes pass the mock tests, and I haven't run them in
+  TTS.
+
+  What the catalog says
+  Most of the missing cards come from a few whole sets that this mod does not
+  hold:
+  - Villains expansion: Loki, Magneto, Sabretooth, Mystique, Juggernaut,
+    Enchantress, Kraven, Mysterio, Green Goblin, Dr. Octopus, Bullseye, Electro,
+    Kingpin, Ultron and Venom as Heroes, plus Cops, Multiple Man, Asgardian
+    Warriors and SHIELD Assault Squad. This is where most of the missing Hero
+    names came from.
+  - Marvel Studios Phase 1: Chitauri, Iron Foes, Hammer Drone Army, HYDRA
+    Pilots, HYDRA Spies, Ten Rings Fanatics.
+  - Spider-Man Homecoming: Peter Parker Homecoming, Tony Stark, Happy Hogan,
+    High-Tech Spider-Man, Peter's Allies, Adrian Toomes, Vulture.
+
+  Confirmed aliases
+  These are the same card under another name, not a missing one:
+  - Deadpool Mercs for Money is the Deadpool expansion's Deadpool.
+  - Daredevil Iron Fist is Danny Rand Daredevil.
+  - Maria Hill is the Maria Hill Director of SHIELD Mastermind.
+  - Asgardian Warrior is Asgardian Warriors.
+  - A dozen scheme and hero typos are fixed.
+
+  Result
+  These figures come from my offline run against the library, not from TTS:
+  - Ready now (every mod expansion on): 317 of 780, up from 278. 34 of the 780
+    need a hand-built Villain Deck.
+  - Sets to add to the mod, best first:
+    a. Villains: +173
+    b. Marvel Studios Phase 1: +98
+    c. Spider-Man Homecoming: +84
+    d. Fear Itself: +31
+
+    That makes 386 more scenarios, about 703 of 780 in all.
+
+  What changed in the browser
+  - Missing-card labels: a missing card now reads "[from Villains, not in this
+    mod]" instead of "not in this library".
+  - Library audit: it now prints the set ranking above and lists only names that
+    match neither the mod nor the catalog. Those are mostly compound
+    Masterminds like "Loki with Odin" and custom groups.
+  - New scripts and data: build_catalog.py rebuilds the catalog from the wiki
+    text, and catalog.json ships ready-made.
+
+  Install and rebuild
+  Expand-Archive -Force "$env:USERPROFILE\Downloads\legendary_install.zip"
+  "$env:TEMP\legendary_install"
+  python "$env:TEMP\legendary_install\install.py"
+  python C:\Users\steph\build_save.py
+
+  In TTS, press Library audit and check that it shows the same top four sets.
+
+  The catalog tells you what to add, not how
+  Getting those sets into TTS means finding their assets or scanning them. The
+  Villains expansion is the best first target. It unlocks 173 scenarios and
+  gives you the villain-as-Hero cards that fill many of the Hero slots.
+
+❯ they exist in E:\Media\Board Games\Marvel Legendary Cards\Base Sets\Villains  
+  Core Set                                                                      
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+● Good, the Villains set images exist. What's left is turning those images into
+  TTS decks and bags, which I can't plan until I see how the folder is laid out.
+  Your 22 expansions came from the mod's own bags. This set has to be built
+  from images, so I need the file names and pixel sizes first.
+
+  I sent folder_survey.py. Save it to C:\Users\steph and run:
+
+  python C:\Users\steph\folder_survey.py "E:\Media\Board Games\Marvel Legendary 
+  Cards\Base Sets\Villains Core Set"
+
+  It writes E:\Media\Board Games\TTS_work\survey_Villains_Core_Set.csv, with one
+  row per file (path, size, pixel dimensions) and a count per sub-folder.
+  Upload that CSV.
+
+  From the CSV I need to know:
+  - Card images: whether they are one file per card (like your Schemes and
+    Masterminds folders) or sheets of many cards.
+  - Where each Hero's 14 cards come from: whether each Hero's copy counts (5, 5,
+    3, 1) are separate files or one image per distinct card.
+  - Card backs: whether the folder includes them.
+  - Resolution: whether sizes match the other sets, so the new cards look
+    consistent on the table.
+
+  Once I have the CSV I'll write the builder. The plan is for it to read the
+  folder and the catalog's card lists, which give each Hero's four card names
+  and the Villain groups' cards. It then assembles TTS deck sheets and a
+  "Villains" expansion bag in the same shape as your other 22. The browser's
+  Library audit should then show the Villains set's 173 scenarios as ready, and
+  the Expansions panel will list the new set so you can switch it on and off.
+  The builder will print its usual progress lines.
+
+❯ @"/root/.claude/uploads/b3e277d9-fb15-5a5d-843f-3c5fdf6a631e/733d1ec9-survey_ 
+  Villains_Core_Set.csv" PS C:\Users\steph> python                              
+  C:\Users\steph\folder_survey.py "E:\Media\Board Games\Marvel Legendary        
+  Cards\Base Sets\Villains Core Set"                                            
+  [05:12:19 +   0s] walking E:\Media\Board Games\Marvel Legendary Cards\Base    
+  Sets\Villains Core Set                                                        
+  [05:12:19 +   0s] 136 files                                                   
+  [05:12:21 +   1s]   (top)                                                     
+                  1 files                                                       
+  [05:12:21 +   1s]   Adversaries\Avengers                                      
+                  6 files                                                       
+  [05:12:21 +   1s]   Adversaries\Defenders                                     
+                  4 files                                                       
+  [05:12:21 +   1s]   Adversaries\Marvel Knights                                
+                  4 files                                                       
+  [05:12:21 +   1s]   Adversaries\Spider-Friends                                
+                  4 files                                                       
+  [05:12:21 +   1s]   Adversaries\Uncanny Avengers                              
+                  4 files                                                       
+  [05:12:21 +   1s]   Adversaries\Uncanny X-Men                                 
+                  4 files                                                       
+  [05:12:21 +   1s]   Adversaries\X-Men First Class                             
+                  5 files                                                       
+  [05:12:21 +   1s]   Backup Adversaries                                        
+                  4 files                                                       
+  [05:12:21 +   1s]   Bystanders                                                
+                  4 files                                                       
+  [05:12:21 +   1s]   Commanders\Dr Strange                                     
+                  5 files                                                       
+  [05:12:21 +   1s]   Commanders\Nick Fury                                      
+                  5 files                                                       
+  [05:12:21 +   1s]   Commanders\Odin                                           
+                  5 files                                                       
+  [05:12:21 +   1s]   Commanders\Professor X                                    
+                  5 files                                                       
+  [05:12:21 +   1s]   Plot                                                      
+                  8 files                                                       
+  [05:12:21 +   1s]   Starting Cards                                            
+                  8 files                                                       
+  [05:12:21 +   1s]   Villains\Bullseye                                         
+                  4 files                                                       
+  [05:12:21 +   1s]   Villains\Dr Octopus                                       
+                  4 files                                                       
+  [05:12:21 +   1s]   Villains\Electro                                          
+                  4 files                                                       
+  [05:12:21 +   1s]   Villains\Enchantress                                      
+                  4 files                                                       
+  [05:12:21 +   1s]   Villains\Green Goblin                                     
+                  4 files                                                       
+  [05:12:21 +   1s]   Villains\Juggernaut                                       
+                  4 files                                                       
+  [05:12:21 +   1s]   Villains\Kingpin                                          
+                  4 files                                                       
+  [05:12:21 +   1s]   Villains\Kraven                                           
+                  4 files                                                       
+  [05:12:21 +   1s]   Villains\Loki                                             
+                  4 files                                                       
+  [05:12:21 +   1s]   Villains\Magneto                                          
+                  4 files                                                       
+  [05:12:21 +   1s]   Villains\Mysterio                                         
+                  4 files                                                       
+  [05:12:21 +   1s]   Villains\Mystique                                         
+                  4 files                                                       
+  [05:12:21 +   1s]   Villains\Sabretooth                                       
+                  4 files                                                       
+  [05:12:21 +   1s]   Villains\Ultron                                           
+                  4 files                                                       
+  [05:12:21 +   1s]   Villains\Venom                                            
+                  4 files                                                       
+  [05:12:21 +   1s] most common image sizes: 1968x2764 x14, 1960x2764 x13,      
+  1968x2756 x9, 1964x2752 x9, 1972x2752 x8, 1960x2756 x6                        
+  [05:12:21 +   1s] DONE: 136 files in 31 folders -> E:\Media\Board             
+  Games\TTS_work\survey_Villains_Core_Set.csv                                   
+  PS C:\Users\steph>                                                            
+  ⎿  Read ../../../root/.claude/uploads/b3e277d9-fb15-5a5d-843f-3c5fdf6a631e/733
+     d1ec9-survey_Villains_Core_Set.csv (138 lines)
+
+  Ran 5 shell commands (ctrl+o to expand)
+
+❯ also i intentionally do not have any MCU or What if show sets. they look ass  
+
+● Understood. I'll treat the MCU and What If sets as deliberately excluded, so
+  they won't count as gaps or be recommended. I'm updating the audit now.
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+● MCU and What If sets are now excluded from the audit and from any
+  recommendation. The updated install package (28 files) is attached; the
+  earlier install and rebuild steps apply unchanged.
+
+  I treated these catalog sets as MCU or What If: Marvel Studios Phase 1, Marvel
+  Studios' Guardians of the Galaxy, The Infinity Saga, What If…?, Ant-Man and
+  the Wasp, Black Panther, Black Widow and Spider-Man Homecoming. If I put the
+  wrong set in this list, tell me and I'll correct it.
+
+  What changed
+  - Detail view: a missing card from one of these sets reads "[from Marvel
+    Studios Phase 1, an excluded MCU / What If set]".
+  - Library audit: scenarios that need an excluded set are counted on their own
+    line and never ranked. 202 of the 429 scenarios this mod can't run fall in
+    that group.
+  - Ranking, from my offline simulation, not yet run in TTS: only two sets
+    remain worth adding. The Villains expansion unlocks 173 scenarios, and Fear
+    Itself adds 29 more. Together they raise the ready count from 317 to 519
+    of 780.
+
+  The Villains set is where the Heroes you're missing come from (Loki, Magneto,
+  Sabretooth, Dr. Octopus and the rest), so it is the one worth building from
+  your folder. Your survey shows the whole set: 15 Villain-Heroes, 7 Villain
+  groups, 4 Henchmen, 4 Commanders (the Masterminds) and 8 Plot cards (the
+  Schemes).
+
+  Next step
+  I sent dump_object.py before your message. Please run it so I can match the
+  mod's exact deck and bag format:
+
+  python C:\Users\steph\dump_object.py
+
+  It writes E:\Media\Board Games\TTS_work\dump\object_1ebd5a.json (the Venom
+  bag) and expansion_bags.json. Upload both. I'll then build the Villains
+  expansion bag from your images. That also gives you an Expansions toggle, so
+  the set can be switched on and off like the other 22.
+
+  I'll skip the Villains set's "Starting Cards" and the four extra Bystanders.
+  They are for playing the villain side, and your scenarios use these Villains
+  as Heroes on the normal side.
+
+❯ @"/root/.claude/uploads/b3e277d9-fb15-5a5d-843f-3c5fdf6a631e/f2c5fb9b-object_ 
+  1ebd5a.json" @"/root/.claude/uploads/b3e277d9-fb15-5a5d-843f-3c5fdf6a631e/8d1 
+  479bd-expansion_bags.json" need to facilitate normal play as well but thanks  
+  ⎿  Read ../../../root/.claude/uploads/b3e277d9-fb15-5a5d-843f-3c5fdf6a631e/8d1
+     479bd-expansion_bags.json (1102 lines)
+
+  Ran 10 shell commands (ctrl+o to expand)
+
+● I'm writing the Villains expansion builder; next I'm fixing the Henchmen
+  repack insertion and testing it on a synthetic copy of the Venom bag.
+
+  Ran 6 shell commands (ctrl+o to expand)
+
+● I'm wiring the Villains set into the build (menu, scenarios, Commander setup)
+  and checking it with the synthetic bag.
+
+  Ran 6 shell commands (ctrl+o to expand)
+● The Villains set is built into the mod as a normal 23rd expansion, so both
+  normal Setup and the scenario browser can draw from it. I only tested it on a
+  synthetic copy of the Venom bag and fake images, so the first run on your PC
+  is the real test. The package (31 files) is attached.
+
+  I read "normal play" as ordinary random Setup, not only scenarios. The set
+  goes into the pools through the same Expansions toggle as the other 22.
+
+  What gets built
+  - 15 Villain-Heroes: Bullseye, Dr Octopus, Electro, Enchantress, Green Goblin,
+    Juggernaut, Kingpin, Kraven, Loki, Magneto, Mysterio, Mystique, Sabretooth,
+    Ultron and "Venom Sinister Six". The last is named to avoid clashing with
+    your Venomverse Venom. Each has 14 cards (5/5/3/1 copies), class and team
+    tags, and the Villains Expansion tag.
+  - 7 Adversary groups: these go in as Villain groups (Avengers, Defenders,
+    Marvel Knights, Spider Friends, Uncanny Avengers, Uncanny X Men, X Men First
+    Class), 8 cards each.
+  - 4 Backup Adversaries: these go in as Henchmen (Asgardian Warriors, Cops,
+    Multiple Man, SHIELD Assault Squad), 10 cards each.
+  - 4 Commanders: these go in as Masterminds (Dr Strange, Nick Fury, Odin,
+    Professor X), each with a face card and 4 tactics. In normal Setup each one
+    also pulls in its listed group (Defenders, Avengers, Asgardian Warriors, X
+    Men First Class).
+  - 8 Plots: these go in as Schemes. Their card text, shown in Card Reference,
+    uses the Villains game's wording (Adversary, Bindings, Overrun), so a few
+    effects need translating at the table.
+  - Card sheets: they're written as JPEG sheets of up to 35 cards at 600×843 per
+    card, straight into E:\Legendary_TTS_Assets\img.
+
+  What I did not build
+  I left out the Starting Cards (Soldier, Operative, Command Strike and the
+  rest) and the four extra Bystanders. They only matter for playing the Villains
+  game as designed, so tell me if you want them added.
+
+  Steps
+  Expand-Archive -Force "$env:USERPROFILE\Downloads\legendary_install.zip"
+  "$env:TEMP\legendary_install"
+  python "$env:TEMP\legendary_install\install.py"
+  python C:\Users\steph\build_villains_set.py
+  python C:\Users\steph\build_reference.py
+  python C:\Users\steph\build_save.py
+
+  build_villains_set.py is the new step. It reads each card's name off its image
+  so the two Common cards per Hero and the Tactics get matched to the right
+  names. The first run takes a few minutes, and the results are cached. If a
+  name can't be read it warns "using list order", so watch for that.
+
+  Before you play
+  - Name matching: the builder prints a line per Hero and Commander showing
+    which name it matched to which image. Upload that output if any line looks
+    wrong.
+  - Expansions list: check that "Villains" appears in the Expansions list.
+  - First test: switch it on, then run a Scenarios setup with a green or yellow
+    row that uses Loki or Magneto.
+  - Library audit: it should then show 173 more scenarios as ready once the
+    expansion is on.
+
+❯ PS C:\Users\steph> Expand-Archive -Force                                      
+  "$env:USERPROFILE\Downloads\legendary_install.zip"                            
+  "$env:TEMP\legendary_install"                                                 
+  PS C:\Users\steph> python "$env:TEMP\legendary_install\install.py"            
+  [05:27:21 +  0s] installing 29 files into C:\Users\steph                      
+  [05:27:21 +  0s] [1/29] assets_in_survey.py           2946 bytes  OK          
+  [05:27:21 +  0s] [2/29] build_catalog.py              7435 bytes  OK          
+  [05:27:21 +  0s] [4/29] build_reference.py           14149 bytes  OK          
+  [05:27:21 +  0s] [5/29] build_save.py                12277 bytes  OK          
+  [05:27:21 +  0s] [6/29] build_scenarios.py            7089 bytes  OK          
+  [05:27:21 +  0s] [7/29] build_villains_set.py         2874 bytes  OK          
+  [05:27:21 +  0s] [8/29] catalog.json                 18803 bytes  OK          
+  [05:27:21 +  0s] [9/29] counter_lua.py               17863 bytes  OK          
+  [05:27:21 +  0s] [10/29] dump_object.py                2973 bytes  OK         
+  [05:27:21 +  0s] [11/29] expansion_names.json         10225 bytes  OK         
+  [05:27:21 +  0s] [12/29] folder_survey.py              2049 bytes  OK         
+  [05:27:21 +  0s] [13/29] grid_mat.py                   1915 bytes  OK         
+  [05:27:21 +  0s] [14/29] icon_fixes.json              62595 bytes  OK         
+  [05:27:21 +  0s] [15/29] icon_review.py                4842 bytes  OK         
+  [05:27:21 +  0s] [16/29] keyword_fixes.json           70052 bytes  OK         
+  [05:27:21 +  0s] [17/29] keyword_pages.py              1576 bytes  OK         
+  [05:27:21 +  0s] [18/29] lua_patch.py                 17804 bytes  OK         
+  [05:27:21 +  0s] [19/29] make_mat_skins.py             3204 bytes  OK         
+  [05:27:21 +  0s] [20/29] make_player_mat.py            1370 bytes  OK         
+  [05:27:21 +  0s] [21/29] mat_config.py                 3862 bytes  OK         
+  [05:27:21 +  0s] [22/29] menu_lua.py                  32184 bytes  OK         
+  [05:27:21 +  0s] [23/29] pdf_extract.py                2387 bytes  OK         
+  [05:27:21 +  0s] [24/29] scenario_lua.py              31923 bytes  OK         
+  [05:27:21 +  0s] [25/29] scenario_names.py             6031 bytes  OK         
+  [05:27:21 +  0s] [26/29] scenarios.json              864055 bytes  OK         
+  [05:27:21 +  0s] [27/29] turn_lua.py                  14499 bytes  OK         
+  [05:27:21 +  0s] [28/29] villains_set.py              18390 bytes  OK         
+  [05:27:21 +  0s] [29/29] villains_set_spec.json       38543 bytes  OK         
+  [05:27:21 +  0s] compiling the scripts                                        
+  [05:27:21 +  0s] import check: mat_config, counter_lua, turn_lua,             
+  scenario_names, scenario_lua, villains_set, menu_lua, lua_patch all load      
+  [05:27:21 +  0s] generated files the build needs (make them with the commands 
+  shown):                                                                       
+  [05:27:21 +  0s]    E:\Media\Board Gam                                        
+  ──── (162 lines hidden) ───────────────────────────────────────────────────── 
+  remaining Heroes from the list x1 ->     for i=1, forcedCount("heroes",       
+  heroesBag, heroCount-1...                                                     
+     scenario: Villain groups from the list x1 ->     villainsBag.shuffle()     
+      for i=1, forcedCount("villa...                                            
+     scenario: Henchmen from the list   x1 ->     for i=1,                      
+  forcedCount("henchmen", henchmenBag, henchma...                               
+     scenario: the listed groups replace the Mastermind-mandated ones x1 ->     
+  if playerCount != 1 and MENU.force == nil then                                
+        ...                                                                     
+     Villains Commanders lead their groups x1 -> function                       
+  addMastermindGroup(mastermindName,schemeName,hen...                           
+  bag scripts patched: 10  literal counts: {'{12.75,2,14}': 13, '{-9.75,2,1}':  
+  3, '{-4.75,2,20}': 2, '{-1,2,20}': 2, '{-2.5,2,20}': 1}                       
+  mat skins: 9 (default 1)                                                      
+  main board scale set to 0.5849 for an object width of 29.4 (load message      
+  should say OK)                                                                
+  image URLs rewritten: 10281   left on their original URL: 97   rebuilt files  
+  actually referenced: 132 of 132                                               
+  player mats:                                                                  
+      51edf5 -> player mat image (scale 0.40, printed 13.2 x 9.4)               
+      6212f9 -> player mat image (scale 0.40, printed 13.2 x 9.4)               
+      446b40 -> player mat image (scale 0.40, printed 13.2 x 9.4)               
+      17be32 -> player mat image (scale 0.40, printed 13.2 x 9.4)               
+      9d07a8 -> player mat image (scale 0.40, printed 13.2 x 9.4)               
+      starting deck 8bff16 -> Draw Deck slot of mat 51edf5 (-23.57, -12.37)     
+      starting deck 11148f -> Draw Deck slot of mat 17be32 (-22.26, 12.86)      
+      starting deck 973fd9 -> Draw Deck slot of mat 6212f9 (-4.52, -12.76)      
+      starting deck db28dc -> Draw Deck slot of mat 446b40 (15.21, -12.65)      
+      starting deck bcc49a -> Draw Deck slot of mat 9d07a8 (22.74, 1.70)        
+  decks moved onto their new slots:                                             
+      22f0d7 'SHIELD Officers' -> shield slot (-5.20, 3.26)                     
+      15841b 'Bystanders' -> bystanders slot (8.93, 12.30)                      
+      dab70e 'Wounds' -> wounds slot (11.79, 12.30)                             
+  other objects overlapping the new mat footprint (0):                          
+  [05:29:30 +   0s] phase 4/6: looking for a save named 'Legendary Universal'   
+  in E:\Documents\My Games\Tabletop Simulator\Saves                             
+  [05:29:30 +   0s]    using E:\Documents\My Games\Tabletop                     
+  Simulator\Saves\TS_Save_10.json                                               
+  [05:29:30 +   0s] phase 5/6: copying images: 0 to copy (0 MB), 132 already in 
+  place                                                                         
+  [05:29:30 +   0s]    copied playermat.png                                     
+  [05:29:30 +   0s]    all 132 referenced image files are present               
+  [05:29:30 +   0s] phase 6/6: writing the save                                 
+  [05:29:31 +   1s] DONE: wrote E:\Documents\My Games\Tabletop                  
+  Simulator\Saves\TS_Save_10.json (14 MB). Previous content kept as .bak.       
+  Images in E:\Legendary_TTS_Assets\img                                         
+  PS C:\Users\steph>                                                            
+
+● All five steps ran clean. build_save.py added the Villains bag, wrote the save
+  and found every image, and your reference data now has 122 schemes and 63
+  masterminds. This only shows the build worked. I haven't seen the result in
+  TTS.
+
+  Build output
+  - Card names: OCR matched all 15 Heroes and 4 Commanders. The lowest scores
+    were Kingpin (0.69), Loki (0.72) and Sabretooth (0.73). A wrong match there
+    would only swap the hover name between two cards of the same Hero, not break
+    anything.
+  - Console glitch: the Kingpin, Mystique and Juggernaut lines overwrote each
+    other in your window. The deck lines below them show all 15 Hero decks built
+    with 14 cards each.
+  - Sheets: 7 JPEG sheets, 21 MB in total.
+  - Bag objects: 5 top-level objects in the bag (Heroes, Villains, Masterminds,
+    Henchmen, Schemes).
+
+  Check in TTS (load Legendary Universal)
+  1. The chat should print the mat-width OK line, with no script errors. This is
+     the first load with the Villains bag in the save.
+  2. In the Expansions panel, "Villains" should be the last entry. Tick it,
+     press Apply, and the Hero pool should grow by 15.
+  3. Press Scenarios, then Library audit. It should show 173 scenarios as "need
+     an expansion switched on", not "not possible". Those are the Villains
+     scenarios.
+  4. Pick a scenario that uses Loki or Magneto and press Set up scenario. It
+     should switch Villains on itself, wait, then draw the listed Heroes.
+  5. Run a normal random Setup with Villains on. Over a few runs you should see
+     Villains Heroes, Commanders and Plots turn up, and a Commander should pull
+     in its own group (Nick Fury brings Avengers, Odin brings Asgardian
+     Warriors).
+  6. Open Card Reference for a new Plot, such as Crown Thor King Of Asgard. It
+     should show the catalog text.
+
+  If anything errors or looks wrong (card art, names, a missing back, a
+  Commander not pulling its group), send a screenshot of the chat.
+
+[Image #122]
+  ⎿  [Image #123]
+
+❯ playing a game and im seeing some discrepencies                               
+                                                                                
+  idk what shield assault squads are and what a backip adversary group is       
+
+  Ran 6 shell commands (ctrl+o to expand)
+
+● I found and fixed two bugs in the build scripts; the third item is vocabulary.
+
+  1. Cut-off keyword text (Size-Changing screenshot)
+  The text in the data is complete: the hand-read file has the full "…Legendary
+  Civil War." and "…cards this turn." The panel was clipping the last wrapped
+  line of each paragraph. Each text box had a fixed height that was slightly too
+  small, so a paragraph that wrapped to 4 lines lost its 4th. I made the
+  heights more generous (a 235-character paragraph now gets 123 px instead of
+  82). This also affects the scenario detail panel, which used the same sizing.
+
+  2. "Mass Produce War Machine Armor" (Plot card screenshot)
+  The Villains set was written for a game where you play the Villains, so its
+  cards use different words. In normal Legendary they mean:
+
+  ┌──────────────────┬──────────────────────────────────────────────────────┐
+  │  Villains-set    │                   Normal Legendary                   │
+  │       word       │                                                      │
+  ├──────────────────┼──────────────────────────────────────────────────────┤
+  │ Adversary        │ Villain                                              │
+  ├──────────────────┼──────────────────────────────────────────────────────┤
+  │ Backup Adversary │ Henchman (a Backup Adversary group is a Henchmen     │
+  │                  │ group)                                               │
+  ├──────────────────┼──────────────────────────────────────────────────────┤
+  │ Commander        │ Mastermind                                           │
+  ├──────────────────┼──────────────────────────────────────────────────────┤
+  │ Command Strike   │ Master Strike                                        │
+  ├──────────────────┼──────────────────────────────────────────────────────┤
+  │ Plot, Plot Twist │ Scheme, Scheme Twist                                 │
+  ├──────────────────┼──────────────────────────────────────────────────────┤
+  │ Good Wins        │ Evil Wins                                            │
+  ├──────────────────┼──────────────────────────────────────────────────────┤
+  │ Ally             │ Hero                                                 │
+  ├──────────────────┼──────────────────────────────────────────────────────┤
+  │ Lair             │ HQ                                                   │
+  ├──────────────────┼──────────────────────────────────────────────────────┤
+  │ Overrun Pile     │ Escape Pile                                          │
+  ├──────────────────┼──────────────────────────────────────────────────────┤
+  │ Bindings         │ Wounds                                               │
+  └──────────────────┴──────────────────────────────────────────────────────┘
+
+  So that card means: include the S.H.I.E.L.D. Assault Squad Henchmen group, 10
+  cards, which is one of the 4 Henchmen groups I added. Its Special Rule ("+1
+  Attack for each War Machine Technology") and its Evil Wins line stay as
+  printed.
+
+  Changes
+  - Translation: Card Reference now shows the 8 Plots and 4 Commanders in normal
+    wording. For this card it reads "Include 10 S.H.I.E.L.D. Assault Squads as
+    one of the Henchmen groups… Evil Wins: when there are 3 Assault Squads in
+    the Escape Pile." The card on the table still shows the printed wording.
+  - New glossary: the Keywords tab has a "Villains Set Terms" entry with the
+    table above.
+  - Automatic Setup for this Plot: it now adds the SHIELD Assault Squad group
+    itself, in place of one random Henchmen group. Before, it did nothing.
+  - Hand-setup note: four other Plots need stacks that Setup doesn't build.
+    Setup now prints a "Plot setup, do by hand" line in chat naming them:
+    - Cage Villains (2 Cops per player)
+    - Crown Thor King of Asgard (Thor Villain next to the Scheme)
+    - Graduation at Xavier's X-Academy (8 Bystanders)
+    - Infiltrate the Lair with Spies (21 Bystanders)
+
+    Build An Underground Mega-Vault Prison also prints a note (the Wounds stack
+    holds 5 per player).
+
+  Three limits remain:
+  - Villains-set keywords: Demolish, Elusive and X-Treme Attack are only
+    explained in Villains Core Set Rules.pdf, which I haven't read.
+  - Hero card text: the new Heroes' own card text mentions Adversaries and
+    Commander Tactics, and I did not rewrite those.
+  - Crush HYDRA: it uses New Recruits and Madame HYDRA from the Starting Cards,
+    which this save doesn't have, so that Plot won't fully work.
+
+  Update
+  Expand-Archive -Force "$env:USERPROFILE\Downloads\legendary_install.zip"
+  "$env:TEMP\legendary_install"
+  python "$env:TEMP\legendary_install\install.py"
+  python C:\Users\steph\build_reference.py
+  python C:\Users\steph\build_save.py
+
+  You don't need to rerun build_villains_set.py. After loading, open Keywords →
+  Size-Changing to confirm the full text shows. Then run a Setup with Mass
+  Produce War Machine Armor to confirm the Assault Squad group arrives.
+
+❯ also not seeing the villains set in the expansions list                       
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+● I can't tell yet why you don't see it. The build log said it added the
+  Villains bag, and in my mock tests the menu lists 23 expansions with Villains
+  last. The Expansions panel is a scroll list of 22 existing entries plus the
+  new one, so you may simply have missed it at the bottom. I changed the panel
+  so you can't miss it, and added a load message that will settle the question
+  either way.
+
+  What I changed
+  - Order: "Villains" is now the first entry in the Expansions panel, labelled
+    "(new: 15 Heroes, 7 Villain groups, 4 Masterminds)".
+  - Header: the panel now says how many expansions it lists ("23 expansions…").
+  - Load message: when the save loads, chat prints Expansions in the menu: N 
+    (last: …).
+
+  Update
+  Expand-Archive -Force "$env:USERPROFILE\Downloads\legendary_install.zip"
+  "$env:TEMP\legendary_install"
+  python "$env:TEMP\legendary_install\install.py"
+  python C:\Users\steph\build_save.py
+  You don't need to run build_villains_set.py or build_reference.py again.
+
+  What the load message tells us
+  - Expansions in the menu: 23 (last: Villains) — the list has it. Open the
+    panel and Villains is at the top.
+  - Expansions in the menu: 22 (last: Realm of Kings) — the build didn't pick up
+    the bag file when it wrote the Lua. Send me the build_save.py output and
+    I'll chase it.
+  - No message at all — you loaded an older copy of the save instead of
+    Legendary Universal (slot TS_Save_10).
+
+  Tell me which you get.
+
+[Image #124]
+  ⎿  [Image #125]
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● The Villains entry now shows first in the Expansions list, and the keyword XML
+  is complete—remaining text cutoffs are from TTS truncating the last wrapped
+  line in Text boxes, so I'll switch those boxes to overflow instead of
+  truncate. · summarized
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+● Villains in the Expansions list: your screenshot shows it working. "Villains"
+  is first, and the panel says "23 expansions". That one is settled.
+
+  Cut-off keyword text: the last wrapped line of some paragraphs was still
+  missing. Examples: "Civil [War.]", "you played this [turn.]", "on that
+  [card.]". Raising the box heights last time fixed some paragraphs and not
+  these, so height wasn't the cause. In my tests the generated text is complete,
+  and every paragraph ends with its last word. So TTS is dropping the last
+  wrapped line when it draws the box. I made two changes in the build:
+  - Overflow: every Card Reference and scenario-detail text box is now set to
+    overflow instead of truncate, so a line past the box edge is still drawn.
+  - Trailing blank line: reference paragraphs now end with a blank line as
+    insurance. If TTS still hides a last line, it hides the blank one.
+
+  I can't see how TTS draws these boxes from here. This is a fix for the
+  symptom, not a measured result, so please check it.
+
+  Update
+  Expand-Archive -Force "$env:USERPROFILE\Downloads\legendary_install.zip"
+  "$env:TEMP\legendary_install"
+  python "$env:TEMP\legendary_install\install.py"
+  python C:\Users\steph\build_save.py
+  You don't need to run build_reference.py again.
+
+  Open Card Reference → Keywords → Size-Changing and check that the first
+  paragraph ends "…Legendary Civil War." and the Fin Fang Foom paragraph ends
+  "…you played this turn." If any last words are still missing, send me a
+  screenshot. Since that would mean overflow isn't honored in your TTS, the fix
+  would then be to shrink the font and size the boxes by line count.
+
+[Image #126]
+
+❯ ambitions are being put in the escaped pile?                                  
+
+  Ran 5 shell commands (ctrl+o to expand)
+
+● The Ambitions were not escaping. The stack in your screenshot is the Ambitions
+  deck itself, parked in the Escaped box. This is my layout bug.
+
+  Why I think so
+  - Your Scheme is "Crush Them With My Bare Hands". No Ambitions are in the
+    Villain Deck, so no Ambition could have escaped.
+  - The stack is tall: it has about the thickness of the whole Ambitions deck
+    (the Secret Wars decks hold 30 and 10 cards), not a card or two.
+  - When an expansion unpacks, the Secret Wars bag puts its Ambitions deck at a
+    fixed spot. On the old board that spot was a separate area. On the new mat I
+    mapped it to the same printed box as Escaped, so the deck sits on top of
+    the slot where escaped Villains go.
+  - It would also have distorted the Evil Wins tracker, since the Escaped
+    counter reads that zone.
+
+  Fix
+  - Ambitions home: the Ambitions deck now goes to the mat's Bindings slot,
+    which nothing else in this save uses.
+  - Secret Wars Volume 2: its Ambitions go on top of the Volume 1 stack there.
+  - Cleanup: it returns the Ambitions deck to the same slot.
+
+  Update
+  Expand-Archive -Force "$env:USERPROFILE\Downloads\legendary_install.zip"
+  "$env:TEMP\legendary_install"
+  python "$env:TEMP\legendary_install\install.py"
+  python C:\Users\steph\build_save.py
+
+  Your current game keeps the deck where it already landed. Drag it off the
+  Escaped box by hand, or run Automatic Cleanup, load the new save and switch
+  Secret Wars on again.
+
+  When Sinister Ambitions is the Scheme, Ambition cards in the Villain Deck do
+  escape into the Escaped pile. That is correct, and it feeds the "Ambition
+  Villains escaped" counter.
+
+  If you see Ambition cards escaping under a different Scheme, send a screenshot
+  of the Villain Deck contents and I'll look at that instead.
+
+❯ what next in terms of features                                                
+
+  Ran 1 shell command (ctrl+o to expand)
+● I'd do these in this order. The counts come from the scenario data.
+
+  0. Shakedown (not a feature, but it gates the rest)
+  Much of what we've built is unverified in real TTS: scenario Set up end to
+  end, the Villains set in a full game, End Turn on real cards, the Evil Wins
+  counters on every mat, and Mat art. One full game with chat errors and
+  screenshots will find more than any new feature.
+
+  1. Finish the scenarios
+  - Villain Deck extras (53 scenarios): notes like "Wasp in Villain Deck" or
+    "Thor in Villain Deck". Setup would pull the named Hero into the Villain
+    Deck automatically.
+  - Custom Villain Decks (34): the scenario lists individual cards ("Moonstone's
+    Gang: Blackout x2, Moonstone x2…"). Setup would assemble the deck from
+    those cards instead of refusing.
+  - Two Masterminds (27): entries like "Loki with Odin". Setup would place both.
+  - Villain Mat (21): this needs a decision from you on where it goes on the
+    mat.
+  - Other notes (127 scenarios have notes beyond "Solo"): these are currently
+    only displayed. Setup would handle the common ones and the rest stay as chat
+    reminders.
+
+  2. Campaign tracker
+  The PDF is a chronological series, 780 scenarios. Mark each Won, Lost or
+  Skipped inside the save, add a "random unplayed scenario" button, and filter
+  by played or unplayed. It's small and uses the data we already have.
+
+  3. Card lookup for every card in play
+  The catalog you uploaded has the full text of every Hero, Villain and Henchman
+  card. Card Reference could get Heroes, Villains and Henchmen tabs, with a
+  lookup by name. In solo play that removes most of the rulebook digging, and
+  the Villains-set cards could show in normal wording.
+
+  4. Hand-setup Schemes
+  These now only print a "do by hand" line:
+  - Secret Empire (Dark Loyalty)
+  - Adam Warlock
+  - the Wedding stacks
+  - Divide and Conquer
+  - the Villains-set Plots (2 Cops per player, 8 or 21 Bystanders, Thor next to
+    the Scheme)
+
+  5. Smaller items
+  - A solo setup preset with the standard rules applied.
+  - An undo for the last Play Villain Card, in case it misfires.
+
+  If you want the most return for play, I'd take 1 then 3. The campaign tracker
+  (2) is the quickest to finish. Tell me the order you want, or the Villain Mat
+  placement if you want that one included.
+
+❯ do 1. grill style                                                             
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● User answered Claude's questions:
+  ⎿  · 46 scenarios say things like "Wasp in Villain Deck" or "Add Colossus to 
+     Villain Deck". When Setup does that, which cards go into the Villain Deck? 
+     → Whole Hero deck (Recommended)
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● User answered Claude's questions:
+  ⎿  · 21 scenarios say "Use Villain Mat" (one adds "King Hulk reacts to 
+     Avengers, Mighty, Spider-Friends…"). The scenario PDF never defines it. 
+     What should Setup do for these? → villains play is essentially the same.
+
+● User answered Claude's questions:
+  ⎿  · 27 scenarios name two Masterminds, e.g. "Loki with Odin", "Kingpin, with 
+     Red Skull", "Dr. Doom and Hood". How do you play those, and what should 
+     Setup place? → Both in play (Recommended)
+
+● User answered Claude's questions:
+  ⎿  · The mat has no free box next to the Mastermind slot (Strike and Villain 
+     KO sit to its left, the Scheme above it). Where should the second 
+     Mastermind and its tactics go? → Above the Scheme
+
+  Ran 10 shell commands (ctrl+o to expand)
+
+● Status: the scenario extras (second Masterminds, Heroes into the Villain Deck,
+  KO-pile groups, single-card Villain groups) are written; now hooking them
+  into setup() and testing.
+
+  Ran 7 shell commands (ctrl+o to expand)
+
+● The scenario extras are built and pass the mock tests (every scenario test,
+  the existing menu suite, and 606 setups with 0 failures). Nothing is tested in
+  real TTS. The package (31 files) is attached.
+
+  What your answers decided, and what it now does
+  - Heroes in the Villain Deck (49): the whole Hero deck is shuffled in, like
+    the Trap Heroes scheme. If the Scheme already put that Hero there (House of
+    M's Scarlet Witch, for example), Setup skips it instead of adding a second
+    copy.
+  - Villain Mat (21): Setup runs as normal and prints "play is the same, nothing
+    extra to set up". I took "villains play is essentially the same" to mean
+    there is nothing mat-specific to build.
+  - Two Masterminds (27):
+    - The first goes in the Mastermind slot and the second above the Scheme
+      slot, with a snap point.
+    - Chat lists both.
+    - The Master Strike line shows both Masterminds' strike text.
+    - Card Reference shows both Masterminds' text.
+  - Names like "Loki with Odin": the browser splits them into separate
+    Masterminds, but only when the whole label isn't a single known Mastermind.
+    "Madelyne Pryor, Goblin Queen" stays whole.
+
+  Things I didn't ask you about
+  - Henchmen to the KO pile (16): the group goes face-up on the Hero KO slot
+    under the note's label ("Annihilation Wave Henchmen").
+  - Henchmen cards into the Hero Deck (4): the named count is cut from the
+    group, shuffled into the Hero Deck, and the rest returns to the pool.
+    Examples are Thor Corps x6 and Maggia Goons x6.
+  - Single-card Villain groups (30 of 34): a group like "Moonstone's Gang
+    (Blackout x2, Moonstone x2, Electro x2, Rhino x2)" is built by taking those
+    cards from the real group decks and shuffling them into the Villain Deck.
+    The spare cards go back to the pool. If a group or card isn't there, Setup
+    prints which one.
+  - Still refused (4): Avengers/Defenders War, Avengers Under Siege, Civil War
+    part 4 and The Apocalypse Twins have lists the PDF text breaks or that name
+    cards without a group.
+  - Detail panel: the scenario detail now has a "Set up also:" line listing what
+    Setup will do for that scenario.
+
+  Library audit now: 332 ready, 189 waiting only on an expansion you can switch
+  on, and 4 built by hand.
+
+  Still only reminders
+  - "Use Phoenix / Magik / Dr. Strange instead of Jean Grey in the Villain Deck"
+    (4): the Dark Phoenix Scheme adds Jean Grey itself, so swapping her out
+    safely needs more work.
+  - "Hulk as Hulk Deck" (3): the Hulk Scheme picks its own Hero.
+  - Other notes: things like "Black Panther counts as an Avenger" are shown in
+    the detail but not automated.
+
+  Update
+  Expand-Archive -Force "$env:USERPROFILE\Downloads\legendary_install.zip"
+  "$env:TEMP\legendary_install"
+  python "$env:TEMP\legendary_install\install.py"
+  python C:\Users\steph\build_save.py
+
+  What to test in TTS
+  1. Run a Setup on "King Hyperion, with Dr. Doom".
+  2. Run a Setup on "On the Trail of the Amazing Spider-Man", which uses the
+     single-card Villain group.
+
+  For each, send a screenshot of the table and the chat. Those two exercise the
+  parts I could only simulate.
+
+❯ redesign ui/ux                                                                
+  ⎿  Interrupted · What should Claude do instead?
+  ⎿  [Image #127]
+
+❯ redesign ui/ux                                                                
+
+● User answered Claude's questions:
+  ⎿  · What the screenshot shows: nine buttons in an ad-hoc stack that overlaps 
+     TTS's own left toolbar, "Board / My mat" floating off to the side, and 
+     setup, play, reference and view buttons all mixed together. My plan splits 
+     them by job. Where should the buttons you press every turn (Play Villain 
+     Card, End Turn, Refill HQ, Board, My mat) live? → Top-centre bar
+
+● User answered Claude's questions:
+  ⎿  · Setup Menu, Scenarios, Card Reference and Expansions are four separate 
+     panels that open over each other and the board. How should they behave? → 
+     One tabbed panel, docked right (Recommended)
+
+● User answered Claude's questions:
+  ⎿  · Where should the Evil Wins tracker (Escaped 3/9, Twists 5/8 …) live 
+     during a game? → Strip under the top bar (Recommended)
+
+  Ran 7 shell commands (ctrl+o to expand)
+
+● I've redesigned the UI to the three choices you gave me; it passes the mock
+  tests, and I haven't seen it in TTS. The package and a mock of the layout
+  (ui_mock.png, drawn by me, not a screenshot) are attached.
+
+  What you picked and what changed
+  - Top-centre bar: one slim bar under TTS's own menu replaces the nine buttons
+    stacked over the left toolbar. It groups buttons by job:
+    - Setup / Cleanup
+    - Menu / Scenarios / Reference
+    - Play Villain Card / End Turn / Refill HQ
+    - Board / My mat
+
+    Every button keeps its old function.
+  - One docked tabbed panel: it sits on the right under the bar, with tabs
+    Setup, Scenarios, Reference and Expansions, and an X. Only one is open at a
+    time, and each tab opens its own panel at its own width (Setup 470,
+    Expansions 450, Reference 580, Scenarios 800). It no longer covers the city,
+    HQ or your left side.
+  - Tracker strip: the Evil Wins counters are one line under the bar while a
+    game is set up. It turns amber when a loss condition is close and red once
+    it's met. The +/- correction buttons stay in Reference → This game.
+
+  Existing handlers now open exactly one tab. Setup's "Show card text after
+  setup" opens the Reference tab as before. The scenario "Card text" button does
+  the same.
+
+  Things I could only guess
+  - Position: the bar starts 52 px down to clear TTS's top menu, which I
+    couldn't measure. If it overlaps, tell me and I'll shift it.
+  - Window size: the layout assumes a 1920×1080 canvas. On a smaller window
+    everything scales together, but the 800-wide Scenarios panel gets large.
+
+  Update
+  Expand-Archive -Force "$env:USERPROFILE\Downloads\legendary_install.zip"
+  "$env:TEMP\legendary_install"
+  python "$env:TEMP\legendary_install\install.py"
+  python C:\Users\steph\build_save.py
+
+  Send me a screenshot after loading. Tell me which of these you'd change:
+  - bar size or labels
+  - panel widths
+  - anything in the Setup tab (I only re-homed it, I didn't redesign its
+    contents yet)
+
+[Image #128]
+  ⎿  [Image #129]
+
+❯ overall pretty okay                                                           
+
+  Ran 1 shell command (ctrl+o to expand)
+● Your screenshots show three defects in the new layout, and I fixed all three.
+
+  1. The bar covered TTS's menu labels. "Games / Objects / Music…" were cut off
+     by the top bar. The bar now starts at 64 px instead of 52 px, and the
+     tracker strip and dock moved down with it.
+  2. "Play Villain Card" wrapped to two lines, and the "Expansions" tab split as
+     "Expansion / s". Equal-width buttons were forcing the narrow labels. Every
+     button now has its own width. The button is labelled "Play Villain", and
+     the dock tabs are sized to fit "Expansions".
+  3. Panel heights: the docked panels start 12 px lower, so they got slightly
+     shorter to stay on screen.
+
+  Nothing else about the design changed.
+
+  Update
+  Expand-Archive -Force "$env:USERPROFILE\Downloads\legendary_install.zip"
+  "$env:TEMP\legendary_install"
+  python "$env:TEMP\legendary_install\install.py"
+  python C:\Users\steph\build_save.py
+
+  If the bar still touches TTS's toolbar, tell me and I'll move it down again.
+
+  The earlier screenshot also shows the Expansions panel's empty lower half. The
+  Setup tab contents (dropdowns, mat art, status) are unchanged, so tell me
+  what you'd rearrange there.
+
+❯ audit each page's contents, research lua ui design that wuld be               
+  useful/helpful/aesthetic                                                      
+  ⎿  Did 1 search in 7s
+
+● Fetch(https://api.tabletopsimulator.com/ui/introUI/)
+  ⎿  Error: getaddrinfo ENOTFOUND api.tabletopsimulator.com
+  ⎿  Did 1 search in 4s
+  ⎿  Did 1 search in 6s
+  ⎿  Did 1 search in 5s
+  ⎿  Did 1 search in 7s
+  ⎿  Did 1 search in 8s
+
+● Fetch(https://github.com/Berserk-Games/Tabletop-Simulator-API/blob/master/docs
+       /ui.md)
+  ⎿  Received 309.9KB (200 OK)
+
+● Fetch(https://tts-community.github.io/api/ui/attributes/)
+  ⎿  Error: getaddrinfo ENOTFOUND tts-community.github.io
+
+● Fetch(https://github.com/Berserk-Games/Tabletop-Simulator-API/blob/master/docs
+       /ui/attributes.md)
+  ⎿  Received 336.9KB (200 OK)
+
+● Fetch(https://github.com/Berserk-Games/Tabletop-Simulator-API/blob/master/docs
+       /ui/basicelements.md)
+  ⎿  Received 238.2KB (200 OK)
+
+● Fetch(https://github.com/Berserk-Games/Tabletop-Simulator-API/blob/master/docs
+       /ui/inputelements.md)
+  ⎿  Received 302.4KB (200 OK)
+
+● Fetch(https://github.com/Berserk-Games/Tabletop-Simulator-API/blob/master/docs
+       /ui/layoutgrouping.md)
+  ⎿  Received 306.1KB (200 OK)
+
+● Fetch(https://github.com/Berserk-Games/Tabletop-Simulator-API/blob/master/docs
+       /ui/defaults.md)
+  ⎿  Received 220.8KB (200 OK)
+
+● I read the TTS UI reference (Berserk's own docs, via their GitHub mirror),
+  then audited each page against what the code actually emits. I haven't tested
+  any of the proposed UI in the game.
+
+  1. Audit of each page
+
+  Top bar
+  - No tooltips: "Setup" (runs Automatic Setup) and "Menu" (opens the Setup tab)
+    read as the same thing.
+  - No state: Play Villain, End Turn and Refill HQ look live before any game
+    exists, and nothing shows while a turn action is running.
+  - No icons: every button is the same size and shape.
+  - Menu button: duplicates the dock's Setup tab.
+
+  Tracker strip
+  - Plain text: one line of text, coloured as a whole. There is no bar and no
+    per-counter state.
+  - Colour: amber or red applies to the whole line, even when only one counter
+    is close.
+
+  Setup tab
+  - Duplicate buttons: Setup, Cleanup and Expansions repeat the top bar and the
+    tabs.
+  - Clipped log: the "Last setup" log is a fixed 150 px box with the default
+    truncate behaviour. Scenario setups now print 10+ lines, which get cut off.
+  - Long dropdowns: the Scheme dropdown has about 123 entries and the Mastermind
+    dropdown about 60, with no search.
+  - No preview: picking a Scheme or Mastermind shows no card text until you open
+    Reference.
+  - Missing information: nothing shows pool size (Heroes, Villains, Henchmen
+    available) or whether the current choice is legal for the player count.
+
+  Scenarios tab
+  - Paging: 9 rows per page across 780 scenarios, about 87 pages. Era and search
+    help, but there is no jump to a letter, no random pick and no sort.
+  - Colour only: row status is shown by colour alone, so you need the legend
+    text to read it.
+  - Detail pane: a stack of plain text lines. Missing items sit in one block,
+    not marked individually.
+  - No memory: no played, won or favourite marks.
+
+  Reference tab
+  - Text walls: each Scheme, Mastermind and keyword is a block of coloured text.
+  - No search: the keyword and Scheme dropdowns have 75 and 123 entries.
+  - Coverage: it covers only Schemes, Masterminds and keywords. Hero, Villain
+    and Henchman cards are not in it.
+  - Tracker +/- buttons: these sit inside the This game sub-tab.
+
+  Expansions tab
+  - Length: a scroll list of 23 checkboxes, so about half the list is hidden.
+  - No batch controls: there are no select-all, select-none or grouping
+    controls.
+  - Apply rule: nothing says that Apply only works after a Cleanup until you
+    press it.
+
+  Whole UI
+  - Rebuilds: every click replaces the entire XML, so scroll position and
+    scroll-list state reset.
+  - No theme: colours and font sizes (11 to 22) are repeated on each element,
+    with no shared styles.
+  - Text boxes: none set horizontalOverflow explicitly.
+
+  2. What the TTS UI offers (read from the docs)
+
+  Feature: <Defaults> with class
+  Use for us: One theme in one place: button, panel, label and heading styles.
+  Cuts XML size and keeps sizes consistent.
+  ────────────────────────────────────────
+  Feature: ProgressBar (percentage, fillImageColor, percentageTextFormat,
+  textColor)
+  Use for us: Real bars for the Evil Wins counters, coloured green → amber →
+  red.
+  ────────────────────────────────────────
+  Feature: tooltip (position, colours, font size)
+  Use for us: Hover help on every bar button, with the hotkey.
+  ────────────────────────────────────────
+  Feature: Button icon, iconWidth, iconColor, iconAlignment, plus Image
+  Use for us: Icons on bar buttons and Hero class chips. Needs UI assets:
+  UI.setXml(xml, assets) takes a name + url pair and only images are supported.
+   Whether file:/// URLs work as asset URLs is untested.
+  ────────────────────────────────────────
+  Feature: showAnimation / hideAnimation (Grow, FadeIn, SlideIn_Right, …)
+  Use for us: Dock sliding in and out. Only fires through UI.show(id) and
+  UI.hide(id), not through active.
+  ────────────────────────────────────────
+  Feature: ToggleGroup + ToggleButton
+  Use for us: Players 1–5 as a proper radio group; filter chips (Solo, Ready,
+  era).
+  ────────────────────────────────────────
+  Feature: TableLayout with Row / Cell
+  Use for us: Key and value rows for scenario details and a clean pool summary.
+  ────────────────────────────────────────
+  Feature: GridLayout (constraintCount)
+  Use for us: Expansions as a 2 or 3 column grid so nothing hides in a scroll.
+  ────────────────────────────────────────
+  Feature: Slider
+  Use for us: Reference text size.
+  ────────────────────────────────────────
+  Feature: onMouseEnter / onMouseExit
+  Use for us: Hover a scenario row to preview it without clicking.
+  ────────────────────────────────────────
+  Feature: interactable="false" on Button
+  Use for us: Grey out Play and End Turn until a game is set up.
+  ────────────────────────────────────────
+  Feature: UI.setAttribute, setValue, setClass
+  Use for us: Change one element without rebuilding the XML: tab switches,
+  selected rows, counters.
+  ────────────────────────────────────────
+  Feature: Rich text <b>, <i>, <textcolor color="">, <textsize size="">
+  Use for us: Per-item colours inside one Text, for example one red missing card
+
+  in a list.
+  ────────────────────────────────────────
+  Feature: resizeTextForBestFit with min and max size
+  Use for us: Fixes labels like "Play Villain Card" wrapping.
+  ────────────────────────────────────────
+  Feature: percentage widths (width="100%")
+  Use for us: Panels that scale to the window.
+
+  Two notes on the docs:
+  - Overflow: Text defaults are horizontalOverflow=Overflow and
+    verticalOverflow=Truncate. That default explains the clipped last lines you
+    saw.
+  - Include: the page on Include was not in the docs I read.
+
+  3. Proposed redesign, in the order I'd do it
+
+  1. Theme and no rebuilds: put the Defaults and classes in place, set every
+     Text to Wrap, and switch tabs and counters through UI.setAttribute or
+     show/hide. This removes the flicker and scroll resets, and makes everything
+     else cheaper. It also fixes the clipped log.
+  2. Bar: tooltips with hotkeys, icons if the assets work, greyed-out turn
+     buttons before setup, and renamed buttons ("New Game" runs Setup; "Setup"
+     tab is the options).
+  3. Tracker: a progress bar per counter in the strip, coloured by how close you
+     are to losing.
+  4. Setup tab: a Scheme and Mastermind preview under each dropdown, a
+     type-ahead search box above each, a pool summary ("12 Heroes, 5 Villain
+     groups, 3 Henchmen"), a larger scrolling log, and the duplicate buttons
+     removed.
+  5. Scenarios: a TableLayout detail pane with missing items marked in red,
+     filter chips as ToggleButtons, hover preview, a "random ready scenario"
+     button and a jump control.
+  6. Reference: a search box, plus Hero, Villain and Henchman tabs fed from the
+     catalog.
+  7. Expansions: a 3-column grid with Select all and None.
+
+  Items 4 to 6 add content, not just polish.
+
+  Which should I start on, and do you want the icon work (it adds an
+  asset-loading step I can't pre-test) in or out?
+
+  Sources:
+  - Tabletop Simulator API: UI class reference (Berserk-Games GitHub)
+  - Attributes
+  - Basic elements
+  - Input elements
+  - Layout and grouping
+  - Defaults
+
+❯ begin                                                                         
+
+  Ran 10 shell commands (ctrl+o to expand)
+
+● The Scenarios tab is rewritten (detail table, chips, jump, random); I'm fixing
+  a typo in my test and running it.
+
+  Ran 5 shell commands (ctrl+o to expand)
+● UI v2 is built and passes the mock tests, but none of it has been seen in TTS.
+  The package (31 files) is attached. I left out the icons and the
+  Hero/Villain/Henchman reference tabs; the reasons are in the last section.
+
+  What changed
+  1. Theme: a shared <Defaults> block now gives every Text
+     wrap-and-never-truncate behaviour (the cause of the clipped last lines),
+     plus shared heading, label and note styles and button styles for green,
+     blue and red. Tooltips are styled the same way. The setup log lives in a
+     scrolling box with correct height.
+  2. Top bar:
+     - Tooltips: every button explains itself on hover.
+     - Greyed out until a game exists: Play Villain, End Turn and Refill HQ. New
+       Game greys out while a game is running. A 3-second poll keeps this
+       current.
+     - Renamed: the run button is "New Game". "Setup" opens the Setup tab.
+  3. Tracker: a progress bar per counter, coloured green, then amber, then red,
+     then bright red once lost. Counters update in place every 2 seconds.
+  4. Setup tab:
+     - Pool summary: a line such as "In the pools now: 28 Heroes, 14 Villain
+       groups, …".
+     - Filters: a type-to-filter box above the Mastermind and Scheme dropdowns,
+       each showing "N shown".
+     - Card text preview: the first lines of the chosen card appear under each
+       dropdown and update without a rebuild.
+     - Single button: the duplicate Setup, Cleanup and Expansions buttons are
+       gone in favour of one New Game button.
+  5. Expansions tab: a 2-column grid with Villains first, a "[n] Heroes in pool"
+     count per entry, All on and All off buttons, and an "N of 23 ticked" line.
+  6. Scenarios tab:
+     - Detail table: a table with a row per field. Missing names are coloured
+       inside the lists: red means not in the mod, amber means an expansion is
+       off.
+     - Filter chips: Solo only and Ready now are toggle buttons.
+     - Paging: << and >> jump 10 pages.
+     - Random ready: a button that picks a ready scenario from the current list.
+     - Solo marker: solo rows show "Solo".
+  7. Reference tab: a search box on the Schemes, Masterminds and Keywords tabs.
+     Typing jumps to the first match.
+
+  What I could only guess
+  - Progress bar fill: I set fillImageColor without a fill image. If the bar
+    shows white or no fill, tell me and I'll supply a fill image.
+  - Rich text: the <textcolor> tags for missing-name colouring follow the docs,
+    but I haven't seen them render.
+  - Table sizing: the detail table sits inside a scroll view. If the scroll area
+    stops short, I'll switch to explicit heights.
+  - Script size: the global script is now 623 KB (it was 260 KB at the start of
+    the project).
+
+  Update
+  Expand-Archive -Force "$env:USERPROFILE\Downloads\legendary_install.zip"
+  "$env:TEMP\legendary_install"
+  python "$env:TEMP\legendary_install\install.py"
+  python C:\Users\steph\build_save.py
+
+  Not done
+  - Icons: they would need a UI asset-loading step, and I can't tell whether TTS
+    accepts file:/// URLs for UI assets. Say if you want it tried.
+  - Hero, Villain and Henchman reference tabs: the catalog text is about 400 KB
+    and would roughly double the script. I'd want to see how the current 623 KB
+    loads first.
+
+  Send screenshots of the bar, the tracker with a game running, and each tab.
+
+❯ /teleport session_017T2dDTUJ2zPZwXgQPCX7tK 
+  ⎿  Session resumed successfully
