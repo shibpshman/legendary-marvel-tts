@@ -1,0 +1,259 @@
+"""Builds the frozen 'Legendary Universal' TTS save from the Workshop mod JSON.
+
+ - every image URL that has a rebuilt file in TTS_work\\new becomes a file:/// URL in ASSETS\\img
+ - main board gets the Universal Mat transform, boards/zone updated, Lua patched (lua_patch.py)
+ - writes into an existing save slot whose in-file SaveName matches --name (create it once in game)
+Never modifies the Workshop JSON. Prints timestamped progress; long steps print a heartbeat every 10 s."""
+import argparse, glob, json, os, re, shutil, sys, threading, time
+import lua_patch as P
+import mat_config as C
+
+ap = argparse.ArgumentParser()
+ap.add_argument('--mod', default=r'E:\Documents\My Games\Tabletop Simulator\Mods\Workshop\2410733963.json')
+ap.add_argument('--saves', default=r'E:\Documents\My Games\Tabletop Simulator\Saves')
+ap.add_argument('--work', default=r'E:\Media\Board Games\TTS_work')
+ap.add_argument('--assets', default=r'E:\Legendary_TTS_Assets')
+ap.add_argument('--name', default='Legendary Universal')
+ap.add_argument('--dry', action='store_true', help='report only, write nothing')
+a = ap.parse_args()
+
+MAIN_BOARD, ZONE_BOARD = '083da5', 'a63bcd'
+MOVES = C.MOVES
+IMG = os.path.join(a.assets, 'img')
+T0 = time.time()
+
+
+def log(msg):
+    print('[%s +%4ds] %s' % (time.strftime('%H:%M:%S'), time.time() - T0, msg), flush=True)
+
+
+class Heartbeat:
+    """prints 'still <label>' every 10 s while a long single step runs"""
+    def __init__(self, label, probe=None):
+        self.label, self.probe, self.stop = label, probe, threading.Event()
+    def __enter__(self):
+        self.t0 = time.time()
+        threading.Thread(target=self._run, daemon=True).start()
+        return self
+    def _run(self):
+        while not self.stop.wait(10):
+            extra = ''
+            try:
+                extra = ' ' + self.probe() if self.probe else ''
+            except Exception:
+                pass
+            log('   ... still %s (%ds)%s' % (self.label, time.time() - self.t0, extra))
+    def __exit__(self, *e):
+        self.stop.set()
+
+
+def canon(u):
+    return re.sub(r'^https?://cloud-\d+\.steamusercontent\.com', 'https://steamusercontent-a.akamaihd.net', u)
+
+
+def key(u):
+    return re.sub(r'[^A-Za-z0-9]', '', canon(u))
+
+
+# ---- rebuilt files ----------------------------------------------------------------------
+log('phase 1/6: listing rebuilt files in %s' % a.work)
+src_new = os.path.join(a.work, 'new')
+files = {}
+for f in os.listdir(src_new):
+    stem, ext = os.path.splitext(f)
+    files[stem] = f
+log('   %d rebuilt files available' % len(files))
+
+log('phase 2/6: reading the mod JSON (%s, %.0f MB)' % (a.mod, os.path.getsize(a.mod) / 1e6))
+with Heartbeat('reading the mod JSON'):
+    mod = json.load(open(a.mod, encoding='utf-8'))
+log('   %d top-level objects' % len(mod['ObjectStates']))
+
+stats = {'url': 0, 'kept': 0, 'bag_lua': 0}
+used = set()
+URLKEYS = ('FaceURL', 'BackURL', 'ImageURL', 'ImageSecondaryURL')
+bag_counts = {}
+
+
+def to_file_url(name):
+    return 'file:///' + os.path.join(IMG, name).replace('\\', '/')
+
+
+def walk(o):
+    if isinstance(o, dict):
+        for k, v in list(o.items()):
+            if k in URLKEYS and isinstance(v, str) and v.startswith('http'):
+                kk = key(v)
+                if kk in files:
+                    o[k] = to_file_url(files[kk]); used.add(kk); stats['url'] += 1
+                else:
+                    stats['kept'] += 1
+            elif k == 'LuaScript' and isinstance(v, str) and v and o is not mod:
+                new, counts = P.patch_bag(v)
+                if new != v:
+                    o[k] = new; stats['bag_lua'] += 1
+                    for lit, n in counts.items(): bag_counts[lit] = bag_counts.get(lit, 0) + n
+            else:
+                walk(v)
+    elif isinstance(o, list):
+        for x in o: walk(x)
+
+
+# ---- Villains expansion bag (made by build_villains_set.py) -------------------------------------------------------
+VB = os.path.join(a.work, 'villains_set', 'villains_bag.json')
+if os.path.exists(VB):
+    vbag = json.load(open(VB, encoding='utf-8'))
+    mod['ObjectStates'] = [o for o in mod['ObjectStates'] if o.get('GUID') != vbag['GUID']] + [vbag]
+    log('   Villains expansion bag %s added (%d nested objects); it shows up in the Expansions list' % (vbag['GUID'], len(vbag['ContainedObjects'])))
+else:
+    log('   no Villains expansion bag (%s): run build_villains_set.py to add the Villains set' % VB)
+
+log('phase 3/6: patching Lua, rewriting image URLs, placing board/zone/decks')
+SKIN_DIR = os.path.join(a.work, 'skins')
+skin_files = sorted(glob.glob(os.path.join(SKIN_DIR, 'mat_skin_*.jpg')), key=lambda p: int(re.search(r'_(\d+)\.jpg', p).group(1)))
+C.SKIN_URLS = ['file:///' + os.path.join(IMG, os.path.basename(p)).replace('\\', '/') for p in skin_files]
+if skin_files: log('   %d mat skins found in %s (skin %d is the default)' % (len(skin_files), SKIN_DIR, C.MAT_SKIN))
+else: log('   no mat skins in %s: run make_mat_skins.py to use the 28_Inch mats (the old mat image stays)' % SKIN_DIR)
+new_lua, report = P.patch_global(mod['LuaScript'])
+mod['LuaScript'] = new_lua
+with Heartbeat('rewriting image URLs'):
+    walk(mod)
+
+tops = {o.get('GUID'): o for o in mod['ObjectStates']}
+if C.SKIN_URLS:
+    _bi = tops[MAIN_BOARD].setdefault('CustomImage', {})
+    _bi['ImageURL'] = C.SKIN_URLS[min(max(C.MAT_SKIN, 1), len(C.SKIN_URLS)) - 1]
+    _bi.pop('ImageSecondaryURL', None)
+board, zone = tops[MAIN_BOARD], tops[ZONE_BOARD]
+s = C.MAT_REF_SCALE * C.BOUNDS_W / C.MAT_REF_WIDTH   # calibrated from the width measured in game (see mat_config.py)
+t = board['Transform']
+t.update(posX=P.CX, posZ=P.CZ, rotY=180, scaleX=s, scaleY=s, scaleZ=s)
+zt = zone['Transform']
+zt.update(**C.ZONE)
+moved = []
+for g, slot_name in MOVES.items():
+    if g in tops:
+        x, z = P.S(slot_name)
+        tops[g]['Transform'].update(posX=x, posZ=z)
+        moved.append('%s %r -> %s slot (%.2f, %.2f)' % (g, tops[g].get('Nickname'), slot_name, x, z))
+    else:
+        log('WARNING: deck %s not found, not moved' % g)
+
+# ---- player mats: official Player Mat image, starting decks onto the Draw Deck slot ------------------------------
+PM_PNG = os.path.join(a.work, 'playermat.png')
+pm_report = []
+if os.path.exists(PM_PNG):
+    import math
+    from PIL import Image
+    with Image.open(PM_PNG) as _im: pm_aspect = _im.size[0] / _im.size[1]
+    pm_url = 'file:///' + os.path.join(IMG, 'playermat.png').replace('\\', '/')
+    mats = []
+    for g in C.PLAYER_MATS:
+        o = tops.get(g)
+        if o is None: log('WARNING: player mat %s not found' % g); continue
+        o.setdefault('CustomImage', {})['ImageURL'] = pm_url
+        o['CustomImage'].pop('ImageSecondaryURL', None)
+        tr = o['Transform']
+        sc = tr['scaleX']
+        pw = C.PM_BOARD_H * sc * pm_aspect * C.PM_PRINTED_FRAC
+        ph = C.PM_BOARD_H * sc * C.PM_PRINTED_FRAC
+        mats.append((g, tr, pw, ph))
+        pm_report.append('%s -> player mat image (scale %.2f, printed %.1f x %.1f)' % (g, sc, pw, ph))
+    for dg in C.PM_STARTER_DECKS:
+        d = tops.get(dg)
+        if d is None: continue
+        dt = d['Transform']
+        best = min(mats, key=lambda m: (m[1]['posX'] - dt['posX']) ** 2 + (m[1]['posZ'] - dt['posZ']) ** 2) if mats else None
+        if best is None: continue
+        g, tr, pw, ph = best
+        lx, lz = (C.PM_DRAW_UV[0] - .5) * pw, -(C.PM_DRAW_UV[1] - .5) * ph
+        th = math.radians(tr['rotY'] - 180)
+        dt['posX'] = round(tr['posX'] + lx * math.cos(th) + lz * math.sin(th), 2)
+        dt['posZ'] = round(tr['posZ'] - lx * math.sin(th) + lz * math.cos(th), 2)
+        pm_report.append('starting deck %s -> Draw Deck slot of mat %s (%.2f, %.2f)' % (dg, g, dt['posX'], dt['posZ']))
+else:
+    log('no playermat.png in %s, player mats keep their old image (run make_player_mat.py to use the official one)' % a.work)
+
+x0, x1, z0, z1 = P.CX - P.W / 2 - 1.2, P.CX + P.W / 2 + 1.2, P.CZ - P.H / 2 - 1.2, P.CZ + P.H / 2 + 1.2
+hits = []
+for g, o in tops.items():
+    if g in (MAIN_BOARD, ZONE_BOARD) or o.get('Name') in ('ScriptingTrigger', 'HandTrigger', 'Custom_Board'): continue
+    tr = o['Transform']
+    if x0 <= tr['posX'] <= x1 and z0 <= tr['posZ'] <= z1 and tr['posY'] < 3.0 and g not in MOVES:
+        hits.append('%s %r %s at (%.2f, %.2f)' % (g, o.get('Nickname'), o.get('Name'), tr['posX'], tr['posZ']))
+
+print(P.describe())
+print('\nLua patches (global):')
+for line in report: print('  ', line)
+print('bag scripts patched: %d  literal counts: %s' % (stats['bag_lua'], bag_counts))
+print('mat skins: %d (default %d)' % (len(skin_files), C.MAT_SKIN))
+print('main board scale set to %.4f for an object width of %.1f (load message should say OK)' % (s, C.BOUNDS_W))
+print('image URLs rewritten: %d   left on their original URL: %d   rebuilt files actually referenced: %d of %d'
+      % (stats['url'], stats['kept'], len(used), len(files)))
+unused = sorted(set(files) - used)
+if unused: print('rebuilt files NOT referenced by the mod JSON:', [files[k][-34:] for k in unused[:10]])
+print('player mats:')
+for m in pm_report: print('   ', m)
+print('decks moved onto their new slots:')
+for m in moved: print('   ', m)
+print('other objects overlapping the new mat footprint (%d):' % len(hits))
+for h in hits: print('   ', h)
+sys.stdout.flush()
+
+if a.dry:
+    log('--dry: nothing written'); sys.exit(0)
+
+# ---- find the save slot ------------------------------------------------------------------
+log('phase 4/6: looking for a save named %r in %s' % (a.name, a.saves))
+slot = None
+cands = sorted(glob.glob(os.path.join(a.saves, 'TS_Save_*.json')))
+for i, f in enumerate(cands, 1):
+    try:
+        head = open(f, encoding='utf-8', errors='replace').read(400000)
+        m = re.search(r'"SaveName"\s*:\s*"([^"]*)"', head)
+        if m and m.group(1) == a.name: slot = f
+    except Exception:
+        pass
+    if i % 25 == 0: log('   checked %d/%d save files' % (i, len(cands)))
+if not slot:
+    sys.exit('No save named %r in %s. In TTS: start any game, Games > Save & Load > save as %r, close TTS, rerun.' % (a.name, a.saves, a.name))
+log('   using %s' % slot)
+
+# ---- copy images -------------------------------------------------------------------------
+os.makedirs(IMG, exist_ok=True)
+todo = []
+for k in sorted(used):
+    d = os.path.join(IMG, files[k]); sp = os.path.join(src_new, files[k])
+    if not os.path.exists(d) or os.path.getsize(d) != os.path.getsize(sp): todo.append((files[k], sp, d))
+total_mb = sum(os.path.getsize(sp) for _, sp, _ in todo) / 1e6
+log('phase 5/6: copying images: %d to copy (%.0f MB), %d already in place' % (len(todo), total_mb, len(used) - len(todo)))
+done_mb, tlast = 0.0, time.time()
+for i, (name, sp, d) in enumerate(todo, 1):
+    mb = os.path.getsize(sp) / 1e6
+    log('   [%d/%d] copying %s (%.1f MB)  total so far %.0f/%.0f MB' % (i, len(todo), name[-40:], mb, done_mb, total_mb))
+    with Heartbeat('copying ' + name[-30:]):
+        shutil.copy2(sp, d)
+    done_mb += mb
+if os.path.exists(PM_PNG):
+    shutil.copy2(PM_PNG, os.path.join(IMG, 'playermat.png'))
+    log('   copied playermat.png')
+for p in skin_files:
+    dst = os.path.join(IMG, os.path.basename(p))
+    if not os.path.exists(dst) or os.path.getsize(dst) != os.path.getsize(p):
+        log('   copying %s (%.1f MB)' % (os.path.basename(p), os.path.getsize(p) / 1e6))
+        with Heartbeat('copying ' + os.path.basename(p)):
+            shutil.copy2(p, dst)
+bad = [u for u in re.findall(r'file:///[^"\\]+', json.dumps(mod)) if not os.path.exists(u[len('file:///'):].replace('/', '\\' if os.name == 'nt' else '/'))]
+if bad: sys.exit('missing asset files: %s' % bad[:5])
+log('   all %d referenced image files are present' % len(used))
+
+# ---- write the save ----------------------------------------------------------------------
+log('phase 6/6: writing the save')
+mod['SaveName'] = a.name
+mod['Date'] = time.strftime('%m/%d/%Y %I:%M:%S %p'); mod['EpochTime'] = int(time.time())
+tmp = slot + '.new'
+with Heartbeat('writing the save JSON', probe=lambda: '%.0f MB written' % (os.path.getsize(tmp) / 1e6)):
+    with open(tmp, 'w', encoding='utf-8') as f: json.dump(mod, f, ensure_ascii=False, indent=2)
+shutil.copy2(slot, slot + '.bak')
+os.replace(tmp, slot)
+log('DONE: wrote %s (%.0f MB). Previous content kept as .bak. Images in %s' % (slot, os.path.getsize(slot) / 1e6, IMG))

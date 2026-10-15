@@ -1,0 +1,94 @@
+rescued: 57  ({'filename': 39, 'ocr-title': 14, 'fuzzy-name': 3, 'big-margin': 1})
+  [filename] BCDBD822029BB7E9.png #0 'Capture Baby Hope' -> Capture+Baby+Hope.png
+  [ocr-title] BCDBD822029BB7E9.png #1 "X-Cutioner's Song" -> X-Cutioners+Song.png
+  [filename] BCDBD822029BB7E9.png #2 'Transform Citizens Into Demons' -> Transform+Citizens+into+Demons.png
+  [filename] BCDBD822029BB7E9.png #3 'Steal The Weaponized Plutonium' -> Steal+the+Weaponized+Plutonium.png
+  [filename] BCDBD822029BB7E9.png #4 'Detonate The Helicarrier' -> Detonate+the+Helicarrier.png
+  [filename] 178E2267C4E6FF4A.png #6 'Unleash The Power Of The Cosmic Cube' -> Unleash+the+Power+of+the+Cosmic+Cube+core.png
+  [filename] 427DCB4A0BB87D58.png #1 'Flood The Planet With Melted Glaciers' -> Flood+the+Planet+with+Melted+Glaciers.png
+  [ocr-title] C1FDD8314F3592E8.png #17 'Crime Stopper' -> Thing_4Uncommon.png
+  [filename] 80FC8A0AB40A1A50.png #2 'Scheme Twist' -> Core+Scheme+Twist.png
+  [filename] A79FA111B00B59F7.png #4 'Smash Two Dimensions Together' -> Smash+Two+Dimensions+Together.png
+  [filename] A79FA111B00B59F7.png #5 'Build An Army Of Annihilation' -> Build+an+Army+of+Annihilation.png
+  [filename] A79FA111B00B59F7.png #6 'Corrupt The Next Generation Of Heroes' -> Corrupt+the+Next+Generation+of+Heroes.png
+  [filename] C908708AFEDCC1C9.png #0 'Crime Surge' -> Crime+Surge.png
+  [filename] C908708AFEDCC1C9.png #5 'Thirst For Vengeance' -> Thirst+for+Vengeance.png
+  [filename] C908708AFEDCC1C9.png #6 'Wave Of Punishment' -> Wave+of+Punishment.png
+  [filename] C908708AFEDCC1C9.png #7 'Thirst For Power' -> Thirst+for+Power.png
+  [filename] C908708AFEDCC1C9.png #11 'Pure Evil' -> Pure+Evil.png
+  [filename] C908708AFEDCC1C9.png #15 'Wipe Out' -> Wipe+Out.png
+  [fuzzy-name] C908708AFEDCC1C9.png #16 'Crackdown' -> Crackdown.png
+  [filename] C908708AFEDCC1C9.png #18 'Inflict Pain' -> Inflict+Pain.png
+  [filename] C908708AFEDCC1C9.png #20 'Pressure Point' -> Pressure+Point.png
+  [fuzzy-name] C908708AFEDCC1C9.png #25 'Entrap' -> Entrap.png
+  [ocr-title] C908708AFEDCC1C9.png #29 'Infiltrate S.H.I.E.L.D.' -> Infiltrate+SHIELD.png
+  [ocr-title] 43F470A88A0B3492.png #5 'Nimrod, Super Sentinel' -> NimrodSuperSentinel.png
+  [ocr-title] 43F470A88A0B3492.png #6 'Adapt And Destroy' -> NimrodSuperSentinelTactic1.png
+  [ocr-title] 43F470A88A0B3492.png #7 'Detect Mutation' -> NimrodSuperSentinelTactic2.png
+  [ocr-title] 43F470A88A0B3492.png #9 'Teleport And Incarcerate' -> NimrodSuperSentinelTactic4.png
+  [filename] 6282C2EFE0602576.png #1 'Deadlands Hordes Charge The Wall' -> Deadlands+Hordes+Charge+the+Wall.png
+  [filename] 6282C2EFE0602576.png #2 'Enthrone The Barons Of Battleworld' -> Enthrone+the+Barons+of+Battleworld.png
+  [filename] 6282C2EFE0602576.png #7 'The God-Emperor Of Battleworld' -> God-Emperor+of+Battleworld+the.png
+  [filename] 70DFF1ED073AEA73.png #5 'Hostage Situation' -> Hostage+Situation.png
+  [filename] 70DFF1ED073AEA73.png #8 'Secret Escape Tunnels' -> Secret+Escape+Tunnels.png
+  [ocr-title] 5F036658C34002EA.png #60 'Change History' -> TimeTravelingJeanGrey_1Rare.png
+  [filename] 7A41B386FD1E9C7C.png #1 'Deadpool Wants A Chimichanga' -> Deadpool+Wants+a+Chimichanga.png
+  [filename] 23755F7A7105B14F.png #0 'The Unbreakable Enigma Code' -> Unbreakable+Enigma+Code+the.png
+  [filename] 23755F7A7105B14F.png #1 "Go Back In Time To Slay Heroes' Ancestors" -> Go+Back+in+Time+to+Slay+Heroes+Ancestors.png
+  [filename] 23755F7A7105B14F.png #3 'Brainwash The Military' -> Brainwash+the+Military.png
+  [big-margin] 67E8AA90B6072902.png #5 'Primus' -> ZolasCreationsPrimus.png
+  [filename] 6FF0B645375F1F6F.png #1 "Reveal Heroes' Secret Identities" -> Reveal+Heroes+Secret+Identities.png
+  [filename] 6FF0B645375F1F6F.png #4 'United States Split By Civil War' -> United+States+Split+by+Civil+War.png
+  [ocr-title] 6FF0B645375F1F6F.png #7 'Dark Reign Of H.A.M.M.E.R. Officers' -> Dark+Reign+of+HAMMER+Officers.png
+  [filename] 5A39602157AF90E1.png #2 'Hidden Heart Of Darkness' -> Hidden+Heart+of+Darkness.png
+  [filename] 5A39602157AF90E1.png #4 'Find The Split Personality Killer' -> Find+the+Split+Personality+Killer.png
+  [ocr-title] 7868A53C8F791E39.png #18 "Gumshoe's Revolver" -> Spider-ManNoir_2Common.png
+  [ocr-title] B457C9166FF01A7C.png #0 'X-Men Danger Room Goes Beserk' -> X-Men+Danger+Room+Goes+Berserk.png
+  [filename] B457C9166FF01A7C.png #1 'The Dark Phoenix Saga' -> Dark+Phoenix+Saga+the.png
+  [fuzzy-name] B457C9166FF01A7C.png #2 'Mutant-Hunting Super Sentinels' -> Mutant-Hunting+Super+Sentries.png
+  [filename] B457C9166FF01A7C.png #5 'Alien Brood Encounters' -> Alien+Brood+Encounters.png
+  [ocr-title] B457C9166FF01A7C.png #6 'Televised Deathtraps Of Mojoworld' -> Televised+Deathworlds+of+Mojoworld.png
+  [ocr-title] 6FFA3FF74E44E102.png #39 'Driven Mad By Power' -> Phoenix_1Rare.png
+  [ocr-title] BD8D02A131372256.png #18 'Expanding Neural Network' -> VivVision_3Common.png
+  [filename] ABB9CA1BCEE8ED9A.png #2 'Cytoplasm Spike Invasion' -> Cytoplasm+Spike+Invasion.png
+  [filename] ABB9CA1BCEE8ED9A.png #4 'Mutating Gamma Rays' -> Mutating+Gamma+Rays.png
+  [filename] ABB9CA1BCEE8ED9A.png #5 'Shoot Hulk Into Space' -> Shoot+Hulk+into+Space.png
+  [filename] 83504F2CFF40B847.png #1 'Superhuman Baseball Game' -> Superhuman+Baseball+Game.png
+  [filename] 83504F2CFF40B847.png #2 'The Demon Bear Saga' -> Demon+Bear+Saga+the.png
+  [filename] 83504F2CFF40B847.png #3 'Trapped In The Insane Asylum' -> Trapped+in+the+Insane+Asylum.png
+
+LIBRARY FILES WHOSE NAME DISAGREES WITH WHAT THE CARD SAYS (rejected, cells keep original art): 0
+
+still not sure: 32
+  31846A043B1D3E2D.png #14 contradict 'The Price Of Failure'
+  68206B2624ECD205.png #19 contradict 'Hydra Conspiracy'
+  43F035888931D8EC.png #1 weak       'Hypnotic Charm'
+  49E4BFF9E893218D.png #1 none       'Sidekick'
+  43F470A88A0B3492.png #1 forced     'City Of Demon Goblins'
+  43F470A88A0B3492.png #8 none       'Scatter The Mutants'
+  E533566F8114E3EA.png #4 none       'Groot'
+  3C0FE375C22F38BD.png #2 ambig      'Ox'
+  3C0FE375C22F38BD.png #10 ambig      'Henry "Beast" McCoy'
+  7868A53C8F791E39.png #6 ambig      'Listen For Heartbeats'
+  A3BC2BAB59D20587.png #0 weak       'Army Of Evil'
+  A3BC2BAB59D20587.png #1 ambig      'Empire Of Oppression'
+  A3BC2BAB59D20587.png #2 weak       'Endless Hatred'
+  A3BC2BAB59D20587.png #3 forced     'Enraged Mastermind'
+  A3BC2BAB59D20587.png #4 none       'Fight To The End'
+  A3BC2BAB59D20587.png #5 weak       'Growing Threat'
+  A3BC2BAB59D20587.png #6 none       'Legions Upon Legions'
+  A3BC2BAB59D20587.png #7 ambig      'Maniacal Mastermind'
+  A3BC2BAB59D20587.png #8 ambig      'Misery Upon Misery'
+  A3BC2BAB59D20587.png #9 weak       'Opening Salvo'
+  A3BC2BAB59D20587.png #10 forced     'Pain Upon Pain'
+  A3BC2BAB59D20587.png #11 ambig      'Plots Upon Plots'
+  A3BC2BAB59D20587.png #12 none       'Psychic Infection'
+  A3BC2BAB59D20587.png #13 none       'Shadow Of The Disciple'
+  A3BC2BAB59D20587.png #14 forced     'Surprise Assault'
+  A3BC2BAB59D20587.png #15 weak       'The Apprentice Rises'
+  A3BC2BAB59D20587.png #16 none       'The Blood Thickens'
+  A3BC2BAB59D20587.png #17 ambig      'The Plot Thickens'
+  A3BC2BAB59D20587.png #18 ambig      'Tyrant Mastermind'
+  A3BC2BAB59D20587.png #19 weak       'Viral Infection'
+  B06B5D7F9D275BF6.png #22 contradict 'Telepathic Betrayal'
+  99FE6345529EE03B.png #5 forced     'Soul Sieze'

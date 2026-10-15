@@ -1,0 +1,23 @@
+demoted to review: 10   promoted to sure: 6
+
+Demoted:
+  BCDBD822029BB7E9.png #3 nick='Steal The Weaponized Plutonium' -> Sinister+Ambitions.png sim=0.6572
+  31846A043B1D3E2D.png #14 nick='The Price Of Failure' -> MephistoTactic4.png sim=0.8489
+  68206B2624ECD205.png #19 nick='Hydra Conspiracy' -> RedSkullTactic2.png sim=0.8791
+  A79FA111B00B59F7.png #4 nick='Smash Two Dimensions Together' -> Age+of+Ultron.png sim=0.6415
+  A79FA111B00B59F7.png #5 nick='Build An Army Of Annihilation' -> Age+of+Ultron.png sim=0.6924
+  A79FA111B00B59F7.png #6 nick='Corrupt The Next Generation Of Heroes' -> Age+of+Ultron.png sim=0.62
+  6FF0B645375F1F6F.png #7 nick='Dark Reign Of H.A.M.M.E.R. Officers' -> Subjugate+with+Obedience+Disks.png sim=0.7217
+  B06B5D7F9D275BF6.png #22 nick='Telepathic Betrayal' -> ShadowKingTactic3.png sim=0.9233
+  ABB9CA1BCEE8ED9A.png #4 nick='Mutating Gamma Rays' -> Age+of+Ultron.png sim=0.6208
+  ABB9CA1BCEE8ED9A.png #5 nick='Shoot Hulk Into Space' -> Age+of+Ultron.png sim=0.7106
+
+Promoted:
+  A79FA111B00B59F7.png #0 nick='Pan-Dimensional Plague' -> Pan-Dimensional+Plague.png sim=0.6409
+  A79FA111B00B59F7.png #2 nick='Fragmented Realities' -> Fragmented+Realities.png sim=0.5407
+  C908708AFEDCC1C9.png #9 nick='Empower' -> Empower.png sim=0.8443
+  70DFF1ED073AEA73.png #0 nick='Shadowy Disciple' -> Shadowy+Disciple.png sim=0.8072
+  F22ABED394FC8640.png #0 nick='Age Of Ultron' -> Age+of+Ultron.png sim=0.5108
+  BEAF0C764CACDEE3.png #0 nick='Turn The Soul Of Adam Warlock' -> Turn+the+Soul+of+Adam+Warlock.png sim=0.517
+
+final statuses: {'none': 27, 'contradict': 10, 'sure': 1713, 'weak': 10, 'ambig': 35, 'forced': 7}

@@ -1,0 +1,7 @@
+*.pkl
+*.npz
+*.pyc
+__pycache__/
+mods/*/saves/
+mods/*/img/
+mods/*/work/

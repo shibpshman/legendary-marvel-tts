@@ -1,0 +1,326 @@
+7x3 size=[3430, 2026] occurrences=24
+  http://cloud-3.steamusercontent.com/ugc/1764819461646243860/D21FB387C8E8996DEAA7E37968206B2624ECD205/
+    ... d": false,
+          "DeckIDs": [
+            128719,
+            128718,
+            128717,
+            128716,
+            128715
+          ],
+          "CustomDeck": {
+            "1287": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1764819461646243860/D21FB387C8E8996DEAA7E37968206B2624ECD205/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA73D0C
+    ...            "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 128719,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "274": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1764819461646243860/D21FB387C8E8996DEAA7E37968206B2624ECD205/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA7
+
+3x3 size=[2250, 3150] occurrences=18
+  http://cloud-3.steamusercontent.com/ugc/1765945272803764751/3736B523F210CEB104B5336D459A29A74860C2B9/
+    ... 02,
+                83602,
+                83601,
+                83601,
+                83600,
+                83600
+              ],
+              "CustomDeck": {
+                "836": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1765945272803764751/3736B523F210CEB104B5336D459A29A74860C2B9/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA7
+    ... ceDown": true,
+                  "Hands": true,
+                  "CardID": 83603,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "10": {
+                      "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1765945272803764751/3736B523F210CEB104B5336D459A29A74860C2B9/",
+                      "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D5
+
+6x2 size=[4096, 1912] occurrences=12
+  http://cloud-3.steamusercontent.com/ugc/1765945272803738761/E4B68686BF760EB7EA19CF7CBE9D987BB9F4886B/
+    ... : [
+                83404,
+                83403,
+                83402,
+                83401,
+                83400
+              ],
+              "CustomDeck": {
+                "834": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1765945272803738761/E4B68686BF760EB7EA19CF7CBE9D987BB9F4886B/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA7
+    ... ceDown": true,
+                  "Hands": true,
+                  "CardID": 83404,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "10": {
+                      "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1765945272803738761/E4B68686BF760EB7EA19CF7CBE9D987BB9F4886B/",
+                      "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D5
+
+6x2 size=[4096, 1912] occurrences=12
+  http://cloud-3.steamusercontent.com/ugc/1764819592349327154/D5FE5B30DF3B394025E4CAD743ABB65D07057CD6/
+    ... : [
+                83704,
+                83703,
+                83702,
+                83701,
+                83700
+              ],
+              "CustomDeck": {
+                "837": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1764819592349327154/D5FE5B30DF3B394025E4CAD743ABB65D07057CD6/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA7
+    ... eDown": true,
+                  "Hands": true,
+                  "CardID": 83704,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "744": {
+                      "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1764819592349327154/D5FE5B30DF3B394025E4CAD743ABB65D07057CD6/",
+                      "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D5
+
+3x2 size=[2250, 2100] occurrences=5
+  http://cloud-3.steamusercontent.com/ugc/1764819788281464875/1743DB8917FA2F39DDB333587D9733AC92B0246E/
+    ...  false,
+          "SidewaysCard": false,
+          "DeckIDs": [
+            5600,
+            5603,
+            5602,
+            5601
+          ],
+          "CustomDeck": {
+            "56": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1764819788281464875/1743DB8917FA2F39DDB333587D9733AC92B0246E/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA73D0C
+    ...               "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 5600,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "55": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1764819788281464875/1743DB8917FA2F39DDB333587D9733AC92B0246E/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA7
+
+8x4 size=[4096, 2868] occurrences=87
+  http://cloud-3.steamusercontent.com/ugc/1764819854360600637/1A8C014908C6F8EA759740430CEF427F4EDAD958/
+    ...               119301,
+                119300,
+                119300,
+                119302,
+                119302
+              ],
+              "CustomDeck": {
+                "1193": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1764819854360600637/1A8C014908C6F8EA759740430CEF427F4EDAD958/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA7
+    ... eDown": true,
+                  "Hands": true,
+                  "CardID": 119303,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "55": {
+                      "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1764819854360600637/1A8C014908C6F8EA759740430CEF427F4EDAD958/",
+                      "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D5
+
+10x3 size=[4096, 1720] occurrences=87
+  http://cloud-3.steamusercontent.com/ugc/1764819992276473166/C594AAFA0C08E1736F2E9F2DE533566F8114E3EA/
+    ...               120509,
+                120509,
+                120509,
+                120509,
+                120509
+              ],
+              "CustomDeck": {
+                "1205": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1764819992276473166/C594AAFA0C08E1736F2E9F2DE533566F8114E3EA/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA7
+    ... eDown": true,
+                  "Hands": true,
+                  "CardID": 120509,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "55": {
+                      "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1764819992276473166/C594AAFA0C08E1736F2E9F2DE533566F8114E3EA/",
+                      "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D5
+
+3x2 size=[2250, 2100] occurrences=5
+  http://cloud-3.steamusercontent.com/ugc/1761442429501034386/B12CC8D94B4456D258F14CEC7A41B386FD1E9C7C/
+    ...  false,
+          "SidewaysCard": false,
+          "DeckIDs": [
+            5600,
+            5601,
+            5602,
+            5603
+          ],
+          "CustomDeck": {
+            "56": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1761442429501034386/B12CC8D94B4456D258F14CEC7A41B386FD1E9C7C/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA73D0C
+    ...               "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 5600,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "55": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1761442429501034386/B12CC8D94B4456D258F14CEC7A41B386FD1E9C7C/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA7
+
+3x3 size=[2250, 3150] occurrences=9
+  http://cloud-3.steamusercontent.com/ugc/1729919110690755089/9328B8206400DA3DCEB51606ABB9CA1BCEE8ED9A/
+    ...       133303,
+            133306,
+            133305,
+            133301,
+            133304,
+            133302,
+            133307
+          ],
+          "CustomDeck": {
+            "1333": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1729919110690755089/9328B8206400DA3DCEB51606ABB9CA1BCEE8ED9A/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA73D0C
+    ...             "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 133300,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "55": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1729919110690755089/9328B8206400DA3DCEB51606ABB9CA1BCEE8ED9A/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA7
+
+9x2 size=[4096, 1274] occurrences=18
+  http://cloud-3.steamusercontent.com/ugc/1729919194265536214/6E952B101D5A0F61D914C3E32CF64331CE270F87/
+    ...               134504,
+                134503,
+                134502,
+                134501,
+                134500
+              ],
+              "CustomDeck": {
+                "1345": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1729919194265536214/6E952B101D5A0F61D914C3E32CF64331CE270F87/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA7
+    ... own": true,
+                  "Hands": true,
+                  "CardID": 134507,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "1333": {
+                      "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1729919194265536214/6E952B101D5A0F61D914C3E32CF64331CE270F87/",
+                      "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D5
+
+1x1 size=[750, 1050] occurrences=2
+  http://cloud-3.steamusercontent.com/ugc/1729919194265588533/A8824B0B9261851B68F5A994CAC3D347CC1AD534/
+    ... 3,
+                  "NumHeight": 3,
+                  "BackIsHidden": false,
+                  "UniqueBack": false,
+                  "Type": 0
+                },
+                "1347": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1729919194265588533/A8824B0B9261851B68F5A994CAC3D347CC1AD534/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1729919194265588792/9439609
+    ... own": true,
+                  "Hands": true,
+                  "CardID": 134700,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "1333": {
+                      "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1729919194265588533/A8824B0B9261851B68F5A994CAC3D347CC1AD534/",
+                      "BackURL": "http://cloud-3.steamusercontent.com/ugc/1729919194265588792/943
+
+6x3 size=[4096, 2868] occurrences=60
+  http://cloud-3.steamusercontent.com/ugc/1726542626274838535/88E24087D0FCE0608D2D8653185B239ACE2196E0/
+    ...               127802,
+                127801,
+                127801,
+                127801,
+                127800
+              ],
+              "CustomDeck": {
+                "1278": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1726542626274838535/88E24087D0FCE0608D2D8653185B239ACE2196E0/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA7
+    ... own": true,
+                  "Hands": true,
+                  "CardID": 127803,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "1265": {
+                      "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1726542626274838535/88E24087D0FCE0608D2D8653185B239ACE2196E0/",
+                      "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D5
+
+3x3 size=[2250, 3150] occurrences=18
+  http://cloud-3.steamusercontent.com/ugc/1726542626274924227/2188338D06707A58D24E1AE89E232EC942302DF9/
+    ...               128202,
+                128201,
+                128201,
+                128200,
+                128200
+              ],
+              "CustomDeck": {
+                "1282": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1726542626274924227/2188338D06707A58D24E1AE89E232EC942302DF9/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA7
+    ... own": true,
+                  "Hands": true,
+                  "CardID": 128203,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "1265": {
+                      "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1726542626274924227/2188338D06707A58D24E1AE89E232EC942302DF9/",
+                      "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D5
+
+3x3 size=[2250, 3150] occurrences=10
+  http://cloud-3.steamusercontent.com/ugc/1726542626274960784/C0944FC3AAD8C39BED9E4A67B48ED10BFA52E808/
+    ...          "DeckIDs": [
+                128400,
+                128401,
+                128402,
+                128403
+              ],
+              "CustomDeck": {
+                "1284": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1726542626274960784/C0944FC3AAD8C39BED9E4A67B48ED10BFA52E808/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA7
+    ... own": true,
+                  "Hands": true,
+                  "CardID": 128400,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "1265": {
+                      "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1726542626274960784/C0944FC3AAD8C39BED9E4A67B48ED10BFA52E808/",
+                      "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D5
+
+6x2 size=[4096, 1912] occurrences=18
+  http://cloud-3.steamusercontent.com/ugc/1810985572012764695/919968ECAF02C73C9957314F89C8A534382169C6/
+    ...     5601,
+                5601,
+                5602,
+                5603,
+                5604,
+                5605
+              ],
+              "CustomDeck": {
+                "56": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1810985572012764695/919968ECAF02C73C9957314F89C8A534382169C6/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D57DA7
+    ... aceDown": true,
+                  "Hands": true,
+                  "CardID": 5600,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "55": {
+                      "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1810985572012764695/919968ECAF02C73C9957314F89C8A534382169C6/",
+                      "BackURL": "http://cloud-3.steamusercontent.com/ugc/1765945166802199258/6D5
+

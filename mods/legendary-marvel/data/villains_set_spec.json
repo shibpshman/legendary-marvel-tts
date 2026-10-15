@@ -1,0 +1,1492 @@
+{
+ "exp_tag": "Villains Expansion",
+ "set": "Villains",
+ "heroes": [
+  {
+   "name": "Bullseye",
+   "team": "Crime Syndicate",
+   "cards": [
+    {
+     "name": "Everything's a Weapon",
+     "copies": 5,
+     "cls": "Ranged",
+     "cost": 3,
+     "text": [
+      "[Ranged]",
+      "2 Attack",
+      "[Instinct]: Draw a card.",
+      "Cost: 3",
+      "\"And for my next trick...\""
+     ]
+    },
+    {
+     "name": "Fulfill the Contract",
+     "copies": 5,
+     "cls": "Instinct",
+     "cost": 2,
+     "text": [
+      "[Instinct]",
+      "0+ Recruit",
+      "Dodge",
+      "Choose an Adversary Group. You get +1 Recruit for each Adversary in your Victory Pile from that Adversary Group.",
+      "Cost: 2"
+     ]
+    },
+    {
+     "name": "Specialist Assassin",
+     "copies": 3,
+     "cls": "Covert",
+     "cost": 6,
+     "text": [
+      "[Covert]",
+      "3 Attack",
+      "Choose an Adversary. It gets -1 Attack for each Adversary in your Victory Pile from that Adversary Group.",
+      "Cost: 6"
+     ]
+    },
+    {
+     "name": "Perfect Aim",
+     "copies": 1,
+     "cls": "Ranged",
+     "cost": 7,
+     "text": [
+      "[Ranged]",
+      "5+ Attack",
+      "You get +5 Attack for each Commander Tactic in your Victory Pile.",
+      "Cost: 7",
+      "Art contains a gun"
+     ]
+    }
+   ],
+   "deck_name": "Bullseye"
+  },
+  {
+   "name": "Dr. Octopus",
+   "team": "Sinister Six",
+   "cards": [
+    {
+     "name": "Brilliant Research",
+     "copies": 5,
+     "cls": "Tech",
+     "cost": 3,
+     "text": [
+      "[Tech]",
+      "2 Recruit",
+      "[Tech]: When you draw a new hand of cards at the end of this turn, draw an extra card.",
+      "Cost: 3"
+     ]
+    },
+    {
+     "name": "Crazed Experiments",
+     "copies": 5,
+     "cls": "Tech",
+     "cost": 5,
+     "text": [
+      "[Tech]",
+      "2 Attack",
+      "Draw a card.",
+      "Cost: 5",
+      "\"It worked! Hahahahaha!\""
+     ]
+    },
+    {
+     "name": "Eighth Time's a Charm",
+     "copies": 3,
+     "cls": "Strength",
+     "cost": 6,
+     "text": [
+      "[Strength]",
+      "4+ Attack",
+      "If this is the eighth card you played this turn, you get +2 Attack.",
+      "Cost: 6",
+      "If at first you don't succeed..."
+     ]
+    },
+    {
+     "name": "Octo-Pulverize",
+     "copies": 1,
+     "cls": "Tech",
+     "cost": 8,
+     "text": [
+      "[Tech]",
+      "0+ Attack",
+      "Discard cards from the top of your deck until your deck runs out or you have discarded 8 cards (don't shuffle). Then you get +1 Attack for each card you discarded this turn.",
+      "Cost: 8"
+     ]
+    }
+   ],
+   "deck_name": "Dr Octopus"
+  },
+  {
+   "name": "Electro",
+   "team": "Sinister Six",
+   "cards": [
+    {
+     "name": "Electroshock Therapy",
+     "copies": 5,
+     "cls": "Ranged",
+     "cost": 2,
+     "text": [
+      "[Ranged]",
+      "Dodge",
+      "Reveal the top card of your deck. You may KO it.",
+      "Cost: 2",
+      "\"I'm not really all that shocked to see you go\""
+     ]
+    },
+    {
+     "name": "Shocking Robbery",
+     "copies": 5,
+     "cls": "Ranged",
+     "cost": 3,
+     "text": [
+      "[Ranged]",
+      "0+ Attack",
+      "Dodge",
+      "You get +3 Attack usable only against Adversaries in the Bank.",
+      "[Ranged]: Instead you may get +3 Attack usable only against the Commander.",
+      "Cost: 3"
+     ]
+    },
+    {
+     "name": "Supercharge",
+     "copies": 3,
+     "cls": "Instinct",
+     "cost": 5,
+     "text": [
+      "[Instinct]",
+      "2+ Attack",
+      "You get +1 Attack for each card you discarded this turn.",
+      "Cost: 5",
+      "Unlimited Power!"
+     ]
+    },
+    {
+     "name": "Anti-Matter",
+     "copies": 1,
+     "cls": "Ranged",
+     "cost": 7,
+     "text": [
+      "[Ranged]",
+      "4 Attack",
+      "All Adversaries and the Commander get -1 Attack this turn.",
+      "Sinister Six, Sinister Six: Same Effect",
+      "Cost: 7"
+     ]
+    }
+   ],
+   "deck_name": "Electro"
+  },
+  {
+   "name": "Enchantress",
+   "team": "Foes of Asgard",
+   "cards": [
+    {
+     "name": "Enchant the Senses",
+     "copies": 5,
+     "cls": "Ranged",
+     "cost": 3,
+     "text": [
+      "[Ranged]",
+      "2 Attack",
+      "[Ranged]: Whenever you defeat an Adversary this turn, you gain a New Recruit.",
+      "Cost: 3"
+     ]
+    },
+    {
+     "name": "Soul Sacrifice",
+     "copies": 5,
+     "cls": "Covert",
+     "cost": 4,
+     "text": [
+      "[Covert]",
+      "1+ Recruit",
+      "You may KO a card from your hand or discard pile. You get +Recruit equal to that card's Cost.",
+      "Cost: 4"
+     ]
+    },
+    {
+     "name": "Irresistible Bribe",
+     "copies": 3,
+     "cls": "Covert",
+     "cost": 6,
+     "text": [
+      "[Covert]",
+      "3 Recruit",
+      "Choose an Adversary. You can spend any combination of Recruit and Attack to fight that Adversary this turn.",
+      "[Covert], [Covert]: You can also spend any combination of Recruit and Attack to fight the Commander this turn.",
+      "Cost: 6"
+     ]
+    },
+    {
+     "name": "Unending Anguish",
+     "copies": 1,
+     "cls": "Covert",
+     "cost": 7,
+     "text": [
+      "[Covert]",
+      "Draw three cards.",
+      "Foes of Asgard: Then put Unending Anguish on the bottom of your deck.",
+      "Cost: 7"
+     ]
+    }
+   ],
+   "deck_name": "Enchantress"
+  },
+  {
+   "name": "Green Goblin",
+   "team": "Sinister Six",
+   "cards": [
+    {
+     "name": "Goblin Glider",
+     "copies": 5,
+     "cls": "Tech",
+     "cost": 4,
+     "text": [
+      "[Tech]",
+      "2 Attack",
+      "Dodge",
+      "When you play or Dodge with this card, another HYDRA Ally in your hand gains Dodge this turn.",
+      "Cost: 4"
+     ]
+    },
+    {
+     "name": "Pumpkin Bombs",
+     "copies": 5,
+     "cls": "Tech",
+     "cost": 3,
+     "text": [
+      "[Tech]",
+      "1+ Attack",
+      "Dodge",
+      "If you discarded any cards this turn, you get +2 Attack.",
+      "Cost: 3"
+     ]
+    },
+    {
+     "name": "Unstable Kidnapper",
+     "copies": 3,
+     "cls": "Instinct",
+     "cost": 5,
+     "text": [
+      "[Instinct]",
+      "3 Recruit",
+      "Dodge",
+      "If you discarded any cards this turn, kidnap a Bystander.",
+      "Cost: 5"
+     ]
+    },
+    {
+     "name": "Experimental Goblin Serum",
+     "copies": 1,
+     "cls": "Tech",
+     "cost": 7,
+     "text": [
+      "[Tech]",
+      "4 Attack",
+      "Return from your discard pile to your hand all the cards you discarded this turn.",
+      "Cost: 7"
+     ]
+    }
+   ],
+   "deck_name": "Green Goblin"
+  },
+  {
+   "name": "Juggernaut",
+   "team": "Brotherhood",
+   "cards": [
+    {
+     "name": "Crimson Gem of Cyttorak",
+     "copies": 5,
+     "cls": "Strength",
+     "cost": 4,
+     "text": [
+      "[Strength]",
+      "2+ Recruit",
+      "[Strength]: Each other player reveals the top card of their deck, and if it costs 1, 2, or 3, discards it. You get +1 Recruit for each card discarded this way.",
+      "Cost: 4"
+     ]
+    },
+    {
+     "name": "Size Matters",
+     "copies": 5,
+     "cls": "Strength",
+     "cost": 4,
+     "text": [
+      "[Strength]",
+      "2+ Attack",
+      "You get +1 Attack for each other card you played this turn that costs 4 or more.",
+      "Cost: 4"
+     ]
+    },
+    {
+     "name": "Runaway Train",
+     "copies": 3,
+     "cls": "Strength",
+     "cost": 5,
+     "text": [
+      "[Strength]",
+      "4 Attack",
+      "To play this card, you must discard a card from your hand.",
+      "Cost: 5",
+      "Move it or lose it."
+     ]
+    },
+    {
+     "name": "Unstoppable Force",
+     "copies": 1,
+     "cls": "Strength",
+     "cost": 8,
+     "text": [
+      "[Strength]",
+      "5+ Attack",
+      "Choose one: Each player KOs two cards from their hand, or each player KOs two cards from their discard pile. Then you get +1 Attack for each non-grey Ally KO'd this turn.",
+      "Cost: 8"
+     ]
+    }
+   ],
+   "deck_name": "Juggernaut"
+  },
+  {
+   "name": "Kingpin",
+   "team": "Crime Syndicate",
+   "cards": [
+    {
+     "name": "Pull the Strings",
+     "copies": 5,
+     "cls": "Covert",
+     "cost": 3,
+     "text": [
+      "[Covert]",
+      "Whenever a card effect causes you to gain a New Recruit this turn, put that New Recruit into your hand. Gain a New Recruit.",
+      "Cost: 3"
+     ]
+    },
+    {
+     "name": "Recruitment Day",
+     "copies": 5,
+     "cls": "Strength",
+     "cost": 3,
+     "text": [
+      "[Strength]",
+      "2 Recruit",
+      "[Strength]: Gain a New Recruit.",
+      "Cost: 3",
+      "\"Anyone else want to punch Daredevil in the face?\""
+     ]
+    },
+    {
+     "name": "Import Illegal Weapons",
+     "copies": 3,
+     "cls": "Tech",
+     "cost": 5,
+     "text": [
+      "[Tech]",
+      "3+ Attack",
+      "You get +1 Attack for each New Recruit you played this turn.",
+      "Cost: 5"
+     ]
+    },
+    {
+     "name": "Endless Underlings",
+     "copies": 1,
+     "cls": "Strength",
+     "cost": 8,
+     "text": [
+      "[Strength]",
+      "Gain three New Recruits.",
+      "Crime Syndicate, Crime Syndicate: If you would return a New Recruit to the New Recruit Stack this turn, put it on the bottom of your deck instead.",
+      "Cost: 8"
+     ]
+    }
+   ],
+   "deck_name": "Kingpin"
+  },
+  {
+   "name": "Kraven",
+   "team": "Sinister Six",
+   "cards": [
+    {
+     "name": "Ceaseless Tracker",
+     "copies": 5,
+     "cls": "Instinct",
+     "cost": 2,
+     "text": [
+      "[Instinct]",
+      "1+ Recruit",
+      "Dodge",
+      "Sinister Six: You get +2 Recruit.",
+      "Cost: 2",
+      "Sometimes it's not best to go it alone."
+     ]
+    },
+    {
+     "name": "Corner the Prey",
+     "copies": 5,
+     "cls": "Covert",
+     "cost": 4,
+     "text": [
+      "[Covert]",
+      "2 Attack",
+      "Choose an Adversary. If there are no empty city spaces adjacent to that Adversary, it gets -1 Attack this turn.",
+      "Cost: 4",
+      "Art contains a gun"
+     ]
+    },
+    {
+     "name": "Hunt Down",
+     "copies": 3,
+     "cls": "Strength",
+     "cost": 5,
+     "text": [
+      "[Strength]",
+      "2+ Attack",
+      "Choose an Adversary and a direction. Move that Adversary as many adjacent, empty spaces as you can in that direction. You get +1 Attack for each space it moved.",
+      "Cost: 5"
+     ]
+    },
+    {
+     "name": "He's the Best Around",
+     "copies": 1,
+     "cls": "Instinct",
+     "cost": 8,
+     "text": [
+      "[Instinct]",
+      "0+ Attack",
+      "You get +Attack equal to the Cost of the highest-cost Ally in the Lair.",
+      "Cost: 8",
+      "No one's gonna ever keep him down."
+     ]
+    }
+   ],
+   "deck_name": "Kraven"
+  },
+  {
+   "name": "Loki",
+   "team": "Foes of Asgard",
+   "cards": [
+    {
+     "name": "All Humans Are Expendable",
+     "copies": 5,
+     "cls": "Covert",
+     "cost": 3,
+     "text": [
+      "[Covert]",
+      "2 Attack",
+      "[Covert]: You may KO a card from your hand or discard pile. If you do, gain a New Recruit.",
+      "Cost: 3"
+     ]
+    },
+    {
+     "name": "Illusionary Bindings",
+     "copies": 5,
+     "cls": "Ranged",
+     "cost": 4,
+     "text": [
+      "[Ranged]",
+      "2+ Recruit",
+      "[Ranged]: Each other player reveals a [Ranged] Ally or gains a Bindings. If any number of players gained a Bindings this way, you get +1 Recruit.",
+      "Cost: 4"
+     ]
+    },
+    {
+     "name": "Father of Lies",
+     "copies": 3,
+     "cls": "Covert",
+     "cost": 5,
+     "text": [
+      "[Covert]",
+      "3 Attack",
+      "Look at the top two cards of another player's deck. Without revealing those cards, call one of them \"Good\" and one \"Bad.\" That player puts one of those cards into their discard pile and the other into your discard pile.",
+      "Cost: 5"
+     ]
+    },
+    {
+     "name": "God of Mischief",
+     "copies": 1,
+     "cls": "Covert",
+     "cost": 8,
+     "text": [
+      "[Covert]",
+      "6 Attack",
+      "Each player reveals a Foes of Asgard Ally or reveals their hand. For each player that revealed their hand, you may swap a card from that hand with a card in the Lair of the same cost.",
+      "Cost: 8"
+     ]
+    }
+   ],
+   "deck_name": "Loki"
+  },
+  {
+   "name": "Magneto",
+   "team": "Brotherhood",
+   "cards": [
+    {
+     "name": "Magnetic Levitation",
+     "copies": 5,
+     "cls": "Ranged",
+     "cost": 3,
+     "text": [
+      "[Ranged]",
+      "1+ Attack",
+      "Dodge",
+      "You may choose a Bindings from your hand or discard pile and have another player gain that Bindings. If you do, you get +2 Attack.",
+      "Cost: 3"
+     ]
+    },
+    {
+     "name": "Mutants Will Rule",
+     "copies": 5,
+     "cls": "Strength",
+     "cost": 4,
+     "text": [
+      "[Strength]",
+      "2+ Recruit",
+      "Dodge",
+      "[Strength]: Choose a player. That player reveals a Brotherhood Ally or gains a Bindings. If a Bindings is gained this way, you get +1 Recruit.",
+      "Cost: 4"
+     ]
+    },
+    {
+     "name": "Weapons from Scrap Metal",
+     "copies": 3,
+     "cls": "Ranged",
+     "cost": 5,
+     "text": [
+      "[Ranged]",
+      "3 Attack",
+      "If you discarded any cards this turn, draw a card.",
+      "Cost: 5",
+      "One person's trash is another person's high velocity projectile weapon."
+     ]
+    },
+    {
+     "name": "Master of Magnetism",
+     "copies": 1,
+     "cls": "Ranged",
+     "cost": 7,
+     "text": [
+      "[Ranged]",
+      "4+ Attack",
+      "Brotherhood: For each other Brotherhood Ally you played this turn, choose a player to gain a Bindings. Then you get +2 Attack for each Bindings gained this turn.",
+      "Cost: 7"
+     ]
+    }
+   ],
+   "deck_name": "Magneto"
+  },
+  {
+   "name": "Mysterio",
+   "team": "Sinister Six",
+   "cards": [
+    {
+     "name": "Psychedelic Mist",
+     "copies": 5,
+     "cls": "Ranged",
+     "cost": 2,
+     "text": [
+      "[Ranged]",
+      "1+ Attack",
+      "Dodge",
+      "[Covert]: You get +2 Attack.",
+      "Cost: 2",
+      "Mysterio is at his best when the mist rolls in."
+     ]
+    },
+    {
+     "name": "Shifting Decoy",
+     "copies": 5,
+     "cls": "Covert",
+     "cost": 3,
+     "text": [
+      "[Covert]",
+      "0+ Recruit",
+      "0+ Attack",
+      "Put a card from the lair on the bottom of the Ally Deck. If that card had a Recruit icon, you get +2 Recruit. If that card had an Attack icon, you get +2 Attack.",
+      "Cost: 3"
+     ]
+    },
+    {
+     "name": "Holographic Illusion",
+     "copies": 3,
+     "cls": "Tech",
+     "cost": 5,
+     "text": [
+      "[Tech]",
+      "0+ Attack",
+      "You get +1 Attack for each color of Ally in the Lair.",
+      "Cost: 5"
+     ]
+    },
+    {
+     "name": "False Reflection",
+     "copies": 1,
+     "cls": "Instinct",
+     "cost": 7,
+     "text": [
+      "[Instinct]",
+      "0+ Recruit",
+      "0+ Attack",
+      "Put a card from the Lair on the bottom of the Ally Deck. You get +Recruit equal to that card's printed Recruit and +Attack equal to its printed Attack.",
+      "Sinister Six: Then, for each other Sinister Six Ally you played this turn, do the same effect. (Use a different Ally from the Lair each time.)",
+      "Cost: 7"
+     ]
+    }
+   ],
+   "deck_name": "Mysterio"
+  },
+  {
+   "name": "Mystique",
+   "team": "Brotherhood",
+   "cards": [
+    {
+     "name": "Hidden Weapons",
+     "copies": 5,
+     "cls": "Tech",
+     "cost": 4,
+     "text": [
+      "[Tech]",
+      "2+ Attack",
+      "[Instinct], [Tech]: You get +3 Attack.",
+      "Cost: 4",
+      "Mystique is definitely a dual threat.",
+      "Art contains a gun"
+     ]
+    },
+    {
+     "name": "Show Your True Colors",
+     "copies": 5,
+     "cls": "Covert",
+     "cost": 3,
+     "text": [
+      "[Covert]",
+      "2 Recruit",
+      "Dodge",
+      "As you play this card, you may choose a class. This card is that class instead of [Covert] this turn.",
+      "Cost: 3"
+     ]
+    },
+    {
+     "name": "Turn the Tide",
+     "copies": 3,
+     "cls": "Instinct",
+     "cost": 4,
+     "text": [
+      "[Instinct]",
+      "Reveal the top card of the Ally Deck. You may play a copy of that card this turn. When you do, put that card on the bottom of the Ally Deck.",
+      "Cost: 4"
+     ]
+    },
+    {
+     "name": "Spy Games",
+     "copies": 1,
+     "cls": "Covert",
+     "cost": 7,
+     "text": [
+      "[Covert]",
+      "0+ Attack",
+      "Reveal the top five cards of the Ally Deck. You get +Attack equal to their total printed Attack. Then put them back in any order.",
+      "Cost: 7"
+     ]
+    }
+   ],
+   "deck_name": "Mystique"
+  },
+  {
+   "name": "Sabretooth",
+   "team": "Brotherhood",
+   "cards": [
+    {
+     "name": "Leap of the Tiger",
+     "copies": 5,
+     "cls": "Instinct",
+     "cost": 3,
+     "text": [
+      "[Instinct]",
+      "2+ Attack",
+      "Reveal the top card of your deck, then put it back on top of your deck or into your discard pile. If that card was an [Instinct] Ally, you get +2 Attack.",
+      "Cost: 3"
+     ]
+    },
+    {
+     "name": "Take One for the Team",
+     "copies": 5,
+     "cls": "Instinct",
+     "cost": 4,
+     "text": [
+      "[Instinct]",
+      "1 Recruit",
+      "Reveal the top card of your deck. If it's a Brotherhood Ally, you may draw it. Otherwise, you may KO it.",
+      "Cost: 4"
+     ]
+    },
+    {
+     "name": "Stealthy Predator",
+     "copies": 3,
+     "cls": "Covert",
+     "cost": 2,
+     "text": [
+      "[Covert]",
+      "Reveal the top three cards of your deck. Draw one of them, discard one, and put the other back on top of your deck.",
+      "Cost: 2"
+     ]
+    },
+    {
+     "name": "Upper Hand",
+     "copies": 1,
+     "cls": "Strength",
+     "cost": 7,
+     "text": [
+      "[Strength]",
+      "4+ Attack",
+      "Each player reveals a [Instinct] Ally or reveals the top card of their deck. Choose any number of those revealed top cards to be KO'd.",
+      "[Instinct]: You get +1 Attack for each card KO'd this turn.",
+      "Cost: 7"
+     ]
+    }
+   ],
+   "deck_name": "Sabretooth"
+  },
+  {
+   "name": "Ultron",
+   "team": "Unaffiliated",
+   "cards": [
+    {
+     "name": "Army of Ultrons",
+     "copies": 5,
+     "cls": "Tech",
+     "cost": 3,
+     "text": [
+      "[Tech]",
+      "2 Recruit",
+      "Dodge",
+      "Reveal a HYDRA card from your hand. That card is [Tech] instead of its normal color this turn.",
+      "Cost: 3"
+     ]
+    },
+    {
+     "name": "Encephalo-Ray",
+     "copies": 5,
+     "cls": "Tech",
+     "cost": 2,
+     "text": [
+      "[Tech]",
+      "0+ Attack",
+      "Dodge",
+      "[Tech]: You get +1 Attack for each other [Tech] Ally you played this turn.",
+      "Cost: 2"
+     ]
+    },
+    {
+     "name": "Genetic Experimentation",
+     "copies": 3,
+     "cls": "Tech",
+     "cost": 6,
+     "text": [
+      "[Tech]",
+      "3 Attack",
+      "[Tech]: Kidnap a Bystander for each other [Tech] Ally you played this turn.",
+      "Cost: 6"
+     ]
+    },
+    {
+     "name": "Molecular Rearrangement",
+     "copies": 1,
+     "cls": "Tech",
+     "cost": 8,
+     "text": [
+      "[Tech]",
+      "5+ Attack",
+      "Each other player reveals a [Tech] Ally or discards their hand. Each player who discarded their hand this way draws 5 cards.",
+      "[Tech]: You get +3 Attack for each Ally discarded this way that costs 7 Cost or more.",
+      "Cost: 8"
+     ]
+    }
+   ],
+   "deck_name": "Ultron"
+  },
+  {
+   "name": "Venom",
+   "team": "Sinister Six",
+   "cards": [
+    {
+     "name": "Devour",
+     "copies": 5,
+     "cls": "Instinct",
+     "cost": 4,
+     "text": [
+      "[Instinct]",
+      "2+ Attack",
+      "You may KO a Bystander from your Victory Pile. If you do, you get +2 Attack.",
+      "Cost: 4",
+      "Feeding Time!"
+     ]
+    },
+    {
+     "name": "Symbiote Takeover",
+     "copies": 5,
+     "cls": "Strength",
+     "cost": 3,
+     "text": [
+      "[Strength]",
+      "2 Recruit",
+      "[Strength]: Kidnap a Bystander.",
+      "Cost: 3",
+      "\"Where do you think you're going?\""
+     ]
+    },
+    {
+     "name": "Horrify the Populace",
+     "copies": 3,
+     "cls": "Strength",
+     "cost": 6,
+     "text": [
+      "[Strength]",
+      "4 Attack",
+      "Each Adversary with a 4 Attack or more guards a Bystander.",
+      "Cost: 6"
+     ]
+    },
+    {
+     "name": "Ravenous Greed",
+     "copies": 1,
+     "cls": "Instinct",
+     "cost": 7,
+     "text": [
+      "[Instinct]",
+      "0+ Recruit",
+      "5 Attack",
+      "Each other player reveals an [Instinct] Ally or KOs a Bystander from their Victory Pile.",
+      "[Instinct]: Kidnap all Bystanders that were KO'd this turn. Then you get +1 Recruit for each Bystander you kidnapped this turn.",
+      "Cost: 7"
+     ]
+    }
+   ],
+   "deck_name": "Venom Sinister Six"
+  }
+ ],
+ "villains": [
+  {
+   "name": "Avengers",
+   "cards": [
+    {
+     "name": "Ant-Man",
+     "copies": 2,
+     "text": [
+      "Attack: 3*",
+      "VP: 2",
+      "Elusive 4"
+     ]
+    },
+    {
+     "name": "Captain America",
+     "copies": 1,
+     "text": [
+      "Attack: 4+",
+      "VP: 5",
+      "Ambush: Each player reveals three colors of Allies or gains a Bindings. (Grey is a color.)",
+      "Fight: Same effect. Captain America gets +1 Attack for each color of Ally in the Lair.",
+      "Overrun: Demolish each player."
+     ]
+    },
+    {
+     "name": "Hulk",
+     "copies": 1,
+     "text": [
+      "Attack: 8",
+      "VP: 6",
+      "Ambush: Demolish each player twice.",
+      "Fight: Same effect.",
+      "Overrun: Same effect."
+     ]
+    },
+    {
+     "name": "Iron Man",
+     "copies": 1,
+     "text": [
+      "Attack: 7",
+      "VP: 5",
+      "Ambush: Each player reveals a [Tech] Ally or gains a Bindings.",
+      "Fight: Same effect.",
+      "Overrun: Demolish each player."
+     ]
+    },
+    {
+     "name": "Thor",
+     "copies": 1,
+     "text": [
+      "Attack: 7",
+      "VP: 5",
+      "Ambush: KO each Ally from the Lair that costs 7 Cost or more.",
+      "Fight: Same effect.",
+      "Overrun: Demolish each player."
+     ]
+    },
+    {
+     "name": "Wasp",
+     "copies": 2,
+     "text": [
+      "Attack: 1*",
+      "VP: 4",
+      "Elusive 7"
+     ]
+    }
+   ],
+   "deck_name": "Avengers"
+  },
+  {
+   "name": "Defenders",
+   "cards": [
+    {
+     "name": "Daredevil",
+     "copies": 2,
+     "text": [
+      "Attack: 5",
+      "VP: 3",
+      "Fight: The next Ally you recruit this turn goes on top of your deck.",
+      "Overrun: Each player reveals the top card of their deck and if it costs 1 Cost or more, discards it."
+     ]
+    },
+    {
+     "name": "Iron Fist",
+     "copies": 2,
+     "text": [
+      "Attack: 3*",
+      "VP: 2",
+      "To fight Iron Fist, you must also reveal three Allies with different costs."
+     ]
+    },
+    {
+     "name": "Namor, The Sub-Mariner",
+     "copies": 2,
+     "text": [
+      "Attack: 6",
+      "VP: 4",
+      "Ambush: If any other Defenders Adversaries are in the city, each player gains a Bindings.",
+      "Fight: Same Effect.",
+      "Overrun: Same Effects."
+     ]
+    },
+    {
+     "name": "Luke Cage",
+     "copies": 2,
+     "text": [
+      "Attack: 4",
+      "VP: 2",
+      "Fight: Each player reveals the top three cards of their deck. You choose which players discard them and which players put them back on top in the order of their choice."
+     ]
+    }
+   ],
+   "deck_name": "Defenders"
+  },
+  {
+   "name": "Marvel Knights",
+   "cards": [
+    {
+     "name": "Black Panther",
+     "copies": 2,
+     "text": [
+      "Attack: 4",
+      "VP: 2",
+      "Fight: Each player draws a card."
+     ]
+    },
+    {
+     "name": "Elektra",
+     "copies": 2,
+     "text": [
+      "Attack: 4",
+      "VP: 2",
+      "Fight: KO one of your Allies. Then KO a Bindings from your hand or discard pile."
+     ]
+    },
+    {
+     "name": "Punisher",
+     "copies": 2,
+     "text": [
+      "Attack: 6",
+      "VP: 4",
+      "Fight: Reveal the top card of your deck. If it costs 0 Cost, KO it.",
+      "Overrun: Each player reveals the top card of their deck and if it costs 1 Cost or more, KOs it."
+     ]
+    },
+    {
+     "name": "Ghost Rider",
+     "copies": 2,
+     "text": [
+      "Attack: 5",
+      "VP: 3",
+      "Fight: You may KO another Adversary from your Victory Pile. If you do, you get +3 Recruit.",
+      "Overrun: Each player may KO an Adversary from their Victory Pile. Any player who does not do so gains a Bindings."
+     ]
+    }
+   ],
+   "deck_name": "Marvel Knights"
+  },
+  {
+   "name": "Spider Friends",
+   "cards": [
+    {
+     "name": "Black Cat",
+     "copies": 2,
+     "text": [
+      "Attack: 2*",
+      "VP: 2",
+      "Elusive 6.",
+      "Fight: Each player reveals the top card of their deck. Choose any number of those cards to be discarded."
+     ]
+    },
+    {
+     "name": "Firestar",
+     "copies": 2,
+     "text": [
+      "Attack: 5",
+      "VP: 3",
+      "Fight: Reveal the top card of your deck. If it has a Recruit icon, KO it.",
+      "Overrun: Each player reveals the top card of their deck, and if it has an Attack icon, KO it."
+     ]
+    },
+    {
+     "name": "Moon Knight",
+     "copies": 2,
+     "text": [
+      "Attack: 4",
+      "VP: 2",
+      "Fight: KO one of your Allies. Then, if you fought Moon Knight on the Rooftops, KO another of your Allies."
+     ]
+    },
+    {
+     "name": "Spider-Man",
+     "copies": 2,
+     "text": [
+      "Attack: 2",
+      "VP: 3",
+      "Fight: Reveal the top card of the Adversary Deck. If that card is worth 2 Victory Points or less, play it. If you play a card from the Adversary Deck this way, put Spider-Man back on top of the Adversary Deck.",
+      "Overrun: Each player gains a Bindings."
+     ]
+    }
+   ],
+   "deck_name": "Spider Friends"
+  },
+  {
+   "name": "Uncanny Avengers",
+   "cards": [
+    {
+     "name": "Havok",
+     "copies": 2,
+     "text": [
+      "Attack: 4+",
+      "VP: 2",
+      "X-Treme Attack.",
+      "Ambush: Each player who does not reveal a [Ranged] Ally discards two cards, then draws a card."
+     ]
+    },
+    {
+     "name": "Rogue",
+     "copies": 2,
+     "text": [
+      "Attack: 4+",
+      "VP: 2",
+      "X-Treme Attack.",
+      "Fight: Each other player discards the top card of their deck. Play a copy of one of those Allies."
+     ]
+    },
+    {
+     "name": "Scarlet Witch",
+     "copies": 2,
+     "text": [
+      "Attack: 5",
+      "VP: 3",
+      "Fight: Reveal the top three cards of your deck. Put any that have odd-numbered costs into your hand and discard the rest. (0 is even.)"
+     ]
+    },
+    {
+     "name": "Wolverine",
+     "copies": 2,
+     "text": [
+      "Attack: 7+",
+      "VP: 5",
+      "X-Treme Attack.",
+      "Wolverine gets +1 Attack for each card you've drawn this turn.",
+      "Overrun: Each player reveals an [Instinct] Ally or gains a Bindings. Then shuffle Wolverine back into the Adversary deck."
+     ]
+    }
+   ],
+   "deck_name": "Uncanny Avengers"
+  },
+  {
+   "name": "Uncanny X-Men",
+   "cards": [
+    {
+     "name": "Colossus",
+     "copies": 2,
+     "text": [
+      "Attack: 5+",
+      "VP: 3",
+      "X-Treme Attack.",
+      "Fight: You may KO a Bindings from your hand or discard pile. If you don't, each other player gains a Bindings."
+     ]
+    },
+    {
+     "name": "Nightcrawler",
+     "copies": 2,
+     "text": [
+      "Attack: 4+",
+      "VP: 2",
+      "X-Treme Attack.",
+      "Fight: Choose an Ally you played this turn. When you draw a new hand of cards at the end of this turn, add that Ally to your new hand as an extra card."
+     ]
+    },
+    {
+     "name": "Shadowcat",
+     "copies": 2,
+     "text": [
+      "Attack: 2*+",
+      "VP: 2",
+      "X-Treme Attack.",
+      "Elusive 5"
+     ]
+    },
+    {
+     "name": "Storm",
+     "copies": 2,
+     "text": [
+      "Attack: 4+",
+      "VP: 2",
+      "X-Treme Attack.",
+      "Ambush: (After Storm enters the city.) Move Storm to the Rooftops. If another Adversary is already there, swap them.",
+      "Fight: If you fight Storm on the Rooftops, each other player gains a Bindings."
+     ]
+    }
+   ],
+   "deck_name": "Uncanny X Men"
+  },
+  {
+   "name": "X-Men First Class",
+   "cards": [
+    {
+     "name": "Angel",
+     "copies": 2,
+     "text": [
+      "Attack: 4+",
+      "VP: 2",
+      "X-Treme Attack.",
+      "Fight: Draws two cards, then discard a card."
+     ]
+    },
+    {
+     "name": "Iceman",
+     "copies": 2,
+     "text": [
+      "Attack: 5+",
+      "VP: 3",
+      "X-Treme Attack.",
+      "Fight: Draw a card for each [Ranged] Ally you played this turn."
+     ]
+    },
+    {
+     "name": "Jean Grey",
+     "copies": 1,
+     "text": [
+      "Attack: 6+",
+      "VP: 4",
+      "X-Treme Attack.",
+      "Ambush: Jean Grey guards a Bystander for each Adversary in the city with X-Treme Attack (including Jean).",
+      "Fight: You get +1 Recruit for each Bystander you kidnapped this turn."
+     ]
+    },
+    {
+     "name": "Beast",
+     "copies": 2,
+     "text": [
+      "Attack: 5+",
+      "VP: 3",
+      "X-Treme Attack.",
+      "Fight: KO one of your Allies. Then KO another of your Allies if there are any other Adversaries in the city with X-Treme Attack."
+     ]
+    },
+    {
+     "name": "Cyclops",
+     "copies": 1,
+     "text": [
+      "Attack: 6+",
+      "VP: 4",
+      "X-Treme Attack. To Fight Cyclops, you must also discard a card.",
+      "Overrun: Each player reveals a Brotherhood Ally or discards a card."
+     ]
+    }
+   ],
+   "deck_name": "X Men First Class"
+  }
+ ],
+ "henchmen": [
+  {
+   "name": "Asgardian Warriors",
+   "text": [
+    "Fight: Draw a card.",
+    "Attack: 3",
+    "VP: 1"
+   ],
+   "deck_name": "Asgardian Warriors"
+  },
+  {
+   "name": "Cops",
+   "text": [
+    "Fight: Gain a New Recruit.",
+    "Attack: 3",
+    "VP: 1"
+   ],
+   "deck_name": "Cops"
+  },
+  {
+   "name": "Multiple Man",
+   "text": [
+    "Fight: KO one of your Allies for each other Multiple Man in your Victory Pile.",
+    "Attack: 3",
+    "VP: 1"
+   ],
+   "deck_name": "Multiple Man"
+  },
+  {
+   "name": "S.H.I.E.L.D. Assault Squad",
+   "text": [
+    "Fight: Discard the top card of your deck. Then KO an Ally from your discard pile.",
+    "Attack: 3",
+    "VP: 1"
+   ],
+   "deck_name": "SHIELD Assault Squad"
+  }
+ ],
+ "masterminds": [
+  {
+   "name": "Dr. Strange",
+   "leads": "Defenders",
+   "text": [
+    "Always Leads: Defenders.",
+    "Command Strike: Reveal the top three cards of the Adversary Deck. Put the Adversary you revealed with the highest printed Attack on top of that deck. Then play a Plot Twist from among the cards you revealed. Then put the rest of those cards on the bottom of that deck in random order.",
+    "Attack: 8",
+    "VP: 6"
+   ],
+   "tactics": [
+    {
+     "name": "Book of the Vishanti",
+     "text": [
+      "Fight: Each other player reveals a [Covert] Ally or discards all the cards in their hand, then draws as many cards as they discarded."
+     ]
+    },
+    {
+     "name": "Crimson Bands of Cyttorak",
+     "text": [
+      "Fight: Each other player reveals their hand, then gains a Bindings for each non-grey Ally that player has."
+     ]
+    },
+    {
+     "name": "Eye of Agamotto",
+     "text": [
+      "Fight: Reveal cards from the Ally Deck equal to the number of players. Put one of those cards into each player's discard pile."
+     ]
+    },
+    {
+     "name": "Winds of Watoomb",
+     "text": [
+      "Fight: After you draw a new hand of cards at the end of this turn, each player simultaneously passes a non-grey Ally from their hand to the hand of the player on their left."
+     ]
+    }
+   ],
+   "deck_name": "Dr Strange"
+  },
+  {
+   "name": "Nick Fury",
+   "leads": "Avengers",
+   "text": [
+    "Always Leads: Avengers.",
+    "Command Strike: Stack this Strike next to Nick Fury. Then demolish each player once for each Strike stacked here.",
+    "Attack: 9",
+    "VP: 6"
+   ],
+   "tactics": [
+    {
+     "name": "Bounty on Fury's Head",
+     "text": [
+      "Fight: KO any number of your Hydra Allies. For each Ally you KO'd this way, you may gain a Madame HYDRA."
+     ]
+    },
+    {
+     "name": "Purge Hydra",
+     "text": [
+      "Fight: Each other player reveals their hand and discards two Hydra Allies."
+     ]
+    },
+    {
+     "name": "The Avengers Initiative",
+     "text": [
+      "Fight: Each other player reveals a [Tech] Ally or chooses an Avengers Adversary from their Victory Pile and it enters the Bridge."
+     ]
+    },
+    {
+     "name": "Total Fury",
+     "text": [
+      "Fight: Defeat an Adversary whose Attack is less than the number of Hydra Allies in the KO pile."
+     ]
+    }
+   ],
+   "deck_name": "Nick Fury"
+  },
+  {
+   "name": "Odin",
+   "leads": "Asgardian Warriors",
+   "text": [
+    "Always Leads: Asgardian Warriors.",
+    "Odin gets +1 Attack for each Asgardian Warrior in the city and in the Overrun Pile.",
+    "Command Strike: Each player puts an Asgardian Warrior from their Victory Pile into an empty city space. Any player who cannot do so gains a Bindings.",
+    "Attack: 10+",
+    "VP: 6"
+   ],
+   "tactics": [
+    {
+     "name": "Divine Justice",
+     "text": [
+      "Fight: Each other player with a Bindings in their discard pile gains another Bindings."
+     ]
+    },
+    {
+     "name": "Might of Valhalla",
+     "text": [
+      "Fight: Draw a card for each Asgardian Warrior in your Victory Pile."
+     ]
+    },
+    {
+     "name": "Riches of Asgard",
+     "text": [
+      "Fight: You get +1 Recruit for each Asgardian Warrior in your Victory Pile."
+     ]
+    },
+    {
+     "name": "Ride of the Valkyries",
+     "text": [
+      "Fight: Each other player reveals a Foes of Asgard Ally or discards a card for each Asgardian Warrior in the Overrun Pile."
+     ]
+    }
+   ],
+   "deck_name": "Odin"
+  },
+  {
+   "name": "Professor X",
+   "leads": "X-men First Class",
+   "text": [
+    "Always Leads: X-men First Class.",
+    "Command Strike: Choose the two highest-cost Allies in the Lair. Stack them next to Professor X as \"Telepathic Pawns.\" Professor X gets +1 Attack for each Ally stacked next to him. Players can recrut the top Ally in the stack next to Professor X.",
+    "Attack: 8",
+    "VP: 6"
+   ],
+   "tactics": [
+    {
+     "name": "Cerebro Device",
+     "text": [
+      "Fight: Reveal the top three cards of the Adversary Deck. Play any Adversaries you revealed that have \"X-Treme Attack\". Put the rest back in random order."
+     ]
+    },
+    {
+     "name": "Mental Dominance",
+     "text": [
+      "Fight: Stack the top three cards of the Ally Deck next to Professor X in random order as \"Telepathic Pawns.\""
+     ]
+    },
+    {
+     "name": "Mightiest Mutant Mind",
+     "text": [
+      "Fight: Each other player reveals a Brotherhood Ally or stacks a non-grey Ally from their hand next to Professor X as a \"Telepathic Pawn.\""
+     ]
+    },
+    {
+     "name": "Telepathic Imprisonment",
+     "text": [
+      "Fight: Each other player reveals a Brotherhood Ally or gains a Bindings."
+     ]
+    }
+   ],
+   "deck_name": "Professor X"
+  }
+ ],
+ "schemes": [
+  {
+   "name": "Build an Underground MegaVault Prison",
+   "text": [
+    "Setup: 8 Twists. The Bindings stack holds 5 Bindings per player.",
+    "Twist: If there is an Adversary in the Sewers, each player gains a Bindings. Otherwise, reveal the top card of the Adversary Deck. If that card is an Adversary, it enters the Sewers.",
+    "Good Wins: When the Bindings stack runs out."
+   ],
+   "deck_name": "Build An Underground Mega-Vault Prison"
+  },
+  {
+   "name": "Cage Villains in Power-Suppressing Cells",
+   "text": [
+    "Setup: 8 Twists. Stack 2 Cops per player next to this Plot.",
+    "Twist: Each player returns all Cops from their Victory Pile to the Cop Stack. Then each player puts a non-grey Ally from their hand in front of them. Put a Cop from the Cop Stack on top of each of those Allies.",
+    "Special Rules: You can fight any Cop on top of Allies. If you do, the player of your choice gains that Ally.",
+    "Good Wins: When a Twist must put out a Cop, but the Cop Stack is already empty."
+   ],
+   "deck_name": "Cage Villains In Power-Suppressing Cells"
+  },
+  {
+   "name": "Crown Thor King of Asgard",
+   "text": [
+    "Setup: 8 Twists. Put the Thor Adversary next to this Plot.",
+    "Twist: If Thor is in the city, he overruns. Otherwise, Thor enters the Bridge from wherever he is, and Thor guards 3 Bystanders.",
+    "Special Rules: Whenever Thor overruns, stack a Plot Twist from the KO pile next to this Plot as a \"Triumph of Asgard.\"",
+    "Good Wins: When there are 3 Triumphs of Asgard next to this Plot."
+   ],
+   "deck_name": "Crown Thor King Of Asgard"
+  },
+  {
+   "name": "Crush HYDRA",
+   "text": [
+    "Setup: 8 Twists.",
+    "Twists 1-7: Each Adversary in the city captures a New Recruit, or if there are no more New Recruits, a Madame HYDRA.",
+    "Twist 8: Put all captured Allies from the city into the Overrun Pile.",
+    "Special Rules: An Adversary gets +1 Attack for each Ally it has captured. When you fight that Adversary, gain those Allies.",
+    "Good Wins: When there are 11 Allies in the Overrun Pile."
+   ],
+   "deck_name": "Crush Hydra"
+  },
+  {
+   "name": "Graduation at Xavier's X-Academy",
+   "text": [
+    "Setup: 8 Twists. Stack 8 Bystanders next to this Plot as \"Young Mutants.\"",
+    "Twist: Put a Bystander from next to this Plot into the Overrun Pile.",
+    "Good Wins: When there are 8 Bystanders in the Overrun Pile."
+   ],
+   "deck_name": "Graduation At Xaviers X-Academy"
+  },
+  {
+   "name": "Infiltrate the Lair with Spies",
+   "text": [
+    "Setup: 8 Twists, Stack 21 Bystanders next to this Plot as \"Infiltrating Spies.\"",
+    "Twist: Put all Bystanders from the Lair into the Overrun pile. Then put a Bystander from next to this Plot into each Lair space under the Bridge, Streets, and Sewers.",
+    "Special Rules: When you recruit an Ally, kidnap any Bystander in that Lair space. When an Ally leaves the Lair in any other way, put any Bystander from that Lair space into the Overrun Pile.",
+    "Good Wins: When there are 12 Bystanders in the Overrun Pile."
+   ],
+   "deck_name": "Infiltrate The Lair With Spies"
+  },
+  {
+   "name": "Mass Produce War Machine Armor",
+   "text": [
+    "Setup: 8 Twists, Include 10 S.H.I.E.L.D. Assault Squads as one of the Backup Adversary groups.",
+    "Twist: Stack this Twist next to the Plot as \"War Machine Technology.\" An Assault Squad from the current player's Victory Pile enters the Bridge.",
+    "Special Rules: Assault Squads get +1 Attack for each War Machine Technology next to the Plot.",
+    "Good Wins: When there are 3 Assault Squads in the Overrun Pile."
+   ],
+   "deck_name": "Mass Produce War Machine Armor"
+  },
+  {
+   "name": "Resurrect Heroes with Norn Stones",
+   "text": [
+    "Setup: 8 Twists.",
+    "Twists 1-6: An Adversary from the current player's Victory Pile enters the Bridge. Then play the top card of the Adversary Deck.",
+    "Twists 7-8: Each player puts an Adversary from their Victory Pile into the Overrun Pile.",
+    "Good Wins: When there are 3 Adversaries per player in the Overrun Pile."
+   ],
+   "deck_name": "Resurrect Heroes With The Norn Stones"
+  }
+ ],
+ "bag_guid": "c0de11"
+}

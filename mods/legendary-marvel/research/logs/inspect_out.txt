@@ -1,0 +1,704 @@
+MOD 2410733963.json  name=Marvel Legendary (Scripted)
+130 unique CustomDeck face sheets in JSON; 3939 card refs
+
+3x3 | cached=N | refs=8 | http://cloud-3.steamusercontent.com/ugc/1765945222253223436/5AE319F82B09FA96FA26FC9ABCDBD822029BB7E9/
+      idx  0  'Capture Baby Hope'  ''
+      idx  1  "X-Cutioner's Song"  ''
+      idx  2  'Transform Citizens Into Demons'  ''
+      idx  3  'Steal The Weaponized Plutonium'  ''
+      idx  4  'Detonate The Helicarrier'  ''
+      idx  5  'Save Humanity'  ''
+2x2 | cached=N | refs=11 | http://cloud-3.steamusercontent.com/ugc/1765945222253228423/F7ABDDAF06189EEA9EC1226C2EF469B07D80BA78/
+      idx  0  'News Reporter'  ''
+      idx  1  'Paramedic'  ''
+      idx  2  'Radiation Scientist'  ''
+9x3 | cached=N | refs=34 | http://cloud-3.steamusercontent.com/ugc/1765945222253193681/E119DE3D97B165BB555AE9D6920FAC782833A6BE/
+      idx  0  'Rhino'  ''
+      idx  1  'Electro'  ''
+      idx  2  'Egghead'  ''
+      idx  3  'Gladiator'  ''
+      idx  8  'Maggia Goons'  ''
+      idx 18  'Bullseye'  ''
+10x7 | cached=N | refs=224 | http://cloud-3.steamusercontent.com/ugc/1765945166802631994/0F3389CC3630155287CA45CF2C03FF92AB66B9B9/
+      idx  0  'Strength Of Spirit'  ''
+      idx  1  'Drop Off A Friend'  ''
+      idx  2  'High-Speed Chase'  ''
+      idx  3  'Diving Catch'  ''
+      idx  4  'Firepower From The Future'  ''
+      idx  5  'Concussive Blast'  ''
+9x3 | cached=N | refs=25 | http://cloud-3.steamusercontent.com/ugc/1765945222253176752/F175977199F894F7BE2AEC5531846A043B1D3E2D/
+      idx  0  'Apocalypse'  ''
+      idx  1  'Apocalyptic Destruction'  ''
+      idx  2  'Horsemen Are Drawing Nearer'  ''
+      idx  3  'Immortal And Undefeated'  ''
+      idx  4  'The End Of All Things'  ''
+      idx  5  'Kingpin'  ''
+7x5 | cached=N | refs=88 | http://cloud-3.steamusercontent.com/ugc/1765945166802498528/7DFCDF05A8E8CC8E2ED729D8564385487624DB54/
+      idx  0  'Sabretooth'  ''
+      idx  1  'Mystique'  ''
+      idx  2  'Juggernaut'  ''
+      idx  3  'Blob'  ''
+      idx  4  'Doombot Legion'  ''
+      idx  5  'Ymir, Frost Giant King'  ''
+7x3 | cached=N | refs=0 | http://cloud-3.steamusercontent.com/ugc/1764819461646243860/D21FB387C8E8996DEAA7E37968206B2624ECD205/
+7x3 | cached=N | refs=70 | http://cloud-3.steamusercontent.com/ugc/1765945166802331836/A1A3D6ECE7BD53941B9A427943F035888931D8EC/
+      idx  0  'High Stakes Jackpot'  ''
+      idx  1  'Hypnotic Charm'  ''
+      idx  2  'Card Shark'  ''
+      idx  3  'Stack The Deck'  ''
+      idx  4  'Impossible Trick Shot'  ''
+      idx  5  'Covering Fire'  ''
+7x3 | cached=N | refs=70 | http://cloud-3.steamusercontent.com/ugc/1765945166802354398/12FE911A93E72A4B2D9686FE388D4AA826AAE690/
+      idx  0  'Steal Abilities'  ''
+      idx  1  'Copy Powers'  ''
+      idx  2  'Borrowed Brawn'  ''
+      idx  3  'Energy Drain'  ''
+      idx  4  'The Amazing Spider-Man'  ''
+      idx  5  'Web-Shooters'  ''
+7x3 | cached=N | refs=70 | http://cloud-3.steamusercontent.com/ugc/1765945166802193909/A5F4A5E1D94EF65C254859227446C6B8F3545712/
+      idx  0  'Silent Sniper'  ''
+      idx  1  'Covert Operation'  ''
+      idx  2  'Mission Accomplished'  ''
+      idx  3  'Dangerous Rescue'  ''
+      idx  4  'A Day Like No Other'  ''
+      idx  5  'Diving Block'  ''
+3x3 | cached=N | refs=8 | http://cloud-3.steamusercontent.com/ugc/1765945166802464876/4C935275ED84659E201BDFFF178E2267C4E6FF4A/
+      idx  0  'Negative Zone Prison Breakout'  ''
+      idx  1  'Super Hero Civil War'  ''
+      idx  2  'Secret Invasion Of The Skrull Shapeshifters'  ''
+      idx  3  "Replace Earth's Leaders With Killbots"  ''
+      idx  4  'The Legacy Virus'  ''
+      idx  5  'Midtown Bank Robbery'  ''
+3x2 | cached=N | refs=4 | http://cloud-3.steamusercontent.com/ugc/1765945272803797615/C800F926ACE14F350C935973427DCB4A0BB87D58/
+      idx  0  'Bathe Earth In Cosmic Rays'  ''
+      idx  1  'Flood The Planet With Melted Glaciers'  ''
+      idx  2  'Invincible Force Field'  ''
+      idx  3  'Pull Reality Into The Negative Zone'  ''
+3x3 | cached=N | refs=0 | http://cloud-3.steamusercontent.com/ugc/1765945272803764751/3736B523F210CEB104B5336D459A29A74860C2B9/
+7x3 | cached=N | refs=70 | http://cloud-3.steamusercontent.com/ugc/1765945272803675544/68F1D4AE9B5DA1A8CC899D6FC1FDD8314F3592E8/
+      idx  0  'Nova Flame'  ''
+      idx  1  'Flame On!'  ''
+      idx  2  'Call For Backup'  ''
+      idx  3  'Hothead'  ''
+      idx  4  'Invisible Barrier'  ''
+      idx  5  'Unseen Rescue'  ''
+6x2 | cached=N | refs=0 | http://cloud-3.steamusercontent.com/ugc/1765945272803738761/E4B68686BF760EB7EA19CF7CBE9D987BB9F4886B/
+4x2 | cached=N | refs=152 | http://cloud-3.steamusercontent.com/ugc/1765945166802550306/BAD146F7F81032E3AC9A972180FC8A0AB40A1A50/
+      idx  0  'Bystander'  ''
+      idx  1  'Master Strike'  ''
+      idx  2  'Scheme Twist'  ''
+      idx  3  ''  ''
+      idx  4  'Maria Hill'  ''
+      idx  5  ''  ''
+3x2 | cached=N | refs=4 | http://cloud-3.steamusercontent.com/ugc/1764819592349359206/2951939270D175ECFF3845CB1A679A4DCA2C26E7/
+      idx  0  'Invade The Daily Bugle News HQ'  ''
+      idx  1  'Weave A Web Of Lies'  ''
+      idx  2  'The Clone Saga'  ''
+      idx  3  'Splice Humans With Spider DNA'  ''
+6x2 | cached=N | refs=8 | http://cloud-3.steamusercontent.com/ugc/1764819592349269467/1772FAE2B1D30A9023E1D233CB017897DDA2D923/
+      idx  4  'Kraven The Hunter'  ''
+      idx  5  'Shocker'  ''
+      idx  6  'Vulture'  ''
+      idx  7  'Chameleon'  ''
+      idx  8  'Sandman'  ''
+      idx  9  'Hobgoblin'  ''
+7x3 | cached=N | refs=70 | http://cloud-3.steamusercontent.com/ugc/1764819592349205371/C93DEF2B434C57A93F9160DA09544BA6F19F293D/
+      idx  0  'Cat Burglar'  ''
+      idx  1  'Jinx'  ''
+      idx  2  'Pickpocket'  ''
+      idx  3  'Casual Bank Robbery'  ''
+      idx  4  'Golden Ankh Of Khonshu'  ''
+      idx  5  'Crescent Moon Darts'  ''
+6x2 | cached=N | refs=0 | http://cloud-3.steamusercontent.com/ugc/1764819592349327154/D5FE5B30DF3B394025E4CAD743ABB65D07057CD6/
+7x2 | cached=N | refs=16 | http://cloud-3.steamusercontent.com/ugc/1764819788281396650/0728B2E0081ABC27FBE0FB4682438764E4CA34AF/
+      idx  0  'Mind Gem'  ''
+      idx  1  'Space Gem'  ''
+      idx  2  'Soul Gem'  ''
+      idx  3  'Time Gem'  ''
+      idx  4  'Power Gem'  ''
+      idx  5  'Reality Gem'  ''
+6x2 | cached=N | refs=10 | http://cloud-3.steamusercontent.com/ugc/1764819788281432781/CB8B859933DD0098E9C8C89EEB54B9551F2AF84E/
+      idx  0  'Supreme Intelligence Of The Kree'  ''
+      idx  1  'Guide Kree Evolution'  ''
+      idx  2  'Countermeasure Protocols'  ''
+      idx  3  'Cosmic Omniscience'  ''
+      idx  4  'Combined Knowledge Of All Kree'  ''
+      idx  5  'Thanos'  ''
+7x3 | cached=N | refs=70 | http://cloud-3.steamusercontent.com/ugc/1764819592349576405/F9C3789A02F6585F4FEBA4D691657AFC11791F64/
+      idx  0  'Avatar Of Destruction'  ''
+      idx  1  'The Destroyer'  ''
+      idx  2  'Knives Of The Hunter'  ''
+      idx  3  'Interstellar Tracker'  ''
+      idx  4  'Godslayer Blade'  ''
+      idx  5  'Galactic Assassin'  ''
+3x2 | cached=N | refs=0 | http://cloud-3.steamusercontent.com/ugc/1764819788281464875/1743DB8917FA2F39DDB333587D9733AC92B0246E/
+8x4 | cached=N | refs=0 | http://cloud-3.steamusercontent.com/ugc/1764819854360600637/1A8C014908C6F8EA759740430CEF427F4EDAD958/
+3x3 | cached=N | refs=8 | http://cloud-3.steamusercontent.com/ugc/1764819854360728432/29B4A91715D735F776F07ACEA79FA111B00B59F7/
+      idx  0  'Pan-Dimensional Plague'  ''
+      idx  1  'Master Of Tyrants'  ''
+      idx  2  'Fragmented Realities'  ''
+      idx  3  'Dark Alliance'  ''
+      idx  4  'Smash Two Dimensions Together'  ''
+      idx  5  'Build An Army Of Annihilation'  ''
+2x2 | cached=N | refs=3 | http://cloud-3.steamusercontent.com/ugc/1764819992271285922/D57E3FC129E3533BF34AC4A049E4BFF9E893218D/
+      idx  0  'Banker'  ''
+8x4 | cached=N | refs=30 | http://cloud-3.steamusercontent.com/ugc/1764819992271306483/2EAC9F28107809E35B903959C908708AFEDCC1C9/
+      idx  0  'Crime Surge'  ''
+      idx  1  'Secret Plans'  ''
+      idx  2  'Ruthless Strike'  ''
+      idx  3  'Dark Apprentice'  ''
+      idx  4  'Collateral Damage'  ''
+      idx  5  'Thirst For Vengeance'  ''
+10x6 | cached=N | refs=196 | http://cloud-3.steamusercontent.com/ugc/1764819854360179258/994E47F871EAE2FE1EAB67C0AB21414245A76D59/
+      idx  0  'Untouchable'  ''
+      idx  1  'Disrupt Circuits'  ''
+      idx  2  'Infiltrate HQ'  ''
+      idx  3  'Phase Out'  ''
+      idx  4  'Hypersonic Scream'  ''
+      idx  5  'Silence Is Golden'  ''
+7x3 | cached=N | refs=2 | http://cloud-3.steamusercontent.com/ugc/1764819992271205218/377D797ECA3B58C6AF85F70F43F470A88A0B3492/
+      idx  0  'Madelyne Pryor Goblin Queen'  ''
+      idx 15  'Zombie Green Goblin'  ''
+10x3 | cached=N | refs=0 | http://cloud-3.steamusercontent.com/ugc/1764819992276473166/C594AAFA0C08E1736F2E9F2DE533566F8114E3EA/
+3x3 | cached=N | refs=8 | http://cloud-3.steamusercontent.com/ugc/1761442429495805141/FF1F03B72A63E6D2F08EF64A6282C2EFE0602576/
+      idx  0  'The Mark Of Khonshu'  ''
+      idx  1  'Deadlands Hordes Charge The Wall'  ''
+      idx  2  'Enthrone The Barons Of Battleworld'  ''
+      idx  3  'Sinister Ambitions'  ''
+      idx  4  'The Fountain Of Eternal Life'  ''
+      idx  5  'Master The Mysteries Of Kung-Fu'  ''
+2x2 | cached=N | refs=10 | http://cloud-3.steamusercontent.com/ugc/1761442429496223624/7EDDA30973A4CA51CFCF78E472C97578CF330207/
+      idx  0  'Alligator Trapper'  ''
+      idx  1  'Shapeshifted Copycat'  ''
+      idx  2  'Undercover Agent'  ''
+6x2 | cached=N | refs=10 | http://cloud-3.steamusercontent.com/ugc/1761442429496235854/A3881A057FD447B1863F004370DFF1ED073AEA73/
+      idx  0  'Shadowy Disciple'  ''
+      idx  1  'Devastate S.H.I.E.L.D.'  ''
+      idx  2  'Crazed Charge'  ''
+      idx  3  'Seize The High Ground'  ''
+      idx  4  'Detonate The Bridge'  ''
+      idx  5  'Hostage Situation'  ''
+10x7 | cached=N | refs=224 | http://cloud-3.steamusercontent.com/ugc/1764819992276275406/7B075A1655857A9AFAB65DE35F036658C34002EA/
+      idx  0  'Shapeshifting Symbiote'  ''
+      idx  1  'Big Slimeportunity'  ''
+      idx  2  'Government Payroll'  ''
+      idx  3  'Multi-Gun'  ''
+      idx  4  'Lord Of Dragons'  ''
+      idx  5  'Warlord Of Open Spaces'  ''
+7x3 | cached=N | refs=2 | http://cloud-3.steamusercontent.com/ugc/1761442429496120086/99099EDE9244A81EB6B84EB6AC371CB545E07267/
+      idx 10  'Shiklah The Demon Bride'  ''
+      idx 15  'Spider Queen'  ''
+3x3 | cached=N | refs=16 | http://cloud-3.steamusercontent.com/ugc/1761442429501001937/E81D62E44C86D805351BE6AB4C9CD256DEDD25A1/
+      idx  0  'Taskmaster'  ''
+      idx  1  'Sluggo'  ''
+      idx  2  'Weasel'  ''
+      idx  3  'Blind Al And Deuce'  ''
+      idx  4  'The Deadpool Kid'  ''
+      idx  5  'D.E.A.D.P.O.O.L.'  ''
+3x2 | cached=N | refs=0 | http://cloud-3.steamusercontent.com/ugc/1761442429501034386/B12CC8D94B4456D258F14CEC7A41B386FD1E9C7C/
+6x2 | cached=N | refs=10 | http://cloud-3.steamusercontent.com/ugc/1761442429501119090/B456811EF8222F6C94B70CF3F6DA249202F4B28B/
+      idx  0  'Evil Deadpool'  ''
+      idx  1  'Hyper-Insane Healing Factor'  ''
+      idx  2  'Evil Even Oddball'  ''
+      idx  3  "Of Course It's Corpse"  ''
+      idx  4  'Stitched From Dead (Pool) Parts'  ''
+      idx  5  'Macho Gomez'  ''
+7x3 | cached=N | refs=70 | http://cloud-3.steamusercontent.com/ugc/1761442429497646102/D2C694ED9569A16ADC4137928BF5722B497628C6/
+      idx  0  'Epic Middle Manager'  ''
+      idx  1  'How Do I Get Out Of Here??'  ''
+      idx  2  'Hydra Half-Wit'  ''
+      idx  3  'Bullets Flying, Bob Hiding'  ''
+      idx  4  'Deadpool Rage!'  ''
+      idx  5  'Running Commentary'  ''
+3x2 | cached=N | refs=4 | http://cloud-3.steamusercontent.com/ugc/1761442571549329709/6650B659F0524DC219DF4DD823755F7A7105B14F/
+      idx  0  'The Unbreakable Enigma Code'  ''
+      idx  1  "Go Back In Time To Slay Heroes' Ancestors"  ''
+      idx  2  'Change The Outcome Of WWII'  ''
+      idx  3  'Brainwash The Military'  ''
+3x3 | cached=N | refs=16 | http://cloud-3.steamusercontent.com/ugc/1761442571549309444/9219F4B924E2EE113D0B140D67E8AA90B6072902/
+      idx  0  'Melter'  ''
+      idx  1  'Radioactive Man'  ''
+      idx  2  'Black Knight'  ''
+      idx  3  'Executioner'  ''
+      idx  4  'Captain Zolandia'  ''
+      idx  5  'Primus'  ''
+7x3 | cached=N | refs=70 | http://cloud-3.steamusercontent.com/ugc/1761442571549200074/7EBEF0641AC8D8AB2686D14A50E12FE3FCC8CD31/
+      idx  0  'Mobilize For War'  ''
+      idx  1  'Spy Network'  ''
+      idx  2  'Paramilitary Ops'  ''
+      idx  3  'Sniper Squad'  ''
+      idx  4  'Punch Evil In The Face'  ''
+      idx  5  'Liberate The Prisoners'  ''
+6x2 | cached=N | refs=10 | http://cloud-3.steamusercontent.com/ugc/1761442571549383782/A8BD4499F4AC1C6A7806EFD6C29E432EFD6130E0/
+      idx  0  'Arnim Zola'  ''
+      idx  1  'Dominate The Weak'  ''
+      idx  2  'Crush Pacifist Resistance'  ''
+      idx  3  'Pet Projects'  ''
+      idx  4  'Computer-Uploaded Genius'  ''
+      idx  5  'Baron Heinrich Zemo'  ''
+3x3 | cached=N | refs=8 | http://cloud-3.steamusercontent.com/ugc/1760317131396914128/C00BF954932D31AC587354326FF0B645375F1F6F/
+      idx  0  'Imprison Unregistered Superhumans'  ''
+      idx  1  "Reveal Heroes' Secret Identities"  ''
+      idx  2  'Predict Future Crime'  ''
+      idx  3  'Nitro The Supervillain Threatens Crowds'  ''
+      idx  4  'United States Split By Civil War'  ''
+      idx  5  'Epic Super Hero Civil War'  ''
+5x2 | cached=N | refs=22 | http://cloud-3.steamusercontent.com/ugc/1760317625490836121/DB4761953C31D4E9D1F8713C33AEF41BC9D8B72F/
+      idx  0  'Aspiring Hero'  ''
+      idx  1  'Comic Shop Keeper'  ''
+      idx  2  'Hairball'  ''
+      idx  3  'Ms. Lion'  ''
+      idx  4  'Lockheed'  ''
+      idx  5  'Lockjaw'  ''
+8x4 | cached=N | refs=76 | http://cloud-3.steamusercontent.com/ugc/1760317131396810420/F80239B98771930AE7CFA0B473F13CAC2DC9B296/
+      idx  0  'Cape-Killers'  ''
+      idx  1  'Penance'  ''
+      idx  2  'Venom'  ''
+      idx  3  'Bullseye'  ''
+      idx  4  'Moonstone'  ''
+      idx  5  'Big Bertha'  ''
+4x2 | cached=N | refs=15 | http://cloud-3.steamusercontent.com/ugc/1760317625490877383/C755AF5309D6DADF688E869601C933EA964E2421/
+      idx  0  'Blinding Flash'  ''
+      idx  1  'Blunt Force Trauma'  ''
+      idx  2  'Corrosive Webbing'  ''
+      idx  3  'Fatal Blow'  ''
+      idx  4  'Psychic Trauma'  ''
+      idx  5  'Spreading Nanovirus'  ''
+10x7 | cached=N | refs=40 | http://cloud-3.steamusercontent.com/ugc/1761442933981586770/4C09CCDCEE20598045EE2C44451BEDBA4A0898A9/
+      idx  0  'King & Queen Of Wakanda'  ''
+      idx  4  'Freedom Never Dies'  ''
+      idx  5  'Secret Avengers Assemble!'  ''
+      idx  8  'Penumbra'  ''
+      idx 12  'Master Of Martial Arts'  ''
+      idx 16  'Fly In A Friend'  ''
+7x3 | cached=N | refs=84 | http://cloud-3.steamusercontent.com/ugc/1751310566749955576/A3FC54AC582B02057726364C05D7D4735529295A/
+      idx  0  'Tsunami Of Water // Tsunami Of Justice'  ''
+      idx  1  'Lightning Strike // Pouncing Strike'  ''
+      idx  2  'Gathering Rain Clouds // Gathering Clues'  ''
+      idx  3  'Inspire A Nation // Inspire A Man'  ''
+      idx  4  'Darkness // Light'  ''
+      idx  5  'Above // Below'  ''
+9x3 | cached=N | refs=25 | http://cloud-3.steamusercontent.com/ugc/1760317229802119775/8CC93DAAF0A957EAE8F421A6182CF9CFF905C6B9/
+      idx  0  'Authoritarian Iron Man'  ''
+      idx  1  'Armada Of Armors'  ''
+      idx  2  'Freeze Domestic Assets'  ''
+      idx  3  'Man The Fortifications'  ''
+      idx  4  'Recall To Service'  ''
+      idx  5  'Baron Helmut Zemo'  ''
+7x2 | cached=N | refs=16 | http://cloud-3.steamusercontent.com/ugc/1760317625495298974/FAB48ECB8C74C4BA4A4C3BA53C0FE375C22F38BD/
+      idx  0  'Kraven, Animal Trainer'  ''
+      idx  1  'Montana'  ''
+      idx  2  'Ox'  ''
+      idx  3  'The Chameleon'  ''
+      idx  4  'Fancy Dan'  ''
+      idx  5  'The Vulture, Carnival Cannibal'  ''
+3x2 | cached=N | refs=4 | http://cloud-3.steamusercontent.com/ugc/1751310566741392568/637ED45269A123F49818C37A5A39602157AF90E1/
+      idx  1  'Silence The Witnesses'  ''
+      idx  2  'Hidden Heart Of Darkness'  ''
+      idx  3  'Five Families Of Crime'  ''
+      idx  4  'Find The Split Personality Killer'  ''
+7x3 | cached=N | refs=70 | http://cloud-3.steamusercontent.com/ugc/1760317625495165977/80F55E272C422F817EF32F6A7868A53C8F791E39/
+      idx  0  'Missing Person Case'  ''
+      idx  1  'Identical Twin Brother'  ''
+      idx  2  'Impetuous Dive'  ''
+      idx  3  'Multitalented'  ''
+      idx  4  'Hitting Rock Bottom'  ''
+      idx  5  'Discover The Bodies'  ''
+6x2 | cached=N | refs=10 | http://cloud-3.steamusercontent.com/ugc/1751310566741355724/3EE7124F6C4FE8BAFDA644B14D67D80043E2A280/
+      idx  0  'Charles Xavier Professor Of Crime'  ''
+      idx  1  'Commit To The Asylum'  ''
+      idx  2  'Corrupt Weak Minds'  ''
+      idx  3  'Master Manipulator'  ''
+      idx  4  'X-Con Men'  ''
+      idx  5  'The Goblin Underworld Boss'  ''
+1x1 | cached=N | refs=1 | http://cloud-3.steamusercontent.com/ugc/1751310566751844928/3D23FFF11307C8EBA7E3F4709C6402F6832F88EE/
+      idx  0  "Shi'ar Battlecruiser"  ''
+7x6 | cached=N | refs=106 | http://cloud-3.steamusercontent.com/ugc/1751310566751640719/435FCE4DAE1AB87CC7DB8F91FA38BA70DEF8EC53/
+      idx  0  'Corrupt The Phoenix Force'  ''
+      idx  1  'Nemesis'  ''
+      idx  2  'Fatale'  ''
+      idx  3  'Random'  ''
+      idx  4  'Havok, Brainwashed'  ''
+      idx  5  'Psychic Subjugation'  ''
+3x2 | cached=N | refs=4 | http://cloud-3.steamusercontent.com/ugc/1751310566751645347/F00DC1A2D06E0F4E32D79972D6D01DAC5B3E93D0/
+      idx  0  'Phoenix Force'  ''
+      idx  1  'Master Plan'  ''
+      idx  2  'Animatronic Killer Clown'  ''
+3x3 | cached=N | refs=8 | http://cloud-3.steamusercontent.com/ugc/1751310779614602440/FF567C41B8B64AF61C126EF1B457C9166FF01A7C/
+      idx  0  'X-Men Danger Room Goes Beserk'  ''
+      idx  1  'The Dark Phoenix Saga'  ''
+      idx  2  'Mutant-Hunting Super Sentinels'  ''
+      idx  3  'Nuclear Armageddon'  ''
+      idx  4  'Horror Of Horrors'  ''
+      idx  5  'Alien Brood Encounters'  ''
+6x2 | cached=N | refs=10 | http://cloud-3.steamusercontent.com/ugc/1751310779614844880/747139A6EDB726ABA8142DDA8BD1243A4C6CC328/
+      idx  0  'Cypher'  ''
+      idx  1  'Karma'  ''
+      idx  2  'Magik'  ''
+      idx  3  'Magma'  ''
+      idx  4  'Mirage'  ''
+      idx  5  'Sunspot'  ''
+7x3 | cached=N | refs=20 | http://cloud-3.steamusercontent.com/ugc/1751310779614920106/B8BAF5FE5D3B846617EB7759A3BC2BAB59D20587/
+      idx  0  'Army Of Evil'  ''
+      idx  1  'Empire Of Oppression'  ''
+      idx  2  'Endless Hatred'  ''
+      idx  3  'Enraged Mastermind'  ''
+      idx  4  'Fight To The End'  ''
+      idx  5  'Growing Threat'  ''
+8x7 | cached=N | refs=187 | http://cloud-3.steamusercontent.com/ugc/1751310566750149382/250A9ABE9DAD86B3EF28007C6FFA3FF74E44E102/
+      idx  0  'Mach 10'  ''
+      idx  1  'Twin Blast'  ''
+      idx  2  'Northern Lights'  ''
+      idx  3  'Bone-Shattering Howl'  ''
+      idx  4  'Sonic Blastwave'  ''
+      idx  5  'Sonar Detection'  ''
+3x2 | cached=N | refs=23 | http://cloud-3.steamusercontent.com/ugc/1751310566750144623/9F2AEF4E8F0BCE89BEE6F59ADE26353CC7872338/
+      idx  0  'Blazing Fire // Blazing Fists'  ''
+      idx  1  'Reliable // Unpredictable'  ''
+      idx  2  'Channel Time // Channel Fire'  ''
+      idx  3  'Split Personality // Split Eardrums'  ''
+      idx  4  'Bend Steel // Bend Light'  ''
+5x5 | cached=N | refs=24 | http://cloud-3.steamusercontent.com/ugc/1751310566751792130/01BE5F7764989CE67C8C07C8B06B5D7F9D275BF6/
+      idx  0  'Welcome To My Theme Park!'  ''
+      idx  1  'Roulette Wheel Of Death'  ''
+      idx  2  'I Love A Parade!'  ''
+      idx  3  'I Need An Audience'  ''
+      idx  4  'Fiery Reincarnation'  ''
+      idx  5  'Consume An Entire Galaxy'  ''
+4x2 | cached=N | refs=6 | http://cloud-3.steamusercontent.com/ugc/1751310566751787290/9AD00CED26BFC1CBC617A9386FF037350A2314D0/
+      idx  0  'Arcade'  ''
+      idx  1  'Dark Phoenix'  ''
+      idx  2  'Deathbird'  "Shi'ar Battlecruiser token is in the X-M"
+      idx  3  'Mojo'  ''
+      idx  4  'Onslaught'  ''
+      idx  5  'Shadow King'  ''
+7x2 | cached=N | refs=16 | http://cloud-3.steamusercontent.com/ugc/1751311162396805595/78F951A2D7847AE0DD63E54B17C57A934BDABB87/
+      idx  0  'Goom'  ''
+      idx  1  'Groot From Planet X'  ''
+      idx  2  'Zzutak'  ''
+      idx  3  'Tim Boo Ba'  ''
+      idx  4  'Monsteroso'  ''
+      idx  5  'Trull The Unhuman'  ''
+3x2 | cached=N | refs=4 | http://cloud-3.steamusercontent.com/ugc/1751311162396893402/FAE4915B25D916A98002AEFBE1DC53744FBD51A4/
+      idx  0  'Hypnotize Every Human'  ''
+      idx  1  'Divide And Conquer'  ''
+      idx  2  'Clash Of The Monsters Unleashed'  ''
+      idx  3  'Steal All Oxygen On Earth'  ''
+7x3 | cached=N | refs=70 | http://cloud-3.steamusercontent.com/ugc/1751310965322495527/348CC0B65D89AB9E972BB59DBD8D02A131372256/
+      idx  0  '7th Smartest Man In The World'  ''
+      idx  1  'Growing Pains'  ''
+      idx  2  'Incredible Mind, Awesome Body'  ''
+      idx  3  'Beloved Behemoth'  ''
+      idx  4  "I'm The Best At Board Games"  ''
+      idx  5  'I Heard Keywords Are Powerful'  ''
+3x3 | cached=N | refs=8 | http://cloud-3.steamusercontent.com/ugc/1751311162396852481/D789F603EE8BB46CCC53348B7F57E844E8B8AAB2/
+      idx  0  'Flammable Acid Breath'  ''
+      idx  1  'Alien Dragon Technology'  ''
+      idx  2  'Multipronged Assault'  ''
+      idx  3  'Supersonic Dive Attack'  ''
+      idx  4  'Jester Of A Twisted Opera'  ''
+      idx  5  'Insane Clown Has A Posse'  ''
+1x1 | cached=N | refs=1 | http://cloud-3.steamusercontent.com/ugc/1751311162396844446/B57C23FCA639D05C6E4A200109FE3BA213E8C547/
+      idx  0  'Fin Fang Foom'  ''
+1x1 | cached=N | refs=1 | http://cloud-3.steamusercontent.com/ugc/1751311162396846894/2F6BD7664DE0A22C3E5BF720DE14206845618B76/
+      idx  0  'Pagliacci'  ''
+10x4 | cached=N | refs=137 | http://cloud-3.steamusercontent.com/ugc/1751311162397563150/92E0C60A84C1DF66BF64C17D7E7963781FA81597/
+      idx  0  'Visualize The Variables'  ''
+      idx  1  'Like Totally Smart Hulk'  ''
+      idx  2  'Renegade Genius'  ''
+      idx  3  'Extrapolate'  ''
+      idx  4  'Gamma-Draining Nanites'  ''
+      idx  5  'World-Spanning Hunger'  ''
+10x4 | cached=N | refs=135 | http://cloud-3.steamusercontent.com/ugc/1751311162397566612/4BA8D798A639DF73EFB9122783156A07E9EF8D27/
+      idx  0  'Attune Tectonic Transducer'  ''
+      idx  1  'Kronan Tactician'  ''
+      idx  2  'Lord Of Granite'  ''
+      idx  3  'Forged By Fire'  ''
+      idx  4  'Nothing Beats Rock'  ''
+      idx  5  'Move Mountains'  ''
+5x5 | cached=N | refs=24 | http://cloud-3.steamusercontent.com/ugc/1729919110690481514/0FBC8018BB8630B704A9129F1371086F732895CE/
+      idx  0  'Personal Arsenal'  ''
+      idx  1  'Bust You Down To Private'  ''
+      idx  2  'Call Out The Army'  ''
+      idx  3  'Urban Warfare'  ''
+      idx  4  "Black Bolt's Omni-Shout"  ''
+      idx  5  "Dr. Strange's Orb Of Agamotto"  ''
+4x2 | cached=N | refs=6 | http://cloud-3.steamusercontent.com/ugc/1729919110690476365/CF95D91AB18EC2D83B089A18AA35E5E381F69373/
+      idx  0  'General Thunderbolt Ross'  ''
+      idx  1  'Illuminati Secret Society'  ''
+      idx  2  'King Hulk Sakaarson'  ''
+      idx  3  'MODOK'  ''
+      idx  4  'The Sentry'  ''
+      idx  5  'The Red King'  ''
+10x4 | cached=N | refs=86 | http://cloud-3.steamusercontent.com/ugc/1729919110689001610/B3F782FC124A129D3FB896110E6DE16D7B465A59/
+      idx  0  'Psychotic Break'  ''
+      idx  1  'Shadow Man'  ''
+      idx  2  'Infini-Tendrils'  ''
+      idx  3  'Black Anti-Hurricane'  ''
+      idx  4  'Demonform'  ''
+      idx  5  'Thundra'  ''
+3x2 | cached=N | refs=4 | http://cloud-3.steamusercontent.com/ugc/1729919194264753534/3626A05C5D6DE292DEDFE1AEF0A541A8303B92F0/
+      idx  0  'Actor'  ''
+      idx  1  'Animal Trainer'  ''
+      idx  2  'Tourist Couple'  ''
+      idx  3  'Triage Nurse'  ''
+3x3 | cached=N | refs=0 | http://cloud-3.steamusercontent.com/ugc/1729919110690755089/9328B8206400DA3DCEB51606ABB9CA1BCEE8ED9A/
+7x3 | cached=N | refs=70 | http://cloud-3.steamusercontent.com/ugc/1729919194265458094/8E3B819603B669A7D0D86BCD60E0BECCC34F6C48/
+      idx  0  'Pym Particles'  ''
+      idx  1  'Giant Ego'  ''
+      idx  2  'Risky Science'  ''
+      idx  3  'Ride The Ants'  ''
+      idx  4  'The Ebony Blade'  ''
+      idx  5  'Flying Steed'  ''
+9x2 | cached=N | refs=0 | http://cloud-3.steamusercontent.com/ugc/1729919194265536214/6E952B101D5A0F61D914C3E32CF64331CE270F87/
+3x3 | cached=N | refs=8 | http://cloud-3.steamusercontent.com/ugc/1729919194265593986/4F6D76B7066DCCDF4F5CC0D2F4B0D9B077F7A3E5/
+      idx  0  'Sorcerous Blasts'  ''
+      idx  1  'Transmogrify'  ''
+      idx  2  'Stolen Tomes Of Merlin'  ''
+      idx  3  'Reverse The Flow Of Time'  ''
+      idx  4  'Paralyzing Encephalo-Ray'  ''
+      idx  5  'Self-Repairing Legions'  ''
+1x1 | cached=N | refs=0 | http://cloud-3.steamusercontent.com/ugc/1729919194265588533/A8824B0B9261851B68F5A994CAC3D347CC1AD534/
+1x1 | cached=N | refs=1 | http://cloud-3.steamusercontent.com/ugc/1729919194265591342/3F23F2657CCF34AC6A3DD1B1B83A35727FECF442/
+      idx  0  'Ultron'  ''
+3x2 | cached=N | refs=4 | http://cloud-3.steamusercontent.com/ugc/1729919194265629263/38AE8BE77E55554E825A1A38F22ABED394FC8640/
+      idx  0  'Age Of Ultron'  ''
+      idx  1  'Pull Earth Into Medieval Times'  ''
+      idx  2  'Transform Commuters Into Giant Ants'  ''
+      idx  3  'Trap Heroes In The Microverse'  ''
+7x3 | cached=N | refs=70 | http://cloud-3.steamusercontent.com/ugc/1729919276270921743/F224F580B2B6ED2EB6ACC7773E79AF8695AC0299/
+      idx  0  'Feast Or Famine'  ''
+      idx  1  'Gruesome Feast'  ''
+      idx  2  'Rending Claws'  ''
+      idx  3  'Carnivore'  ''
+      idx  4  'Insatiable Hunger'  ''
+      idx  5  'Symbiotic Adaptation'  ''
+5x3 | cached=N | refs=16 | http://cloud-3.steamusercontent.com/ugc/1729919276271056043/2D50151AA9090059CAE326D478705E491D6D4184/
+      idx  0  'Lasher'  ''
+      idx  1  'Agony'  ''
+      idx  2  'Dr. Carlton Drake'  ''
+      idx  3  'Riot'  ''
+      idx  4  'Scream'  ''
+      idx  5  'Phage'  ''
+3x3 | cached=N | refs=8 | http://cloud-3.steamusercontent.com/ugc/1729919276271107769/3A944970AB09EC8A71E4E50F99FE6345529EE03B/
+      idx  0  'Alien Awakening'  ''
+      idx  1  'Escaped Monstrosity'  ''
+      idx  2  'Life Foundation Research'  ''
+      idx  3  'Symbiotic Call'  ''
+      idx  4  'Poisoned Loyalites'  ''
+      idx  5  'Soul Sieze'  ''
+1x1 | cached=N | refs=1 | http://cloud-3.steamusercontent.com/ugc/1729919276271102935/76B0BD65628B4C15FA5F85D4790EBE4AAF109770/
+      idx  0  'Hybrid'  ''
+1x1 | cached=N | refs=1 | http://cloud-3.steamusercontent.com/ugc/1729919276271105619/0F75F9EF11F0BA9B5EBC6AAD84627949794EEC99/
+      idx  0  'Poison Thanos'  ''
+3x2 | cached=N | refs=4 | http://cloud-3.steamusercontent.com/ugc/1729919276271137307/C8BAD4CE1ACC06D4BF8685BD33F9F1B1FABBAC65/
+      idx  0  'Invasion Of The Venom Symbiotes'  ''
+      idx  1  'Maximum Carnage'  ''
+      idx  2  'Paralyzing Venom'  ''
+      idx  3  'Symbiotic Absorption'  ''
+3x2 | cached=N | refs=5 | http://cloud-3.steamusercontent.com/ugc/1726542545630387311/09B4BDAF75153567A790672C9F378A5D7B4F8953/
+      idx  0  'Bulldozer Driver'  ''
+      idx  1  'Double Agent Of SHIELD'  ''
+      idx  2  'Forklift Driver'  ''
+      idx  3  'Fortune Teller'  ''
+      idx  4  'Photographer'  ''
+7x3 | cached=N | refs=70 | http://cloud-3.steamusercontent.com/ugc/1726542545630193481/53ACDCE03707638782E5C1046C30E05E2E429CC5/
+      idx  0  'Interplanetary Visitor'  ''
+      idx  1  'Right Place, Wrong Time'  ''
+      idx  2  'Rebel Without A Cause'  ''
+      idx  3  'Traveling Companion'  ''
+      idx  4  'Uncover Hidden Evil'  ''
+      idx  5  'Crack The Case'  ''
+4x2 | cached=N | refs=24 | http://cloud-3.steamusercontent.com/ugc/1726542545630399204/4A77CE356DC48D9A8919C0FE03A3EE6DF74DE835/
+      idx  0  'Slanderous Editorial'  ''
+      idx  1  'Incite Violent Riots'  ''
+      idx  2  'Promote Spider-Slayer Security'  ''
+      idx  3  'That Menace Spider-Man!'  ''
+      idx  4  'Circus Of Crime'  ''
+      idx  5  'Spider-Slayer'  ''
+1x1 | cached=N | refs=1 | http://cloud-3.steamusercontent.com/ugc/1726542545630401087/2F86A4F757A8A62867D35ACA0B5AB1E65677F0D0/
+      idx  0  'J Jonah Jameson'  ''
+7x2 | cached=N | refs=12 | http://cloud-3.steamusercontent.com/ugc/1726542626274406354/E5EED44BAB9875459E74B04A0E48099F49BC87C5/
+      idx  0  'Carnival Of Concussions'  ''
+      idx  1  'Cult Of Skulls'  ''
+      idx  2  'Maze Of Bones'  ''
+      idx  3  'Prison Of Coffins'  ''
+      idx  4  'Dragon Of Heaven Spaceship'  ''
+      idx  5  'Circles Unbroken'  ''
+2x2 | cached=N | refs=3 | http://cloud-3.steamusercontent.com/ugc/1726542626274401494/9796DF30A41B6373AEC0E0BA28A1B799E3B0629F/
+      idx  0  'Grim Reaper'  ''
+      idx  1  'Mandarin'  ''
+      idx  2  'The Hood'  ''
+10x4 | cached=N | refs=52 | http://cloud-3.steamusercontent.com/ugc/1726542626274293857/421C03D54C347A611C475104E13331B368BA96B1/
+      idx  0  'Mister Hyde'  ''
+      idx  1  'Blackout'  ''
+      idx  2  'Klaw'  ''
+      idx  3  'Count Nefaria'  ''
+      idx  4  'Dark Wolverine (Daken)'  ''
+      idx  5  'Ares'  ''
+3x2 | cached=N | refs=4 | http://cloud-3.steamusercontent.com/ugc/1726542626274655004/7D388C1AEEF7EC9A5316FEBC2DC7910D000B9534/
+      idx  0  'Earthquake Drains The Ocean'  ''
+      idx  1  'The Korvac Saga'  ''
+      idx  2  'House Of M'  ''
+      idx  3  'Secret Hydra Corruption'  ''
+2x2 | cached=N | refs=3 | http://cloud-3.steamusercontent.com/ugc/1726542626274737462/34B8A719D7780BF04FB7982247E2C66516249D71/
+      idx  0  'Dog Show Judge'  ''
+      idx  1  'Lawyer'  ''
+      idx  2  'Rocket Test Pilot'  ''
+10x4 | cached=N | refs=126 | http://cloud-3.steamusercontent.com/ugc/1726542626274174713/1B3BF4C2B6B511E0E54E8F96758B23E8449BFB82/
+      idx  0  'Higher, Further, Faster'  ''
+      idx  1  'Dominate The Battlefield'  ''
+      idx  2  'Radiant Blast'  ''
+      idx  3  'The Sword Of SHIELD'  ''
+      idx  4  'Warflight'  ''
+      idx  5  'Travel To Nullspace'  ''
+6x3 | cached=N | refs=0 | http://cloud-3.steamusercontent.com/ugc/1726542626274838535/88E24087D0FCE0608D2D8653185B239ACE2196E0/
+3x3 | cached=N | refs=0 | http://cloud-3.steamusercontent.com/ugc/1726542626274924227/2188338D06707A58D24E1AE89E232EC942302DF9/
+3x3 | cached=N | refs=0 | http://cloud-3.steamusercontent.com/ugc/1726542626274960784/C0944FC3AAD8C39BED9E4A67B48ED10BFA52E808/
+3x2 | cached=N | refs=4 | http://cloud-3.steamusercontent.com/ugc/1726542626275048474/CA404352E562AB8BD84A43A13020A8C5E9F463DD/
+      idx  0  'Secret Empire Of Betrayal'  ''
+      idx  1  'SHIELD vs Hydra War'  ''
+      idx  2  'Hydra Helicarriers Hunt Heroes'  ''
+      idx  3  'Hail Hydra'  ''
+3x3 | cached=N | refs=16 | http://cloud-3.steamusercontent.com/ugc/1726542626275008299/BE0ABB43457632F3FEC8CBBDF680AA029652391E/
+      idx  0  'Leo Fitz & Jemma Simmons'  ''
+      idx  1  'Grant Ward'  ''
+      idx  2  'G.W. Bridge'  ''
+      idx  3  'Dum Dum Dugan'  ''
+      idx  4  'Melinda May'  ''
+      idx  5  'Sharon Carter'  ''
+7x3 | cached=N | refs=70 | http://cloud-3.steamusercontent.com/ugc/1726542626275236372/A24325D57FDF2BDED3A88E7F05708BD0D1E96DCD/
+      idx  0  'The Warship Skuttlebutt'  ''
+      idx  1  'Bio-Engineered Cyborg'  ''
+      idx  2  'Stormbreaker'  ''
+      idx  3  'Hope Of The Korbinites'  ''
+      idx  4  'Golden Apples Of Idunn'  ''
+      idx  5  'Weapons Master'  ''
+7x2 | cached=N | refs=16 | http://cloud-3.steamusercontent.com/ugc/1726542626275329248/B6D7727C4CF5B2454323087DA67D6F51A2229085/
+      idx  0  'Laufey, Father Of Loki'  ''
+      idx  1  'The Mangog'  ''
+      idx  2  'Ulik, The Troll'  ''
+      idx  3  'Sindr, Fire Giant Queen'  ''
+      idx  4  'Jarnbjorn, First Axe Of Thor'  ''
+      idx  5  'The Casket Of Ancient Winters'  ''
+3x3 | cached=N | refs=8 | http://cloud-3.steamusercontent.com/ugc/1726542626275409322/3161B4B87527819215AC3C38FB18B6436E8B15A3/
+      idx  0  'Naglear, Longship Of Fingernails'  ''
+      idx  1  'Seize Bifrost, The Rainbow Bridge'  ''
+      idx  2  'The Nightsword'  ''
+      idx  3  "Hela's Cloak"  ''
+      idx  4  'Black Hammer Of The Accursed'  ''
+      idx  5  'Dagger Of Living Abyss'  ''
+1x1 | cached=N | refs=1 | http://cloud-3.steamusercontent.com/ugc/1726542626275376788/B3319D16CBEA6E63E6806588AC3A4C8A333324FF/
+      idx  0  'Hela Goddess Of Death'  ''
+1x1 | cached=N | refs=1 | http://cloud-3.steamusercontent.com/ugc/1726542626275377737/BDDA5B3A9FBC1FCDEA3A21548483792BF9EA42AA/
+      idx  0  'Malekith The Accursed'  ''
+3x2 | cached=N | refs=4 | http://cloud-3.steamusercontent.com/ugc/1726542626275529318/ACBE4B672FF55BC8BA6E332881FE096D1F14C2E7/
+      idx  0  'Asgardian Test Of Worth'  ''
+      idx  1  'Ragnarok, Twilight Of The Gods'  ''
+      idx  2  'The Dark World Of Svartalfheim'  ''
+      idx  3  'War Of The Frost Giants'  ''
+3x2 | cached=N | refs=4 | http://cloud-3.steamusercontent.com/ugc/1810985572012853071/BE9EF4E30AE1318EA39D138083504F2CFF40B847/
+      idx  0  'Crash The Moon Into The Sun'  ''
+      idx  1  'Superhuman Baseball Game'  ''
+      idx  2  'The Demon Bear Saga'  ''
+      idx  3  'Trapped In The Insane Asylum'  ''
+3x3 | cached=N | refs=8 | http://cloud-3.steamusercontent.com/ugc/1810985572012809591/1645DAF12F1BE61BC5EB68D83D286D4517E7FF43/
+      idx  0  'Rescue From Limbo'  ''
+      idx  1  'Cleaving Demonblade'  ''
+      idx  2  'Bargain For Souls'  ''
+      idx  3  "A Demon's Mercy"  ''
+      idx  4  'Contempt For Weaklings'  ''
+      idx  5  'Tempting Bargain'  ''
+1x1 | cached=N | refs=1 | http://cloud-3.steamusercontent.com/ugc/1810985572012806339/D339087157858DD93D511D31761E57AE39A74BCA/
+      idx  0  'Belasco Demon Lord Of Limbo'  ''
+1x1 | cached=N | refs=1 | http://cloud-3.steamusercontent.com/ugc/1810985572012807716/48E78EA318F0BD1AC733876AF8516D4734F97450/
+      idx  0  'Emma Frost The White Queen'  ''
+6x2 | cached=N | refs=0 | http://cloud-3.steamusercontent.com/ugc/1810985572012764695/919968ECAF02C73C9957314F89C8A534382169C6/
+7x3 | cached=N | refs=70 | http://cloud-3.steamusercontent.com/ugc/1810985572012625949/59EEC4B53DE2F556E6C0E78ECF419D10C1E26CF8/
+      idx  0  'Control Like A Puppet'  ''
+      idx  1  'Karmic Balance'  ''
+      idx  2  'Temporary Possession'  ''
+      idx  3  'Sow Rivalry'  ''
+      idx  4  'Haunted By The Demon Bear'  ''
+      idx  5  'Nightmare Wolves'  ''
+10x4 | cached=N | refs=129 | http://cloud-3.steamusercontent.com/ugc/1810985572013247718/04AEF46F6C66819D9525B4C7DDD22AE2BE5B64CA/
+      idx  0  'Manifest The Soul Gem'  ''
+      idx  1  'Soulblast'  ''
+      idx  2  'Regenerative Cocoon'  ''
+      idx  3  'Transmute Matter'  ''
+      idx  4  'Protector Of The Universe'  ''
+      idx  5  'Channel The Nega-Bands'  ''
+3x2 | cached=N | refs=4 | http://cloud-3.steamusercontent.com/ugc/1810985741822728169/FB19BD5831744430D0C335D4BEAF0C764CACDEE3/
+      idx  0  'Turn The Soul Of Adam Warlock'  ''
+      idx  1  'The Contest Of Champions'  ''
+      idx  2  'Destroy The Nova Corps'  ''
+      idx  3  'Annihilation: Conquest'  ''
+7x3 | cached=N | refs=52 | http://cloud-3.steamusercontent.com/ugc/1810985741822563491/FA49DB04C8696B25307960C69FBE8912EA2257E5/
+      idx  0  'Ebony Maw'  ''
+      idx  1  'Proxima Midnight'  ''
+      idx  2  'Supergiant'  ''
+      idx  3  'Black Dwarf'  ''
+      idx  4  'Corvus Glaive'  ''
+      idx  5  'Gammenon, The Gatherer'  ''
+7x2 | cached=N | refs=12 | http://cloud-3.steamusercontent.com/ugc/1810985741822647496/0B6A65A48459FB9615E48360838F9CDB4DEBB346/
+      idx  0  'Pull Earth Into The Beyond'  ''
+      idx  1  'Create The Secret Wars'  ''
+      idx  2  'Dimensional Collapse'  ''
+      idx  3  'Playthings Of A Petulant God'  ''
+      idx  4  'Match Offenders Vs. Defenders'  ''
+      idx  5  'Cheat Against Thanos'  ''
+1x1 | cached=N | refs=1 | http://cloud-3.steamusercontent.com/ugc/1810985741822640058/A9E01B2EFC84405FAD746E6D05CB3AD5926C4DA8/
+      idx  0  'The Beyonder'  ''
+1x1 | cached=N | refs=1 | http://cloud-3.steamusercontent.com/ugc/1810985741822641307/DB9B0B56BA8636528EA22E82EA6FF75E999A9A6F/
+      idx  0  'The Grandmaster'  ''
+1x1 | cached=N | refs=1 | http://cloud-3.steamusercontent.com/ugc/1810985741822642824/424E9033C60838A3B2E949F416A57C067E314227/
+      idx  0  'Magus'  ''
+7x3 | cached=N | refs=70 | http://cloud-3.steamusercontent.com/ugc/2028355744163225709/E5D7DC33F81C957BD46529F195B43677CE9C8B94/
+      idx  0  "The King's Speech"  ''
+      idx  1  'Break the Silence'  ''
+      idx  2  'Wordless Murmur'  ''
+      idx  3  'Declaration of War'  ''
+      idx  4  'Weave Four Into One'  ''
+      idx  5  'Earth, Air, Fire, and Water'  ''
+3x3 | cached=N | refs=16 | http://cloud-3.steamusercontent.com/ugc/2028355744163570461/D5A582AA6A56B9FBA6A9F128B7BD98907685E2DD/
+      idx  0  'Lash'  ''
+      idx  1  'Lineage'  ''
+      idx  2  'Omega'  ''
+      idx  3  'The Unspoken'  ''
+      idx  4  'Gladiator'  ''
+      idx  5  'Mentor'  ''
+3x3 | cached=N | refs=8 | http://cloud-3.steamusercontent.com/ugc/2028355744163591222/391D338BF92480CFE0377937EC08FE99F5BB7DB6/
+      idx  0  'Blast Every Form of Energy'  ''
+      idx  1  'Contempt for Weakness'  ''
+      idx  2  'Solar Cage'  ''
+      idx  3  'Vast Wealth of the Shiar'  ''
+      idx  4  'Echo-Tech Chorus Sentries'  ''
+      idx  5  'Seize the Inhuman Throne'  ''
+1x1 | cached=N | refs=1 | http://cloud-3.steamusercontent.com/ugc/2028355744163592566/B7FC559270AC6FA997D1403D02124D4981A5BC38/
+      idx  0  'Emperor Vulcan of the Shiar'  ''
+1x1 | cached=N | refs=1 | http://cloud-3.steamusercontent.com/ugc/2028355744163594004/388D4DF1BAEB45F257C98D1792010B52D5B6D03E/
+      idx  0  'Maximus the Mad'  ''
+3x2 | cached=N | refs=4 | http://cloud-3.steamusercontent.com/ugc/2028355744163631116/A9FE4A117770DE6AE0A97F3628D139951A6564D7/
+      idx  0  'Devolve with Xerogen Crystals'  ''
+      idx  1  'Ruin the Perfect Wedding'  ''
+      idx  2  'Tornado of Terrigen Mists'  ''
+      idx  3  'War of Kings'  ''
+
+Whole-file URL scan: 196 image-like URLs, 2 cached, 194 not cached
+  uncached: http://cloud-3.steamusercontent.com/ugc/1810985741822642824/424E9033C60838A3B2E949F416A57C067E314227/
+  uncached: http://cloud-3.steamusercontent.com/ugc/792010997184394727/6212F5FF59B6D980AA95CCF1B06BE32F8DFF3366/
+  uncached: http://cloud-3.steamusercontent.com/ugc/1765945222253193681/E119DE3D97B165BB555AE9D6920FAC782833A6BE/
+  uncached: http://cloud-3.steamusercontent.com/ugc/1751310566751844928/3D23FFF11307C8EBA7E3F4709C6402F6832F88EE/
+  uncached: http://cloud-3.steamusercontent.com/ugc/1765945272803675544/68F1D4AE9B5DA1A8CC899D6FC1FDD8314F3592E8/
+  uncached: http://cloud-3.steamusercontent.com/ugc/792010997184385296/1A83AFF3AF0959546E8444D9A3F4174BC35E5336/
+  uncached: http://cloud-3.steamusercontent.com/ugc/1764819992271205218/377D797ECA3B58C6AF85F70F43F470A88A0B3492/
+  uncached: http://cloud-3.steamusercontent.com/ugc/1751311162396852481/D789F603EE8BB46CCC53348B7F57E844E8B8AAB2/
+  uncached: http://cloud-3.steamusercontent.com/ugc/792010997184404898/8956C1A3A9A41B0F54B4DE400EC76F7723332310/
+  uncached: http://cloud-3.steamusercontent.com/ugc/1765945166802464876/4C935275ED84659E201BDFFF178E2267C4E6FF4A/
+  uncached: http://cloud-3.steamusercontent.com/ugc/1729919276271107769/3A944970AB09EC8A71E4E50F99FE6345529EE03B/
+  uncached: http://cloud-3.steamusercontent.com/ugc/792010997184392871/C1ACD1C3E628B836F6DEFF643B618418A339EECC/
+  uncached: http://cloud-3.steamusercontent.com/ugc/792010997184398544/F8246EDA891BDFDE3CE9183A139D514F78A582CF/
+  uncached: http://cloud-3.steamusercontent.com/ugc/1761442429501119090/B456811EF8222F6C94B70CF3F6DA249202F4B28B/
+  uncached: http://cloud-3.steamusercontent.com/ugc/1726542626275377017/D257B6C7A72673D07484E06BAEF5F7BA8320DE67/
+
+Top-level object names: ['Notecard', 'HandTrigger', 'HandTrigger', 'HandTrigger', 'HandTrigger', 'HandTrigger', 'HandTrigger', 'HandTrigger', 'HandTrigger', 'Dark City', 'Henchmen', 'Villains', 'Masterminds', 'Heroes', 'Schemes', 'Fantastic Four', 'Master Strikes', 'Scheme Twists', 'SHIELD Officers', 'Bystanders', 'Custom_Board', 'Custom_Board', 'Custom_Board', 'Custom_Board', 'Custom_Board', 'Custom_Board', '# Of Players', 'Extra Storage (DO NOT TOUCH)', 'ScriptingTrigger', 'ScriptingTrigger', 'ScriptingTrigger', 'ScriptingTrigger', 'ScriptingTrigger', 'ScriptingTrigger', 'Paint The Town Red', 'Wounds', 'Deck', 'Deck', 'Deck', 'Deck']
