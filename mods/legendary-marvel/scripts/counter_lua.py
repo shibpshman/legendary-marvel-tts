@@ -9,12 +9,18 @@ import json
 #         kong   = non-grey Heroes (Hero tag + a class tag) in the KO zone
 #         herodeck / wounds / villaindeck = cards left in that deck (Evil wins at 0)
 #         manual = counted by hand with the + / - buttons
+#                  counts_down=True, start=N: starts at N and goes down; Evil wins when it reaches the target (0)
 # target: n = fixed number, pp = per player, plus = players + k
 # ----------------------------------------------------------------------------------------------------------------
 def T(n): return dict(k='twist', l='Scheme Twist #%d (Evil wins)' % n, n=n)
 def ESC(**kw): return dict(k='escv', l='Escaped Villains', **kw)
 def KO(**kw): return dict(k='kong', l='non-grey Heroes in the KO pile', **kw)
-def M(label, **kw): return dict(k='manual', l=label, **kw)
+def M(label, counts_down=False, **kw):
+    r = dict(k='manual', l=label, **kw)
+    if counts_down:
+        assert r.get('start', 0) > r.get('n', 0), 'a counts_down rule needs start above its target, or it would fire at setup: %r' % label
+        r['cd'] = 1
+    return r
 HERO = dict(k='herodeck', l='Hero Deck', n=0)
 WOUND = dict(k='wounds', l='Wound Stack', n=0)
 VILL = dict(k='villaindeck', l='Villain Deck', n=0)
@@ -53,7 +59,7 @@ RULES = {
     'Super Hero Civil War': [HERO], 'Epic Super Hero Civil War': [HERO], 'Deadpool Kills The Marvel Universe': [HERO],
     "Go Back In Time To Slay Heroes' Ancestors": [HERO], 'Detonate The Helicarrier': [HERO, M('HQ spaces Destroyed', n=5)],
     'The Legacy Virus': [WOUND], 'Pan-Dimensional Plague': [WOUND], 'Fall Of The Hulks': [WOUND], 'Anti-Mutant Hatred': [WOUND, VILL],
-    'Clash Of The Monsters Unleashed': [WOUND, M('Monster Pit cards left (Evil wins at 0)', n=0)],
+    'Clash Of The Monsters Unleashed': [WOUND, M('Monster Pit cards left', n=0, start=8, counts_down=True)],
     # counted next to the scheme / mastermind or in the city: manual +/-
     'Organized Crime Wave': [M('Goons escaped', n=5)], "Replace Earth's Leaders With Killbots": [M('Killbots escaped', n=5)],
     'Secret Invasion Of The Skrull Shapeshifters': [M('Heroes in the Escaped Villains pile', n=6)],
@@ -72,7 +78,7 @@ RULES = {
     'X-Men Danger Room Goes Beserk': [M('Airborne Neurotoxins', n=5)], 'The Dark Phoenix Saga': [M('Jean Grey cards escaped', n=5)],
     'Mutant-Hunting Super Sentinels': [M('Sentinels escaped', n=3)], 'Nuclear Armageddon': [M('City spaces destroyed', n=5)],
     'Subjugate With Obedience Disks': [M('HQ spaces with 2 Obedience Disks', n=5)],
-    'Shoot Hulk Into Space': [M('cards in the Prison Ship', n=10), M('Hulk Deck cards left (Evil wins at 0)', n=0)],
+    'Shoot Hulk Into Space': [M('cards in the Prison Ship', n=10), M('Hulk Deck cards left', n=0, start=14, counts_down=True)],
     'Age Of Ultron': [M('Evolved Ultrons in the city and/or Escape Pile', n=7)], 'Transform Commuters Into Giant Ants': [M('Giant Ants next to the Mastermind', n=10)],
     'SHIELD vs Hydra War': [M('Hydra Level', n=11)], 'Secret Empire Of Betrayal': [M('Vicious Betrayals next to the Scheme', n=6)],
     'War Of The Frost Giants': [M('Frost Giant Invaders in the city and/or Escape Pile', n=5)],
@@ -90,7 +96,7 @@ RULES = {k: v for k, v in RULES.items() if v}
 
 def _lua_rule(t):
     parts = ['k="%s"' % t['k'], 'l="%s"' % t['l'].replace('"', "'")]
-    for key in ('n', 'pp', 'plus'):
+    for key in ('n', 'pp', 'plus', 'start', 'cd'):
         if key in t: parts.append('%s=%d' % (key, t[key]))
     return '{' + ','.join(parts) + '}'
 
@@ -214,6 +220,14 @@ function ctrLine(i, r)
         if auto == nil then return r.l .. ": not found", false, 0 end
         local left = auto + adj
         return r.l .. ": " .. left .. " cards left (Evil wins at 0)", (left <= 0), (left <= 0) and 1 or 0
+    end
+    if r.cd == 1 then
+        --[[counts down from start (cards left in a deck kept by hand): Evil wins when it reaches the target--]]
+        local start = r.start or 0
+        local v = start + adj
+        local won = (tgt ~= nil and v <= tgt and not r.info)
+        local frac = (tgt ~= nil and start > tgt) and ((start - v) / (start - tgt)) or 0
+        return r.l .. ": " .. v .. " (Evil wins at " .. tostring(tgt or 0) .. ")", won, frac
     end
     local manual = (auto == nil)
     local v = (auto or 0) + adj
