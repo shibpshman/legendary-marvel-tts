@@ -305,6 +305,15 @@ def patch_global(src):
             src = _rep(src, old, old + '    local plotNote = nil\n' + chain + '    if plotNote ~= nil then say("Plot setup, do by hand: " .. plotNote) end\n', 1, r, 'Villains Plots: manual setup notes')
         old = 'function addMastermindGroup(mastermindName,schemeName,henchmanCount,villainCount,params,params2)\n    --[[Core --]]\n'
         src = _rep(src, old, 'function addMastermindGroup(mastermindName,schemeName,henchmanCount,villainCount,params,params2)\n    --[[Villains expansion Commanders--]]\n' + ''.join(br) + '    --[[Core --]]\n', 1, r, 'Villains Commanders lead their groups')
+    # the Played count (played_lua.py) defines these events; a base-script handler is renamed so ours can chain to it
+    for ev in ('onObjectDrop', 'onObjectPickUp'):
+        defs = src.count('function %s(' % ev)
+        if src.count(ev) != defs:
+            raise SystemExit('PATCH FAILED: %s is used in the base script other than as "function %s(": chain it by hand' % (ev, ev))
+        if defs:
+            src = _rep(src, 'function %s(' % ev, 'function _base_%s(' % ev, 1, r, '%s: base handler chained' % ev)
+        else:
+            r.append('%-34s x0 -> base script has none, Played count owns it' % ev)
     # header goes after the first comment line
     first_nl = src.index('\n') + 1
     src = src[:first_nl] + '\n' + header() + menu_lua.menu_lua() + '\n' + src[first_nl:]

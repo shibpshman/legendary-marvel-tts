@@ -65,3 +65,31 @@ audit render, Villains appears in Expansions, and the v1 top bar and dock layout
 
 - Crush HYDRA Plot needs New Recruits and Madame HYDRA from the Starting Cards, which are not built.
 - New Heroes' own card text still uses Villains-set wording (Adversary, Commander Tactics).
+
+## Played count (2026-11-03)
+
+Gating question: do base-mod cards carry printed Attack / Recruit? No. A scan of `2410733963.json`
+(4525 card objects) found no GMNotes, `Value` 0 on every card, Description on 11 (Deathbird's bag
+note and the ten Mandarin's Rings), no card scripts, and tags holding only name / Hero / set / team /
+class. The 66 `States` cards are transforming cards, not divided ones.
+
+So the numbers come from the BGG export: `scripts/build_card_values.py` parses
+`source-text/...Heroes And Allies.txt` (only the 24 sets the mod has, so Second Edition and Marvel
+Studios reprints do not clash) and `...Complete Card Text.txt` (starting cards), applies
+`data/card_aliases.json` (18 base-mod names that differ from the export, plus S.H.I.E.L.D. Agent and
+Trooper) and writes `data/card_values.json`. All 797 Hero card names in the base mod resolve.
+
+Decisions:
+- Suggest, do not overwrite. Each player sees a "Played" line (visible to their colour only) with an
+  Apply button that copies the totals into their Attack / Recruit counters. The counters stay manual.
+- Recount automatically on drop and pick-up (debounced 0.7 s), and after End Turn.
+- "X+" cards (about 40% of Heroes) add the printed X and mark the total as a minimum ("6+").
+  Divided cards are not counted; the line says how many to add by hand. Card bonuses are never evaluated.
+- Played area = `tfPlayedOn(mat)`, split out of `tfEndTurn` so both use one definition; cards held in
+  a hand are excluded.
+- If the base Global defines `onObjectDrop` / `onObjectPickUp`, `lua_patch.py` renames it to
+  `_base_...` and ours chains to it (reported in the build report either way).
+
+Not yet confirmed in game: the per-colour panels, the event chaining, and the starting S.H.I.E.L.D.
+Agents and Troopers, which have no Nickname in the base mod. Those count as "not in the card list"
+until their CardIDs are added to `by_id` in `card_aliases.json`.

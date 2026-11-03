@@ -238,7 +238,8 @@ function tfPileAt(pt)
     return c[1]
 end
 
-function tfResetCounters(matPos)
+--[[The Attack and Recruit counters nearest a mat--]]
+function tfMatCounters(matPos)
     local function nearest(list)
         local best, bd
         for _, g in ipairs(list) do
@@ -251,8 +252,12 @@ function tfResetCounters(matPos)
         end
         return best
     end
-    for _, list in ipairs({ATTACK_COUNTERS, RECRUIT_COUNTERS}) do
-        local o = nearest(list)
+    return nearest(ATTACK_COUNTERS), nearest(RECRUIT_COUNTERS)
+end
+
+function tfResetCounters(matPos)
+    local att, rec = tfMatCounters(matPos)
+    for _, o in ipairs({att, rec}) do
         if o ~= nil then pcall(function() o.Counter.setValue(0) end) end
     end
 end
@@ -273,22 +278,19 @@ function tfRefillHQ()
     return n
 end
 
-function tfEndTurn(player)
-    local mat = nil
-    local ok, h = pcall(function() return player.getHandTransform(1) end)
-    if ok and h ~= nil and h.position ~= nil then mat = tfNearestMat({x = h.position.x or h.position[1], z = h.position.z or h.position[3]}) end
-    if mat == nil then tfSay("Could not find your player mat.") return end
+--[[The three pile points of a mat, and the printed area's size--]]
+function tfMatPiles(mat)
+    local draw, pw, ph = tfMatPoint(mat, PILES.draw)
+    return draw, tfMatPoint(mat, PILES.victory), tfMatPoint(mat, PILES.discard), pw, ph
+end
+
+--[[Cards and decks played on a mat: inside its printed area (rotation-aware), not on the Draw / Victory / Discard piles--]]
+function tfPlayedOn(mat)
     local matPos = mat.getPosition()
     local rotY = mat.getRotation().y or 180
-    local draw, pw, ph = tfMatPoint(mat, PILES.draw)
-    local vict = tfMatPoint(mat, PILES.victory)
-    local disc = tfMatPoint(mat, PILES.discard)
+    local draw, vict, disc, pw, ph = tfMatPiles(mat)
     local keepers = {draw, vict, disc}
-    --[[everything to discard: the hand and the cards played on the mat--]]
-    local todo = {}
-    local seen = {}
-    local okh, hand = pcall(function() return player.getHandObjects(1) end)
-    if okh and hand ~= nil then for _, o in ipairs(hand) do todo[#todo + 1] = o; seen[o] = true end end
+    local out = {}
     local th = math.rad(rotY - 180)
     for _, o in ipairs(tfAt(matPos.x, matPos.z, pw / 2 + 0.5, pw / 2 + 0.5)) do
         local p = o.getPosition()
@@ -300,7 +302,26 @@ function tfEndTurn(player)
         for _, k in ipairs(keepers) do
             if (p.x - k.x) ^ 2 + (p.z - k.z) ^ 2 < 2.8 ^ 2 then isPile = true end
         end
-        if inside and not isPile and not seen[o] then todo[#todo + 1] = o; seen[o] = true end
+        if inside and not isPile then out[#out + 1] = o end
+    end
+    return out
+end
+
+function tfEndTurn(player)
+    local mat = nil
+    local ok, h = pcall(function() return player.getHandTransform(1) end)
+    if ok and h ~= nil and h.position ~= nil then mat = tfNearestMat({x = h.position.x or h.position[1], z = h.position.z or h.position[3]}) end
+    if mat == nil then tfSay("Could not find your player mat.") return end
+    local matPos = mat.getPosition()
+    local rotY = mat.getRotation().y or 180
+    local draw, vict, disc = tfMatPiles(mat)
+    --[[everything to discard: the hand and the cards played on the mat--]]
+    local todo = {}
+    local seen = {}
+    local okh, hand = pcall(function() return player.getHandObjects(1) end)
+    if okh and hand ~= nil then for _, o in ipairs(hand) do todo[#todo + 1] = o; seen[o] = true end end
+    for _, o in ipairs(tfPlayedOn(mat)) do
+        if not seen[o] then todo[#todo + 1] = o; seen[o] = true end
     end
     local pile = tfPileAt(disc)
     local count = 0
@@ -353,6 +374,7 @@ function tfEndTurnCo()
     local ok, err = pcall(tfEndTurn, TURN.player)
     TURN.busy = false
     if not ok then print("End Turn failed: " .. tostring(err)) end
+    pcall(plSchedule)
     return 1
 end
 
