@@ -89,7 +89,6 @@ RULES = {
     'The Contest Of Champions': [M('Evil Triumphs', n=6)], 'Destroy The Nova Corps': [M("KO'd Nova Centurions", pp=5)],
     'Turn The Soul Of Adam Warlock': [M("Soul's Corruptions", n=8)], 'Ruin the Perfect Wedding': [M("Wedding Hero Stacks KO'd (either one)", n=1)],
     'War of Kings': [M('Victorious Generals', n=6)], 'Divide And Conquer': [M('Hero Decks gone', n=5)],
-    'Pan-Dimensional Plague ': [],
 }
 RULES = {k: v for k, v in RULES.items() if v}
 
