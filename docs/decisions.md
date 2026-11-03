@@ -90,6 +90,9 @@ Decisions:
 - If the base Global defines `onObjectDrop` / `onObjectPickUp`, `lua_patch.py` renames it to
   `_base_...` and ours chains to it (reported in the build report either way).
 
-Not yet confirmed in game: the per-colour panels, the event chaining, and the starting S.H.I.E.L.D.
-Agents and Troopers, which have no Nickname in the base mod. Those count as "not in the card list"
-until their CardIDs are added to `by_id` in `card_aliases.json`.
+The starting S.H.I.E.L.D. Agents and Troopers have no Nickname in the base mod; they are found by CardID
+(`by_id` in `card_aliases.json`): decks 44-48 are the Player1-5Starter decks, index 03 = Agent (8 per
+player), 05 = Trooper (4 per player). Inside a stacked Deck on the mat they still count as unknown,
+because deck entries carry no CardID.
+
+Not yet confirmed in game: the per-colour panels and their placement, and the event chaining.
