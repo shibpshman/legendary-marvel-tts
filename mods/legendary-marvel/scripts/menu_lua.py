@@ -541,6 +541,7 @@ UIS = {inGame = nil}
 --[[Play buttons are greyed out until a game is set up; New Game while one is running--]]
 function uiSyncButtons()
     local g = gameInProgress()
+    if g then pcall(plSyncApply) end
     if g == UIS.inGame then return end
     UIS.inGame = g
     for _, id in ipairs({"btnVillain", "btnEndTurn", "btnRefill"}) do
@@ -548,7 +549,7 @@ function uiSyncButtons()
     end
     pcall(function() UI.setAttribute("btnSetup", "interactable", tostring(not g)) end)
     if not g then
-        PLAYED.text = {}
+        PLAYED.text, PLAYED.totals, PLAYED.mats, PLAYED.stale = {}, {}, {}, {}
         for _, c in ipairs(PLAYED_COLORS) do pcall(function() UI.setAttribute("playP_" .. c, "active", "false") end) end
     else
         pcall(plSchedule)

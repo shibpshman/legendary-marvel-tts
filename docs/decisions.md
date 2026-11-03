@@ -82,6 +82,8 @@ Trooper) and writes `data/card_values.json`. All 797 Hero card names in the base
 Decisions:
 - Suggest, do not overwrite. Each player sees a "Played" line (visible to their colour only) with an
   Apply button that copies the totals into their Attack / Recruit counters. The counters stay manual.
+- Apply turns amber ("Apply") while the counters by the mat differ from the Played totals and dim
+  ("Applied") once they match; hand edits to a counter are noticed by the 3-second UI poll.
 - Recount automatically on drop and pick-up (debounced 0.7 s), and after End Turn.
 - "X+" cards (about 40% of Heroes) add the printed X and mark the total as a minimum ("6+").
   Divided cards are not counted; the line says how many to add by hand. Card bonuses are never evaluated.

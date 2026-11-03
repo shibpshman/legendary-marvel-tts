@@ -21,7 +21,10 @@ CARDV = __CARDV__
 CARDV_HERO = __CARDV_HERO__
 CARDV_ID = __CARDV_ID__
 PLAYED_COLORS = {__COLORS__}
-PLAYED = {pending = 0, text = {}, totals = {}}
+PLAYED = {pending = 0, text = {}, totals = {}, mats = {}, stale = {}}
+--[[Apply button colours: amber while the counters differ from the Played totals, dim once they match--]]
+PLAYED_STALE = "#FFD27F|#FFE3A6|#D9B060|#C8C8C8"
+PLAYED_SYNCED = "#5E6A5C|#7A8A77|#4A5448|#C8C8C8"
 
 function plNorm(s)
     s = string.gsub(s or "", "\226\128\153", "'")
@@ -144,7 +147,9 @@ function plRecount()
         local t = plTallyObjects(plOnMat(mat))
         PLAYED.totals[color] = t
         local s = plText(t)
+        PLAYED.mats[color] = mat
         if PLAYED.text[color] ~= s then plShow(color, s) end
+        plMarkApply(color)
     end
 end
 
@@ -163,6 +168,28 @@ function plSchedule()
     end)
 end
 
+--[[Highlights Apply when the counters by this player's mat do not hold the Played totals. Counters are read, never
+    written; a hand edit of a counter is picked up by the 3-second UI poll (plSyncApply).--]]
+function plMarkApply(color)
+    local t, mat = PLAYED.totals[color], PLAYED.mats[color]
+    if t == nil or mat == nil then return end
+    local att, rec = tfMatCounters(mat.getPosition())
+    local function val(o)
+        if o == nil then return nil end
+        local ok, v = pcall(function() return o.Counter.getValue() end)
+        return ok and v or nil
+    end
+    local stale = (val(att) ~= math.floor(t.a)) or (val(rec) ~= math.floor(t.r))
+    if PLAYED.stale[color] == stale then return end
+    PLAYED.stale[color] = stale
+    pcall(function() UI.setAttribute("playB_" .. color, "colors", stale and PLAYED_STALE or PLAYED_SYNCED) end)
+    pcall(function() UI.setValue("playB_" .. color, stale and "Apply" or "Applied") end)
+end
+
+function plSyncApply()
+    for color, _ in pairs(PLAYED.totals) do pcall(plMarkApply, color) end
+end
+
 function onPlayedApply(player, value, id)
     local color = (type(player) == "string") and player or player.color
     local mat = plSeats()[color]
@@ -174,7 +201,9 @@ function onPlayedApply(player, value, id)
     local msg = color .. " counters set from the cards played: Attack " .. math.floor(t.a) .. ", Recruit " .. math.floor(t.r) .. "."
     if t.ap or t.rp or t.div > 0 or t.unknown > 0 then msg = msg .. " Add card bonuses and divided cards by hand." end
     tfSay(msg)
+    PLAYED.totals[color], PLAYED.mats[color] = t, mat
     plShow(color, plText(t))
+    plMarkApply(color)
 end
 
 function playedXml(add)
@@ -184,7 +213,7 @@ function playedXml(add)
         add('<Panel id="playP_' .. c .. '" visibility="' .. c .. '" active="' .. tostring(show and txt ~= nil) .. '" rectAlignment="UpperCenter" offsetXY="0 -164" width="760" height="34" color="rgba(0.06,0.07,0.11,0.88)">')
         add('<HorizontalLayout padding="10 6 4 4" spacing="8" childForceExpandWidth="false" childForceExpandHeight="true">')
         add('<Text id="playT_' .. c .. '" preferredWidth="650" fontSize="13" color="#FFFFFF" alignment="MiddleLeft">' .. esc(txt or "") .. '</Text>')
-        add('<Button id="playB_' .. c .. '" onClick="onPlayedApply" class="go" preferredWidth="86" tooltip="' .. esc("Set your Attack and Recruit counters to these totals (printed values only).") .. '">Apply</Button>')
+        add('<Button id="playB_' .. c .. '" onClick="onPlayedApply" colors="' .. ((PLAYED.stale[c] == false) and PLAYED_SYNCED or PLAYED_STALE) .. '" preferredWidth="86" tooltip="' .. esc("Set your Attack and Recruit counters to these totals (printed values only). Amber: the counters do not match yet.") .. '">' .. ((PLAYED.stale[c] == false) and "Applied" or "Apply") .. '</Button>')
         add('</HorizontalLayout>')
         add('</Panel>')
     end
