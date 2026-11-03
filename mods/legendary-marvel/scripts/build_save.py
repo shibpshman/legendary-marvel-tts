@@ -3,8 +3,13 @@
  - every image URL that has a rebuilt file in TTS_work\\new becomes a file:/// URL in ASSETS\\img
  - main board gets the Universal Mat transform, boards/zone updated, Lua patched (lua_patch.py)
  - writes into an existing save slot whose in-file SaveName matches --name (create it once in game)
-Never modifies the Workshop JSON. Prints timestamped progress; long steps print a heartbeat every 10 s."""
-import argparse, glob, json, os, re, shutil, sys, threading, time
+Never modifies the Workshop JSON. Prints timestamped progress; long steps print a heartbeat every 10 s.
+
+Base-mod pinning: every Lua patch is an exact-text match against the Workshop mod, so the build hashes the mod
+(SHA-256) and compares it with the recorded baseline in base_mod_sha256.txt. A difference is always reported;
+--strict stops the build on it (or when no baseline is recorded). --record-base writes the current hash as the
+baseline (next to this script); copy it to the repo's data/ to version it."""
+import argparse, glob, hashlib, json, os, re, shutil, sys, threading, time
 import lua_patch as P
 import mat_config as C
 
@@ -15,7 +20,13 @@ ap.add_argument('--work', default=r'E:\Media\Board Games\TTS_work')
 ap.add_argument('--assets', default=r'E:\Legendary_TTS_Assets')
 ap.add_argument('--name', default='Legendary Universal')
 ap.add_argument('--dry', action='store_true', help='report only, write nothing')
+ap.add_argument('--strict', action='store_true', help='stop if the Workshop mod differs from the recorded baseline hash (or none is recorded)')
+ap.add_argument('--record-base', action='store_true', help='record the Workshop mod\'s current hash as the baseline (base_mod_sha256.txt next to this script)')
 a = ap.parse_args()
+HERE = os.path.dirname(os.path.abspath(__file__))
+BASE_SHA_CANDIDATES = [os.environ.get('LEGENDARY_BASE_SHA', ''), os.path.join(a.work, 'base_mod_sha256.txt'),
+                       os.path.join(HERE, 'base_mod_sha256.txt'), 'base_mod_sha256.txt',
+                       os.path.join(HERE, '..', 'data', 'base_mod_sha256.txt')]
 
 MAIN_BOARD, ZONE_BOARD = '083da5', 'a63bcd'
 MOVES = C.MOVES
@@ -68,6 +79,37 @@ log('phase 2/6: reading the mod JSON (%s, %.0f MB)' % (a.mod, os.path.getsize(a.
 with Heartbeat('reading the mod JSON'):
     mod = json.load(open(a.mod, encoding='utf-8'))
 log('   %d top-level objects' % len(mod['ObjectStates']))
+
+
+def sha256_file(path):
+    h = hashlib.sha256()
+    with open(path, 'rb') as f:
+        for b in iter(lambda: f.read(1 << 20), b''): h.update(b)
+    return h.hexdigest()
+
+
+def base_check():
+    """(line for the report, ok). ok is False when the hash differs from the baseline or no baseline is recorded."""
+    cur = sha256_file(a.mod)
+    if a.record_base:
+        dst = os.path.join(HERE, 'base_mod_sha256.txt')
+        with open(dst, 'w', encoding='ascii') as f: f.write(cur + '\n')
+        return 'base mod sha256 %s: RECORDED as the baseline in %s (copy it to the repo\'s data/ to version it)' % (cur, dst), True
+    path = next((p for p in BASE_SHA_CANDIDATES if p and os.path.isfile(p)), None)
+    if path is None:
+        return 'base mod sha256 %s: NO BASELINE recorded (run with --record-base once the build is known good)' % cur, False
+    want = open(path, encoding='ascii').read().split()[0].lower()
+    if want == cur:
+        return 'base mod sha256 %s: matches the baseline in %s' % (cur, path), True
+    return ('base mod sha256 %s: DIFFERS from the baseline %s in %s. The Workshop mod changed: read the Lua patch report '
+            'below; if every patch applied and the game plays, run --record-base to accept it' % (cur, want, path)), False
+
+
+with Heartbeat('hashing the mod JSON'):
+    base_line, base_ok = base_check()
+log('   ' + base_line)
+if a.strict and not base_ok:
+    sys.exit('--strict: stopping because the Workshop mod does not match the recorded baseline (see the line above).')
 
 stats = {'url': 0, 'kept': 0, 'bag_lua': 0}
 used = set()
@@ -183,6 +225,7 @@ for g, o in tops.items():
         hits.append('%s %r %s at (%.2f, %.2f)' % (g, o.get('Nickname'), o.get('Name'), tr['posX'], tr['posZ']))
 
 print(P.describe())
+print('\n' + base_line)
 print('\nLua patches (global):')
 for line in report: print('  ', line)
 print('bag scripts patched: %d  literal counts: %s' % (stats['bag_lua'], bag_counts))
