@@ -123,9 +123,15 @@ if os.path.exists(LOGO):
     lg.putalpha(lg.getchannel('A').point(lambda v: int(v * 0.10)))
     im.alpha_composite(lg, ((bx0 + bx1) // 2 - side // 2, (by0 + by1) // 2 - side // 2 + 30))
 
-for uv, label, col in ((C.PM_ATTACK_UV, 'ATTACK', RED), (C.PM_RECRUIT_UV, 'RECRUIT', GOLD)):
+# the three counter pads (Attack, Recruit, Shards) sit on these boxes and hide their middle, so each label goes above its box
+PURPLE = (190, 140, 255)
+for uv, label, col in ((C.PM_ATTACK_UV, 'ATTACK', RED), (C.PM_RECRUIT_UV, 'RECRUIT', GOLD), (C.PM_SHARDS_UV, 'SHARDS', PURPLE)):
     cx, cy = px(uv)
-    panel((cx - 270, cy - 150, cx + 270, cy + 150), label, accent=col, fill=tint(col, 0.16), r=34)
+    panel((cx - 250, cy - 150, cx + 250, cy + 150), None, accent=col, fill=tint(col, 0.16), r=34)
+    _d = ImageDraw.Draw(im)
+    _f = font(46)
+    _w = _d.textlength(label, font=_f)
+    _d.text((cx - _w / 2, cy - 150 - 58), label, font=_f, fill=(255, 255, 255, 240), stroke_width=3, stroke_fill=(0, 0, 0, 255))
 
 
 # ---- icons: class and team icons cut from the official Player Mat PDF (vector, rendered large), on light tiles so the dark ones show ----
@@ -163,20 +169,10 @@ def tile(icon, size):
     return t
 
 
-def burst(d, cx, cy, r, col, points=10):
-    import math
-    pts = []
-    for i in range(points * 2):
-        rr = r if i % 2 == 0 else r * 0.62
-        a = math.pi * i / points - math.pi / 2
-        pts.append((cx + rr * math.cos(a), cy + rr * math.sin(a)))
-    d.polygon(pts, fill=col, outline=(255, 255, 255, 255))
-
-
 try:
     icons = pdf_icons()
     SZ = 70
-    row_y = int(1243)
+    row_y = int(1235)
     classes = ['Strength', 'Instinct', 'Covert', 'Tech', 'Ranged']
     teams = ['X-Men', 'Avengers', 'S.H.I.E.L.D.', 'Spider Friends']
     gap = 18
@@ -188,16 +184,6 @@ try:
         x += SZ + gap
 except Exception as e:
     print('icons skipped:', e)
-
-# Attack and Recruit symbols in their boxes (drawn: the originals are too small to enlarge)
-dr = ImageDraw.Draw(im)
-for uv, col, kind in ((C.PM_ATTACK_UV, (230, 60, 50, 255), 'a'), (C.PM_RECRUIT_UV, (245, 190, 40, 255), 'r')):
-    cx, cy = px(uv)
-    if kind == 'a':
-        burst(dr, cx - 190, cy + 20, 62, col)
-    else:
-        dr.ellipse((cx - 190 - 56, cy + 20 - 56, cx - 190 + 56, cy + 20 + 56), fill=col, outline=(255, 255, 255, 255), width=4)
-        dr.ellipse((cx - 190 - 38, cy + 20 - 38, cx - 190 + 38, cy + 20 + 38), outline=(120, 80, 0, 255), width=5)
 
 os.makedirs(os.path.dirname(a.out) or '.', exist_ok=True)
 official = os.path.join(os.path.dirname(a.out), 'playermat_official.png')

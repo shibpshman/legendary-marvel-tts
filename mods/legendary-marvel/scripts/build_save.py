@@ -220,25 +220,32 @@ if os.path.exists(PM_PNG):
             if nm and not c.get('Nickname'): c['Nickname'] = nm; named += 1
         pm_report.append('starting deck %s: %d cards named' % (dg, named))
 
-    # Attack / Recruit counters onto the boxes printed on the nearest mat
+    # The three counter pads of each seat (Attack, Recruit, Shards) are chained together with fixed joints. Moving one without the others
+    # makes the joints yank them around, so each trio is released and every pad goes onto its own box on the nearest mat.
     import turn_lua as _T
     def mat_xz(tr, pw, ph, uv):
         lx, lz = (uv[0] - .5) * pw, -(uv[1] - .5) * ph
         th = math.radians(tr['rotY'] - 180)
         return round(tr['posX'] + lx * math.cos(th) + lz * math.sin(th), 2), round(tr['posZ'] - lx * math.sin(th) + lz * math.cos(th), 2)
-    for guids, uv, nm in ((_T.ATTACK_COUNTERS, C.PM_ATTACK_UV, 'Attack'), (_T.RECRUIT_COUNTERS, C.PM_RECRUIT_UV, 'Recruit')):
-        for cg in guids:
-            co = tops.get(cg)
-            if co is None or not mats: pm_report.append('WARNING: %s counter %s not found' % (nm, cg)); continue
+    def joined(g): return ((tops.get(g) or {}).get('JointFixed') or {}).get('ConnectedBodyGUID')
+    for ag in _T.ATTACK_COUNTERS:
+        at = tops.get(ag)
+        if at is None or not mats: pm_report.append('WARNING: Attack counter %s not found' % ag); continue
+        rg = next((r for r in _T.RECRUIT_COUNTERS if joined(r) == ag), None)
+        sg = joined(ag)
+        ref = at['Transform']
+        g, tr, pw, ph = min(mats, key=lambda m: (m[1]['posX'] - ref['posX']) ** 2 + (m[1]['posZ'] - ref['posZ']) ** 2)
+        for guid, uv, nm in ((ag, C.PM_ATTACK_UV, 'Attack'), (rg, C.PM_RECRUIT_UV, 'Recruit'), (sg, C.PM_SHARDS_UV, 'Shards')):
+            co = tops.get(guid) if guid else None
+            if co is None: pm_report.append('WARNING: %s counter for seat %s not found' % (nm, ag)); continue
+            co.pop('JointFixed', None)
+            co['Locked'] = False
             ct = co['Transform']
-            g, tr, pw, ph = min(mats, key=lambda m: (m[1]['posX'] - ct['posX']) ** 2 + (m[1]['posZ'] - ct['posZ']) ** 2)
             ct['posX'], ct['posZ'] = mat_xz(tr, pw, ph, uv)
-            ct['rotY'] = tr['rotY']
-            # the counter used to stand beside the mat on the table; its centre (y 0.93) is inside the mat slab (y 0.98), and physics
-            # throws it out on load. Spawn it just above the mat, flat, and let it settle.
-            ct['posY'] = round(tr['posY'] + 1.2, 2)
+            ct['rotY'] = (tr['rotY'] + 180) % 360        # a pad faces its seat when it is turned half a turn from the mat
+            ct['posY'] = round(tr['posY'] + 1.2, 2)       # centre was inside the mat slab (0.93 vs 0.98): spawn above it and let it settle
             ct['rotX'] = ct['rotZ'] = 0
-            pm_report.append('%s counter %s -> %s box of mat %s (%.2f, %.2f)' % (nm, cg, nm, g, ct['posX'], ct['posZ']))
+            pm_report.append('%s counter %s -> its box on mat %s (%.2f, %.2f)' % (nm, guid, g, ct['posX'], ct['posZ']))
 else:
     log('no playermat.png in %s, player mats keep their old image (run make_player_mat.py to use the official one)' % a.work)
 

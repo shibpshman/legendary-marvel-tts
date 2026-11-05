@@ -47,8 +47,9 @@ PM_ASPECT = 2400 / 1697.7        # TTS_work\\playermat.png (make_player_mat.py)
 PM_BOARD_H = 25.57               # world height of a Custom_Board at scale 1, frame included (measured from the main board)
 PM_PRINTED_FRAC = 26.9 / 29.4    # printed image / framed object, as measured on the main board
 # our own player mat (make_player_mat_v2.py): slot centres and the Played box as fractions of the image (u across, v down)
-PM_VICTORY_UV, PM_DRAW_UV = (.1083, .2591), (.1083, .6832)
-PM_ARTIFACTS_UV, PM_DISCARD_UV = (.8917, .2591), (.8917, .6832)
-PM_PLAYED_BOX = (.2333, .0707, .7667, .6949)    # u0, v0, u1, v1: cards inside count as played and are swept by End Turn
-PM_ATTACK_UV, PM_RECRUIT_UV = (.379, .848), (.621, .848)    # the Attack / Recruit counters are moved here at build time
+PM_VICTORY_UV, PM_DRAW_UV = (.1083, .2238), (.1083, .6243)
+PM_ARTIFACTS_UV, PM_DISCARD_UV = (.8917, .2238), (.8917, .6243)
+PM_PLAYED_BOX = (.2333, .0589, .7667, .6655)    # u0, v0, u1, v1: cards inside count as played and are swept by End Turn
+# the three counter pads (Attack, Recruit, Shards) sit in one row along the bottom edge, 3.03 world units apart like the pads are
+PM_ATTACK_UV, PM_RECRUIT_UV, PM_SHARDS_UV = (.2704, .9011), (.5, .9011), (.7296, .9011)
 PM_STARTER_DECKS = ['8bff16', '11148f', '973fd9', 'db28dc', 'bcc49a']   # one 12-card starting deck per seat
