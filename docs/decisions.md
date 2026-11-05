@@ -111,7 +111,7 @@ old one as `playermat_official.png`). Same pixel size and aspect, so the placeme
 - `build_save.py` moves each Attack / Recruit counter into its box on the nearest mat, and gives the 12 starting cards per
   seat a Nickname (S.H.I.E.L.D. Agent / Trooper) so they are counted inside a deck. This fixes the "starting cards in a
   stack show as not in the card list" limit.
-- Background is the Hulk art cropped from `boardA` (the side panels carry baked text, so only the centre is used).
+- Background is generated, not art: navy gradient, a soft glow behind the Played box, faint halftone dots in the corners. A first version used cropped Hulk art from `boardA`; it was too busy behind the boxes.
 
 Not confirmed in game: card size against the slots (slots are sized for about 2.2 x 3.1 world units), counter rotation
 and height in their boxes, and whether the Played box is big enough for a long turn.

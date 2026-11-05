@@ -5,13 +5,12 @@ The first run keeps the official render as playermat_official.png next to the ou
 official render, so build_save.py's maths is unchanged. Slot positions are the PM_* values in mat_config.py: this script
 imports them, so the art and the Lua always agree."""
 import argparse, os, shutil, sys
-from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageEnhance
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 import mat_config as C
 
 WORK = r'E:\Media\Board Games\TTS_work'
 ap = argparse.ArgumentParser()
 ap.add_argument('--out', default=os.path.join(WORK, 'playermat.png'))
-ap.add_argument('--art', default=os.path.join(WORK, 'assets_up', 'boardA_upscayl_4x_realesrgan-x4plus-anime.png'))
 a = ap.parse_args()
 
 W, H = 2400, 1698
@@ -29,17 +28,22 @@ def font(sz):
 def px(uv): return int(round(uv[0] * W)), int(round(uv[1] * H))
 
 
-# ---- background: the hero art, cropped to the mat's shape, darkened and tinted navy ----------------------------------
-art = Image.open(a.art).convert('RGB')
-r = W / H
-# the source board prints its own labels and rules text in the side panels: keep only the central art
-cw = int(art.size[0] * 0.52); ch = int(cw / r)
-x0, y0 = (art.size[0] - cw) // 2, int((art.size[1] - ch) * 0.35)
-bg = art.crop((x0, y0, x0 + cw, y0 + ch)).resize((W, H), Image.LANCZOS).filter(ImageFilter.GaussianBlur(3))
-bg = ImageEnhance.Brightness(bg).enhance(0.62)
-bg = ImageEnhance.Color(bg).enhance(1.05)
-navy = Image.new('RGB', (W, H), (8, 14, 38))
-bg = Image.blend(bg, navy, 0.35)
+# ---- background: abstract and quiet. Navy gradient, a soft glow behind the Played box, faint comic halftone in the corners ----
+import numpy as np
+yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+t = yy / H
+base = np.stack([14 + 8 * (1 - t), 22 + 12 * (1 - t), 52 + 22 * (1 - t)], axis=-1)           # top slightly lighter
+gx, gy = W * 0.5, H * 0.40
+glow = np.exp(-(((xx - gx) / (W * 0.40)) ** 2 + ((yy - gy) / (H * 0.42)) ** 2))[..., None]
+base = base + glow * np.array([10, 22, 48], dtype=np.float32)
+# halftone dots, strongest in the four corners and gone by the middle
+step = 34
+dot = (np.hypot((xx % step) - step / 2, (yy % step) - step / 2) < (step * 0.16)).astype(np.float32)
+cd = np.minimum(np.minimum(xx, W - xx), 1e9) / (W * 0.30)
+cv = np.minimum(yy, H - yy) / (H * 0.30)
+edge = np.clip(1 - np.hypot(np.clip(cd, 0, 1), np.clip(cv, 0, 1)) , 0, 1) ** 1.2
+base = base + (dot * edge * 22)[..., None]
+bg = Image.fromarray(np.clip(base, 0, 255).astype(np.uint8), 'RGB')
 im = bg.convert('RGBA')
 
 # vignette so the edges read as a frame
