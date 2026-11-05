@@ -3,7 +3,7 @@
 # ---- where the mat sits and how big it is (world units) -------------------------------------
 CX, CZ = 0.25, 8.0               # board centre
 BOUNDS_W = 29.4                  # width TTS reports for the whole board object, wooden frame included ("Mat width 29.4 OK")
-IMG_W = 27.34                    # printed art width = 93 % of the object width (measured 2026-11-05 from a top-down shot: visible art 31.2 of a 33.62 object); every slot position is computed from this
+IMG_W = 26.9                     # width the slot UVs map onto = 91.5 % of the 29.4 object. Confirmed 2026-11-05 with the --calibrate overlay (crosses vs printed slots); the visible art is a little wider than this, so measuring its edges gives too big a number
 ASPECT = 4275 / 2175             # the 28_Inch skins (same aspect as the old universal mat)
 STAGE_Z = 16.4                   # staging strip just above the mat, inside the cleanup zone
 
@@ -45,7 +45,7 @@ ZONE = dict(posX=CX, posZ=8.05, rotY=0, scaleX=31.0, scaleZ=20.4)
 PLAYER_MATS = ['51edf5', '6212f9', '446b40', '17be32', '9d07a8']
 PM_ASPECT = 2400 / 1697.7        # TTS_work\\playermat.png (make_player_mat.py)
 PM_BOARD_H = 29.2                # world height of a Custom_Board at scale 1, frame included: board 17.10 / 0.5849 and mat 11.69 / 0.4 (measured in game 2026-11-05; 25.57 was stale)
-PM_PRINTED_FRAC = 0.93           # printed art / object size, from the same top-down measurement as IMG_W (board 31.2 of 33.62 wide, 15.9 of 17.10 high)
+PM_PRINTED_FRAC = 0.915          # slot-mapped art / object size, the same fraction as IMG_W / BOUNDS_W (overlay check on the mat gave 0.905 to 0.915)
 # our own player mat (make_player_mat_v2.py): slot centres and the Played box as fractions of the image (u across, v down)
 PM_VICTORY_UV, PM_DRAW_UV = (.1083, .2032), (.1083, .5890)
 PM_ARTIFACTS_UV, PM_DISCARD_UV = (.8917, .2032), (.8917, .5890)

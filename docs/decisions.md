@@ -120,10 +120,11 @@ and height in their boxes, and whether the Played box is big enough for a long t
 
 - **Board and mat sizes, measured in game (2026-11-05).** The load check printed the real sizes (`--calibrate` build, `cal_lua.py`): board object
   33.62 x 17.10 at scale 0.5849, mat object 16.53 x 11.69 at scale 0.4. Both give a height of 29.2 per unit of scale, so `PM_BOARD_H` was stale
-  (25.57), as was `MAT_REF_SCALE / MAT_REF_WIDTH` (0.6307 / 31.7). A top-down shot showed the visible art is 93 % of the object on both axes
-  (31.2 of 33.62 wide, 15.9 of 17.10 high), and the computed slot positions then landed on the printed slots within a few pixels.
-  Constants now: `PM_BOARD_H` 29.2, `PM_PRINTED_FRAC` 0.93, `IMG_W` 27.34 (0.93 x the intended 29.4 board width), board scale 0.5115.
-  Earlier guesses (26.9, then 29.4) were partial fixes. Use `python build_save.py --calibrate` to re-measure; rebuild without it for the normal save.
+  (25.57), as was `MAT_REF_SCALE / MAT_REF_WIDTH` (0.6307 / 31.7). The board scale is now 0.5115 (object 29.4 wide, "Mat width 29.4 OK").
+  The art constants were NOT wrong: `IMG_W` 26.9 and `PM_PRINTED_FRAC` 0.915 (the cloud session's values) are right. The overlay crosses
+  (build slot centres drawn in the art's plane) landed within about 1 % of the printed slots with those; two detours to 29.4 and 27.34 (93 %)
+  came from measuring the visible art edges, which stick out past the area the slot UVs map onto. Do not measure art edges again: use `--calibrate`.
+  Decks sit exactly on their computed positions (diff 0.00); what still shows is camera perspective on raised stacks.
 - **Counter pads.** Attack, Recruit and Shards pads of a seat were chained with fixed joints; the build now releases them and puts each
   pad on its own box (`PM_ATTACK_UV`, `PM_RECRUIT_UV`, `PM_SHARDS_UV`). Pads face their seat (mat rotY + 180).
 - **Seats.** Five hand zones (Red, Green, White front; Yellow left; Purple right) beside the mats; Orange, Pink, Blue removed.

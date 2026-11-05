@@ -11,6 +11,8 @@ CAL_BOARD = {cx = __CX__, cz = __CZ__, w = __W__, h = __H__}
 CAL_BOARD_SLOTS = {__BSLOTS__}
 CAL_MAT_UVS = {__MUVS__}
 CAL_PLAYED = {__PLAYED__}
+CAL_DECKS = {__DECKS__}
+CAL_STARTERS = {__STARTERS__}
 CAL_Y = 1.75   -- above the board (top 1.49) and mat (top 1.37) surfaces, or the lines are hidden inside them
 
 function calCol(c) return {r = c[1], g = c[2], b = c[3]} end
@@ -25,6 +27,27 @@ function calPoly(L, pts, col)
     for _, q in ipairs(pts) do p[#p + 1] = {x = q[1], y = CAL_Y, z = q[2]} end
     p[#p + 1] = p[1]
     L[#L + 1] = {points = p, color = calCol(col), thickness = 0.2}
+end
+
+function calDecks()
+    --[[where each deck is against where the build meant it to be (slot centre), and where its bounding box is centred]]
+    local function report(label, guid, ex, ez)
+        local o = getObjectFromGUID(guid)
+        if o == nil then print('CAL ' .. label .. ': not found') return end
+        local p = o.getPosition()
+        local ok, bc = pcall(function() return o.getBounds().center end)
+        local bs = ok and bc or p
+        print(string.format('CAL %-10s intended (%.2f, %.2f)  position (%.2f, %.2f) diff (%+.2f, %+.2f)  bounds centre (%.2f, %.2f) y %.2f', label, ex, ez, p.x, p.z, p.x - ex, p.z - ez, bs.x, bs.z, p.y))
+    end
+    for _, d in ipairs(CAL_DECKS) do report(d[1], d[2], d[3], d[4]) end
+    for i, g in ipairs(PLAYER_MATS) do
+        local mat = getObjectFromGUID(g)
+        local deckg = CAL_STARTERS[i]
+        if mat ~= nil and deckg ~= nil then
+            local pt = tfMatPoint(mat, PILES.draw)
+            report('draw ' .. i, deckg, pt.x, pt.z)
+        end
+    end
 end
 
 function calDraw()
@@ -64,6 +87,7 @@ function calDraw()
 end
 
 Wait.time(calDraw, 4)
+Wait.time(calDecks, 6)
 '''
 
 
@@ -74,6 +98,11 @@ def cal_lua():
     bs += [(C.CX + (u - .5) * W, C.CZ - (C.CITY_V - .5) * H) for u in C.CITY_U]
     bs += [(C.CX + (u - .5) * W, C.CZ - (C.HQ_V - .5) * H) for u in C.CITY_U]
     muv = [C.PM_VICTORY_UV, C.PM_DRAW_UV, C.PM_ARTIFACTS_UV, C.PM_DISCARD_UV, C.PM_ATTACK_UV, C.PM_RECRUIT_UV, C.PM_SHARDS_UV]
+    dk = []
+    for name, guid, key in (('Bystanders', '15841b', 'bystanders'), ('Wounds', 'dab70e', 'wounds'), ('Officers', '22f0d7', 'shield')):
+        u, v = C.SLOT_UV[key]
+        dk.append('{"%s", "%s", %.3f, %.3f}' % (name, guid, C.CX + (u - .5) * W, C.CZ - (v - .5) * H))
+    starters = ', '.join('"%s"' % g for g in C.PM_STARTER_DECKS)
     f = lambda pts: ', '.join('{%.3f, %.3f}' % p for p in pts)
     return (CAL_LUA.replace('__CX__', '%g' % C.CX).replace('__CZ__', '%g' % C.CZ).replace('__W__', '%g' % W).replace('__H__', '%g' % H)
-            .replace('__BSLOTS__', f(bs)).replace('__MUVS__', f(muv)).replace('__PLAYED__', ', '.join('%g' % v for v in C.PM_PLAYED_BOX)))
+            .replace('__BSLOTS__', f(bs)).replace('__MUVS__', f(muv)).replace('__DECKS__', ', '.join(dk)).replace('__STARTERS__', starters).replace('__PLAYED__', ', '.join('%g' % v for v in C.PM_PLAYED_BOX)))
