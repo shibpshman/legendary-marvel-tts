@@ -15,13 +15,18 @@ a = ap.parse_args()
 
 W, H = 2400, 1698
 CARD_W, CARD_H = 400, 560            # slot frame, about one card (2.2 x 3.1 world units at the saved scale)
-FONT = r'C:\Windows\Fonts\bahnschrift.ttf'
+# label font: Avenir Heavy Oblique (its slant echoes the Legendary logo); falls back to Bahnschrift if it is not installed
+FONT_DIRS = [r'C:\Windows\Fonts', os.path.expandvars(r'%LOCALAPPDATA%\Microsoft\Windows\Fonts')]
+FONT_FILES = ['AvenirLTProHeavyOblique.otf', 'bahnschrift.ttf']
+FONT = next((os.path.join(d, f) for f in FONT_FILES for d in FONT_DIRS if os.path.exists(os.path.join(d, f))), None)
+if FONT is None: sys.exit('no label font found: install Avenir LT Pro or keep bahnschrift.ttf')
 
 
 def font(sz):
     f = ImageFont.truetype(FONT, sz)
-    try: f.set_variation_by_name('Bold')
-    except Exception: pass
+    if FONT.lower().endswith('bahnschrift.ttf'):
+        try: f.set_variation_by_name('Bold')
+        except Exception: pass
     return f
 
 
