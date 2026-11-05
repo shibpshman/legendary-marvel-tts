@@ -272,6 +272,34 @@ sys.stdout.flush()
 if a.dry:
     log('--dry: nothing written'); sys.exit(0)
 
+# ---- table: a flat custom table instead of the wooden RPG table, and the expansion bags in tidy rows -------------------------
+TABLE_PNG = os.path.join(a.work, 'table.png')
+if os.path.exists(TABLE_PNG):
+    mod['Table'] = 'Table_Custom'
+    mod['TableURL'] = 'file:///' + os.path.join(IMG, 'table.png').replace(chr(92), '/')
+    log('table: Table_Custom with %s' % TABLE_PNG)
+else:
+    log('no table.png in %s (python make_table.py): the save keeps its wooden table' % a.work)
+# the four core bags stay in the back row (z 20) with the Scheme / Twist / Strike decks; every other bag goes into two rows behind it,
+# sorted by name, with room between them for each bag's Unpack / Repack buttons
+CORE_BAGS = {'Heroes', 'Villains', 'Henchmen', 'Masterminds'}
+bags = [o for o in mod['ObjectStates'] if o.get('Name') == 'Bag']
+rest = [o for o in bags if not (o.get('Nickname') in CORE_BAGS and abs(o['Transform']['posZ'] - 20.1) < 0.3)]
+rest.sort(key=lambda o: (o.get('Nickname', '').startswith('Extra'), o.get('Nickname', '').lower()))
+PER_ROW, DX, ROW_Z, DZ = 12, 3.8, 26.0, 3.8
+for i, o in enumerate(rest):
+    r, c = divmod(i, PER_ROW)
+    n = min(PER_ROW, len(rest) - r * PER_ROW)
+    t = o['Transform']
+    t['posX'] = round((c - (n - 1) / 2) * DX, 2)
+    t['posZ'] = round(ROW_Z + r * DZ, 2)
+    t['posY'] = 2.0
+    t['rotX'] = t['rotZ'] = 0
+log('bags: %d left in the back row, %d laid out in %d rows at z %.1f..%.1f' % (len(bags) - len(rest), len(rest), (len(rest) + PER_ROW - 1) // PER_ROW, ROW_Z, ROW_Z + DZ * ((len(rest) - 1) // PER_ROW)))
+for o in mod['ObjectStates']:
+    if o.get('Nickname', '').startswith('Expansion Bags Here'):
+        o['Transform']['posX'], o['Transform']['posZ'] = -27.0, 27.9
+
 # ---- find the save slot ------------------------------------------------------------------
 log('phase 4/6: looking for a save named %r in %s' % (a.name, a.saves))
 slot = None
@@ -306,6 +334,9 @@ for i, (name, sp, d) in enumerate(todo, 1):
 if os.path.exists(PM_PNG):
     shutil.copy2(PM_PNG, os.path.join(IMG, 'playermat.png'))
     log('   copied playermat.png')
+if os.path.exists(TABLE_PNG):
+    shutil.copy2(TABLE_PNG, os.path.join(IMG, 'table.png'))
+    log('   copied table.png')
 for p in skin_files:
     dst = os.path.join(IMG, os.path.basename(p))
     if not os.path.exists(dst) or os.path.getsize(dst) != os.path.getsize(p):
