@@ -182,13 +182,19 @@ for g, slot_name in MOVES.items():
         log('WARNING: deck %s not found, not moved' % g)
 
 # ---- player mats: official Player Mat image, starting decks onto the Draw Deck slot ------------------------------
+def versioned(path, stem):
+    """stem_<hash of the file>.png: TTS caches images by URL, so a changed file under the same name would show the old art."""
+    return '%s_%s.png' % (stem, hashlib.md5(open(path, 'rb').read()).hexdigest()[:8])
+
+
 PM_PNG = os.path.join(a.work, 'playermat.png')
+PM_NAME = versioned(PM_PNG, 'playermat') if os.path.exists(PM_PNG) else 'playermat.png'
 pm_report = []
 if os.path.exists(PM_PNG):
     import math
     from PIL import Image
     with Image.open(PM_PNG) as _im: pm_aspect = _im.size[0] / _im.size[1]
-    pm_url = 'file:///' + os.path.join(IMG, 'playermat.png').replace('\\', '/')
+    pm_url = 'file:///' + os.path.join(IMG, PM_NAME).replace(chr(92), '/')
     mats = []
     for g in C.PLAYER_MATS:
         o = tops.get(g)
@@ -246,6 +252,22 @@ if os.path.exists(PM_PNG):
             ct['posY'] = round(tr['posY'] + 1.2, 2)       # centre was inside the mat slab (0.93 vs 0.98): spawn above it and let it settle
             ct['rotX'] = ct['rotZ'] = 0
             pm_report.append('%s counter %s -> its box on mat %s (%.2f, %.2f)' % (nm, guid, g, ct['posX'], ct['posZ']))
+    # Five seats, one hand zone beside each mat on the player's side. The base mod has 8 zones round the table, only some of them near a mat.
+    SEATS = {'51edf5': '182660', '6212f9': '5bde5d', '446b40': '248022', '17be32': 'fbc0d5', '9d07a8': 'd02301'}   # mat -> hand zone (Red, Green, White, Yellow, Purple)
+    for mg, hg in SEATS.items():
+        m = next((m for m in mats if m[0] == mg), None); hz = tops.get(hg)
+        if m is None or hz is None: pm_report.append('WARNING: seat for mat %s not built' % mg); continue
+        _, tr, pw, ph = m
+        ht = hz['Transform']
+        rot = round(tr['rotY']) % 360
+        if rot == 180:   ht['posX'], ht['posZ'], ht['rotY'] = tr['posX'], round(tr['posZ'] - ph / 2 - 0.5 - 9.2 / 2, 2), 0
+        elif rot == 270: ht['posX'], ht['posZ'], ht['rotY'] = round(tr['posX'] - ph / 2 - 0.5 - 9.2 / 2, 2), tr['posZ'], 90
+        else:            ht['posX'], ht['posZ'], ht['rotY'] = round(tr['posX'] + ph / 2 + 0.5 + 9.2 / 2, 2), tr['posZ'], 270
+        pm_report.append('seat %s: hand zone %s -> (%.2f, %.2f) rot %d' % (hz.get('FogColor'), hg, ht['posX'], ht['posZ'], ht['rotY']))
+    drop = {'86a578', '3b9aeb', 'e5f681'}      # Orange, Pink, Blue
+    before = len(mod['ObjectStates'])
+    mod['ObjectStates'][:] = [o for o in mod['ObjectStates'] if o.get('GUID') not in drop]
+    pm_report.append('hand zones removed: %d (Orange, Pink, Blue)' % (before - len(mod['ObjectStates'])))
 else:
     log('no playermat.png in %s, player mats keep their old image (run make_player_mat.py to use the official one)' % a.work)
 
@@ -281,9 +303,10 @@ if a.dry:
 
 # ---- table: a flat custom table instead of the wooden RPG table, and the expansion bags in tidy rows -------------------------
 TABLE_PNG = os.path.join(a.work, 'table.png')
+TABLE_NAME = versioned(TABLE_PNG, 'table') if os.path.exists(TABLE_PNG) else 'table.png'
 if os.path.exists(TABLE_PNG):
     mod['Table'] = 'Table_Custom'
-    mod['TableURL'] = 'file:///' + os.path.join(IMG, 'table.png').replace(chr(92), '/')
+    mod['TableURL'] = 'file:///' + os.path.join(IMG, TABLE_NAME).replace(chr(92), '/')
     log('table: Table_Custom with %s' % TABLE_PNG)
 else:
     log('no table.png in %s (python make_table.py): the save keeps its wooden table' % a.work)
@@ -339,11 +362,11 @@ for i, (name, sp, d) in enumerate(todo, 1):
         shutil.copy2(sp, d)
     done_mb += mb
 if os.path.exists(PM_PNG):
-    shutil.copy2(PM_PNG, os.path.join(IMG, 'playermat.png'))
-    log('   copied playermat.png')
+    shutil.copy2(PM_PNG, os.path.join(IMG, PM_NAME))
+    log('   copied %s' % PM_NAME)
 if os.path.exists(TABLE_PNG):
-    shutil.copy2(TABLE_PNG, os.path.join(IMG, 'table.png'))
-    log('   copied table.png')
+    shutil.copy2(TABLE_PNG, os.path.join(IMG, TABLE_NAME))
+    log('   copied %s' % TABLE_NAME)
 for p in skin_files:
     dst = os.path.join(IMG, os.path.basename(p))
     if not os.path.exists(dst) or os.path.getsize(dst) != os.path.getsize(p):
