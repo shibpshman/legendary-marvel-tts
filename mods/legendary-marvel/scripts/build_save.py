@@ -260,6 +260,7 @@ if os.path.exists(PM_PNG):
             ct['rotY'] = (tr['rotY'] + 180) % 360        # a pad faces its seat when it is turned half a turn from the mat
             ct['posY'] = round(tr['posY'] + 1.2, 2)       # centre was inside the mat slab (0.93 vs 0.98): spawn above it and let it settle
             ct['rotX'] = ct['rotZ'] = 0
+            ct['scaleX'] = ct['scaleY'] = ct['scaleZ'] = 0.8   # at full size a pad covers 90 % of its box and hides the label
             pm_report.append('%s counter %s -> its box on mat %s (%.2f, %.2f)' % (nm, guid, g, ct['posX'], ct['posZ']))
     # Five seats, one hand zone beside each mat on the player's side. The base mod has 8 zones round the table, only some of them near a mat.
     SEATS = {'51edf5': '182660', '6212f9': '5bde5d', '446b40': '248022', '17be32': 'fbc0d5', '9d07a8': 'd02301'}   # mat -> hand zone (Red, Green, White, Yellow, Purple)
@@ -337,7 +338,7 @@ for i, o in enumerate(rest):
 log('bags: %d left in the back row, %d laid out in %d rows at z %.1f..%.1f' % (len(bags) - len(rest), len(rest), (len(rest) + PER_ROW - 1) // PER_ROW, ROW_Z, ROW_Z + DZ * ((len(rest) - 1) // PER_ROW)))
 for o in mod['ObjectStates']:
     if o.get('Nickname', '').startswith('Expansion Bags Here'):
-        o['Transform']['posX'], o['Transform']['posZ'] = -27.0, 27.9
+        o['Transform']['posX'], o['Transform']['posZ'] = -36.5, 28.0
 
 # ---- find the save slot ------------------------------------------------------------------
 log('phase 4/6: looking for a save named %r in %s' % (a.name, a.saves))
