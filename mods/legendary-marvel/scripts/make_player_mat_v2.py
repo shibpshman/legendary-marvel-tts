@@ -109,6 +109,15 @@ u0, v0, u1, v1 = C.PM_PLAYED_BOX
 (bx0, by0), (bx1, by1) = px((u0, v0)), px((u1, v1))
 panel((bx0, by0, bx1, by1), 'PLAYED', None, accent=WHITE, fill=(6, 10, 30, 110), r=40)
 
+# faint Legendary icon in the middle of the Played box (flat icon from make_logo_icon.py)
+LOGO = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'legendary_icon.png')
+if os.path.exists(LOGO):
+    lg = Image.open(LOGO).convert('RGBA')
+    side = int((by1 - by0) * 0.78)
+    lg = lg.resize((side, side), Image.LANCZOS)
+    lg.putalpha(lg.getchannel('A').point(lambda v: int(v * 0.10)))
+    im.alpha_composite(lg, ((bx0 + bx1) // 2 - side // 2, (by0 + by1) // 2 - side // 2 + 30))
+
 for uv, label, col in ((C.PM_ATTACK_UV, 'ATTACK', RED), (C.PM_RECRUIT_UV, 'RECRUIT', GOLD)):
     cx, cy = px(uv)
     panel((cx - 270, cy - 150, cx + 270, cy + 150), label, accent=col, fill=tint(col, 0.16), r=34)
