@@ -234,6 +234,10 @@ if os.path.exists(PM_PNG):
             g, tr, pw, ph = min(mats, key=lambda m: (m[1]['posX'] - ct['posX']) ** 2 + (m[1]['posZ'] - ct['posZ']) ** 2)
             ct['posX'], ct['posZ'] = mat_xz(tr, pw, ph, uv)
             ct['rotY'] = tr['rotY']
+            # the counter used to stand beside the mat on the table; its centre (y 0.93) is inside the mat slab (y 0.98), and physics
+            # throws it out on load. Spawn it just above the mat, flat, and let it settle.
+            ct['posY'] = round(tr['posY'] + 1.2, 2)
+            ct['rotX'] = ct['rotZ'] = 0
             pm_report.append('%s counter %s -> %s box of mat %s (%.2f, %.2f)' % (nm, cg, nm, g, ct['posX'], ct['posZ']))
 else:
     log('no playermat.png in %s, player mats keep their old image (run make_player_mat.py to use the official one)' % a.work)
