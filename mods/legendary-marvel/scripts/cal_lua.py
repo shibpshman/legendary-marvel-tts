@@ -11,18 +11,20 @@ CAL_BOARD = {cx = __CX__, cz = __CZ__, w = __W__, h = __H__}
 CAL_BOARD_SLOTS = {__BSLOTS__}
 CAL_MAT_UVS = {__MUVS__}
 CAL_PLAYED = {__PLAYED__}
-CAL_Y = 1.25
+CAL_Y = 1.75   -- above the board (top 1.49) and mat (top 1.37) surfaces, or the lines are hidden inside them
+
+function calCol(c) return {r = c[1], g = c[2], b = c[3]} end
 
 function calCross(L, x, z, col)
-    L[#L + 1] = {points = {{x - 0.6, CAL_Y, z}, {x + 0.6, CAL_Y, z}}, color = col, thickness = 0.16}
-    L[#L + 1] = {points = {{x, CAL_Y, z - 0.6}, {x, CAL_Y, z + 0.6}}, color = col, thickness = 0.16}
+    L[#L + 1] = {points = {{x = x - 0.6, y = CAL_Y, z = z}, {x = x + 0.6, y = CAL_Y, z = z}}, color = calCol(col), thickness = 0.16}
+    L[#L + 1] = {points = {{x = x, y = CAL_Y, z = z - 0.6}, {x = x, y = CAL_Y, z = z + 0.6}}, color = calCol(col), thickness = 0.16}
 end
 
 function calPoly(L, pts, col)
     local p = {}
-    for _, q in ipairs(pts) do p[#p + 1] = {q[1], CAL_Y, q[2]} end
+    for _, q in ipairs(pts) do p[#p + 1] = {x = q[1], y = CAL_Y, z = q[2]} end
     p[#p + 1] = p[1]
-    L[#L + 1] = {points = p, color = col, thickness = 0.2}
+    L[#L + 1] = {points = p, color = calCol(col), thickness = 0.2}
 end
 
 function calDraw()
@@ -42,7 +44,9 @@ function calDraw()
             for _, uv in ipairs(CAL_MAT_UVS) do local p = tfMatPoint(mat, uv); calCross(L, p.x, p.z, {1, 0.1, 0.1}) end
         end
     end
-    Global.setVectorLines(L)
+    local okv, errv = pcall(function() Global.setVectorLines(L) end)
+    if not okv then print('CAL setVectorLines failed: ' .. tostring(errv)) end
+    print('CAL lines drawn: ' .. #L)
     local board = getObjectFromGUID('083da5')
     if board ~= nil then
         local bb = board.getBounds()
