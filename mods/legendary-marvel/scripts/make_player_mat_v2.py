@@ -1,6 +1,6 @@
 """Draws our own player mat: Victory, Draw, Artifacts, Discard, a big Played box and Attack / Recruit counter boxes.
 
-Usage: python make_player_mat_v2.py [--out TTS_work\\playermat.png] [--art TTS_work\\assets_up\\boardA_upscayl_4x_realesrgan-x4plus-anime.png]
+Usage: python make_player_mat_v2.py [--out TTS_work\\playermat.png]
 The first run keeps the official render as playermat_official.png next to the output. Same pixel size and aspect as the
 official render, so build_save.py's maths is unchanged. Slot positions are the PM_* values in mat_config.py: this script
 imports them, so the art and the Lua always agree."""
