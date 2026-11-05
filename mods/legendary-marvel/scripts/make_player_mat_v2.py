@@ -80,10 +80,16 @@ def panel(box, label, sub=None, accent=(255, 255, 255), fill=(10, 16, 40, 175), 
             d.text((cx - sw / 2, ty + 56), sub, font=f2, fill=(205, 215, 235, 220), stroke_width=1, stroke_fill=(0, 0, 0, 255))
 
 
+def tint(accent, k=0.14):
+    base = (10, 16, 40)
+    if accent == (255, 200, 60): return (52, 40, 14, 190)    # gold mixed into navy goes grey, so it gets a hand-set warm fill
+    return tuple(int(base[i] * (1 - k) + accent[i] * k) for i in range(3)) + (185,)
+
+
 def slot(uv, label, accent):
     cx, cy = px(uv)
     box = (cx - CARD_W // 2, cy - CARD_H // 2, cx + CARD_W // 2, cy + CARD_H // 2)
-    panel(box, None, accent=accent)
+    panel(box, None, accent=accent, fill=tint(accent))
     # label under the frame, outside the card area so a card never covers it
     d = ImageDraw.Draw(im)
     f = font(50)
@@ -101,11 +107,11 @@ slot(C.PM_DISCARD_UV, 'DISCARD', RED)
 
 u0, v0, u1, v1 = C.PM_PLAYED_BOX
 (bx0, by0), (bx1, by1) = px((u0, v0)), px((u1, v1))
-panel((bx0, by0, bx1, by1), 'PLAYED', 'cards in this box count: stack or spread them, then press Apply', accent=WHITE, fill=(6, 10, 30, 110), r=40)
+panel((bx0, by0, bx1, by1), 'PLAYED', None, accent=WHITE, fill=(6, 10, 30, 110), r=40)
 
 for uv, label, col in ((C.PM_ATTACK_UV, 'ATTACK', RED), (C.PM_RECRUIT_UV, 'RECRUIT', GOLD)):
     cx, cy = px(uv)
-    panel((cx - 270, cy - 150, cx + 270, cy + 150), label, accent=col, fill=(10, 16, 40, 170), r=34)
+    panel((cx - 270, cy - 150, cx + 270, cy + 150), label, accent=col, fill=tint(col, 0.16), r=34)
 
 
 # ---- icons: class and team icons cut from the official Player Mat PDF (vector, rendered large), on light tiles so the dark ones show ----
