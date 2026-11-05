@@ -1,0 +1,3358 @@
+{
+"cards": {
+"\"yo-yo\" rodriguez": {
+"r": 2
+},
+"#humblebrag": {
+"a": 5
+},
+"2 > 4": {
+"a": 4
+},
+"2>4": {
+"a": 4
+},
+"7th smartest man in the world": {
+"a": 5,
+"ap": 1
+},
+"8th wonder of the world": {
+"a": 4,
+"ap": 1
+},
+"a day like no other": {
+"a": 3,
+"ap": 1
+},
+"a day unlike any other": {
+"a": 3,
+"ap": 1
+},
+"a-bomb": {
+"a": 0,
+"ap": 1
+},
+"above/below": {
+"div": [
+{
+"a": 2
+},
+{
+"r": 0,
+"rp": 1
+}
+]
+},
+"absorb ambient power": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"absorb energies": {
+"x": 1,
+"a": 0,
+"ap": 1,
+"r": 0,
+"rp": 1
+},
+"absorb radiation": {
+"r": 1
+},
+"accelerate": {
+"a": 0,
+"ap": 1
+},
+"accuse enemies of the empire": {
+"a": 4
+},
+"acrobatic kung-fu": {
+"a": 2,
+"ap": 1
+},
+"actor": {},
+"adamantium foot claws": {
+"a": 2
+},
+"adamantium footclaws": {
+"a": 2
+},
+"adventurers assemble!": {
+"a": 4
+},
+"aerial catch": {
+"r": 2
+},
+"aftershock": {
+"a": 2,
+"ap": 1
+},
+"against all odds": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"agent jimmy woo": {},
+"agoraphobia": {},
+"alias investigations": {
+"a": 1
+},
+"all humans are expendable": {
+"a": 2
+},
+"all-terrain barbarian": {
+"r": 2,
+"rp": 1
+},
+"alligator trapper": {},
+"along for the ride": {
+"a": 5
+},
+"alter ego": {
+"a": 2
+},
+"alter molecular density": {
+"r": 5,
+"a": 0,
+"ap": 1
+},
+"alter reality": {
+"r": 2,
+"a": 0,
+"ap": 1
+},
+"amazing strength": {
+"r": 1
+},
+"ambitious enforcer": {
+"a": 3
+},
+"amulet of avalon": {
+"a": 0,
+"ap": 1
+},
+"analyze planetary rotation": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"ancient legacy": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"anger management": {
+"a": 1,
+"ap": 1
+},
+"animal instincts": {
+"a": 0,
+"ap": 1
+},
+"animal trainer": {},
+"anti-matter": {
+"a": 4
+},
+"anticipate their movements": {
+"a": 1,
+"ap": 1
+},
+"apocalyptic vision": {
+"a": 2,
+"ap": 1
+},
+"appetite for destruction": {
+"a": 2
+},
+"approve orbital strike": {
+"a": 0,
+"ap": 1
+},
+"arachno-pheromones": {},
+"arc reactor": {
+"a": 3,
+"ap": 1
+},
+"armor upgrades": {
+"a": 1,
+"ap": 1
+},
+"army of one": {
+"a": 5,
+"ap": 1
+},
+"army of ultrons": {
+"r": 2
+},
+"around the world punch": {
+"a": 0,
+"ap": 1
+},
+"aspiring hero": {},
+"astonishing strength": {
+"r": 1
+},
+"astral projection": {
+"a": 2,
+"ap": 1
+},
+"atom-splitting glaive": {
+"a": 6,
+"ap": 1
+},
+"attune techtonic transducer": {
+"a": 2,
+"ap": 1
+},
+"attune tectonic transducer": {
+"a": 2,
+"ap": 1
+},
+"authorize lethal force": {
+"a": 0,
+"ap": 1
+},
+"avatar of destruction": {},
+"avatar of oblivion": {
+"a": 3,
+"ap": 1
+},
+"avengers assemble!": {
+"r": 0,
+"rp": 1
+},
+"b.f.g.": {
+"a": 5
+},
+"backflip": {
+"r": 2
+},
+"balance the darkforce": {
+"r": 1,
+"a": 1
+},
+"balanced attack": {
+"a": 2
+},
+"balancing act": {
+"r": 1,
+"a": 1
+},
+"bamf!": {
+"r": 2
+},
+"banker": {},
+"battle staves": {
+"a": 2
+},
+"battlefield promotion": {},
+"behind enemy lines": {
+"r": 0,
+"rp": 1,
+"a": 5
+},
+"being big is best": {
+"a": 3,
+"ap": 1
+},
+"beloved behemoth": {
+"a": 2
+},
+"bend steel/bend light": {
+"div": [
+{
+"a": 1,
+"ap": 1
+},
+{
+"r": 1,
+"rp": 1
+}
+]
+},
+"berserker rage": {
+"a": 0,
+"ap": 1
+},
+"big impact": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"big slimeportunity": {
+"r": 2,
+"a": 2
+},
+"bindings": {},
+"bio-electric sting": {
+"a": 1,
+"ap": 1
+},
+"bio-engineered cyborg": {
+"a": 3
+},
+"bioelectric shock": {
+"a": 2
+},
+"bioengineered assassin": {
+"a": 2,
+"ap": 1
+},
+"bionic arm": {
+"a": 2
+},
+"blade of the people": {},
+"blasting fireworks": {
+"a": 1,
+"ap": 1
+},
+"blazing fire/blazing fists": {
+"div": [
+{
+"r": 2,
+"rp": 1
+},
+{
+"a": 2,
+"ap": 1
+}
+]
+},
+"blazing flare/blazing fists": {
+"div": [
+{
+"r": 2,
+"rp": 1
+},
+{
+"a": 2,
+"ap": 1
+}
+]
+},
+"blazing hellfire": {
+"a": 2,
+"ap": 1
+},
+"blend into shadows": {
+"a": 2
+},
+"blind justice": {
+"a": 4
+},
+"blinding burst": {
+"r": 2
+},
+"blinding flash": {},
+"bloodstone pendant": {
+"r": 2,
+"rp": 1
+},
+"blunt force trauma": {},
+"board gamer": {},
+"bold leadership": {
+"r": 0,
+"rp": 1
+},
+"bone-shattering howl": {},
+"boom goes the dynamite": {},
+"borrowed brawn": {
+"a": 1,
+"ap": 1
+},
+"borrowed cloaking device": {
+"a": 1
+},
+"bounce around": {
+"a": 2,
+"ap": 1
+},
+"bounty hunter": {
+"r": 2
+},
+"break the silence": {
+"r": 2,
+"rp": 1
+},
+"break the sound barrier": {
+"a": 0,
+"ap": 1
+},
+"bridge to a better future": {},
+"brilliant biochemist/massive warrior": {
+"div": [
+{
+"r": 2
+},
+{
+"a": 2
+}
+]
+},
+"brilliant research": {
+"r": 2
+},
+"brilliant strategist": {
+"a": 1
+},
+"brooding fury": {
+"a": 3,
+"ap": 1
+},
+"build the strike team": {
+"a": 2
+},
+"build the suit": {
+"r": 3
+},
+"bulldozer driver": {},
+"bullets flying, bob hiding": {
+"r": 2.5
+},
+"burn out": {
+"a": 2,
+"ap": 1
+},
+"burn the fearful": {
+"a": 2
+},
+"bursting with life": {
+"r": 2
+},
+"butterfly effect": {},
+"bystander": {},
+"calculated rage": {
+"a": 3,
+"ap": 1
+},
+"call for backup": {
+"r": 2,
+"rp": 1
+},
+"call lightning": {
+"a": 3,
+"ap": 1
+},
+"calm before the storm": {
+"a": 5,
+"ap": 1
+},
+"can i get a little gratitude": {
+"a": 3
+},
+"can i get a little gratitude?": {
+"a": 3
+},
+"can't surprise a cat": {
+"a": 2
+},
+"captain marvel": {
+"a": 2
+},
+"captivating conundrum": {
+"a": 1
+},
+"card shark": {
+"a": 2
+},
+"carefully considered smashing": {
+"r": 2,
+"a": 0,
+"ap": 1
+},
+"carnivore": {
+"r": 0,
+"rp": 1
+},
+"carry to the air": {
+"r": 2
+},
+"cascading maneuver": {
+"a": 1
+},
+"casual bank robbery": {
+"r": 2,
+"rp": 1
+},
+"cat burglar": {
+"a": 5,
+"ap": 1
+},
+"catlike agility": {
+"a": 1,
+"ap": 1
+},
+"catlike reflexes": {
+"r": 1
+},
+"caught in kree-skrull war": {
+"a": 4
+},
+"cauldron of the cosmos": {
+"r": 1
+},
+"cautious/reckless": {
+"div": [
+{
+"a": 2
+},
+{
+"a": 3
+}
+]
+},
+"ceaseless tracker": {
+"r": 1,
+"rp": 1
+},
+"cellular regeneration": {
+"a": 2,
+"ap": 1
+},
+"change history": {
+"a": 5
+},
+"channel cosmic power": {},
+"channel the nega-bands": {
+"a": 2
+},
+"channel time/channel fire": {
+"div": [
+{},
+{
+"a": 0,
+"ap": 1
+}
+]
+},
+"chaos magic": {},
+"chosen by asgard": {
+"r": 2,
+"a": 0,
+"ap": 1
+},
+"city-wide mega concert": {
+"a": 3
+},
+"citywide mega-concert": {
+"a": 3
+},
+"clairvoyance": {
+"a": 3
+},
+"class dismissed": {
+"r": 2
+},
+"climbing claws": {
+"r": 2,
+"rp": 1
+},
+"cloak of levitation": {
+"a": 2
+},
+"cloning technician": {},
+"combined strength": {
+"a": 0,
+"ap": 1
+},
+"come on, nobody reads card names": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"comic shop keeper": {},
+"complete the grand ritual": {
+"a": 4,
+"ap": 1
+},
+"computer hacker": {},
+"concussive blast": {
+"a": 3,
+"ap": 1
+},
+"concussive plasma": {
+"a": 2,
+"ap": 1
+},
+"conflicted loyalties": {
+"r": 1,
+"a": 1
+},
+"control like a puppet": {
+"a": 5,
+"ap": 1
+},
+"convert sound to light": {
+"r": 1
+},
+"copy powers": {},
+"corner the prey": {
+"a": 2
+},
+"corrosive webbing": {},
+"coruscating vengeance": {
+"a": 6,
+"ap": 1
+},
+"cosmic awareness": {
+"a": 1
+},
+"cosmic champion": {
+"a": 2,
+"ap": 1
+},
+"cosmic energies": {
+"a": 5,
+"ap": 1
+},
+"covering fire": {
+"a": 3
+},
+"covert operation": {
+"a": 0,
+"ap": 1
+},
+"covert specialist": {
+"r": 2
+},
+"crack the case": {
+"r": 3
+},
+"crazed experiments": {
+"a": 2
+},
+"crazed rampage": {
+"a": 4
+},
+"creation of ultron": {
+"a": 2,
+"ap": 1
+},
+"crescent moon darts": {
+"a": 3
+},
+"crime stopper": {
+"a": 4
+},
+"crimson gem of cyttorak": {
+"r": 2,
+"rp": 1
+},
+"crowd favorite": {
+"a": 2
+},
+"crowdsourcing": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"crush ants/crush file sizes": {
+"div": [
+{
+"a": 2
+},
+{
+"r": 2
+}
+]
+},
+"crushing tsunami": {
+"a": 0,
+"ap": 1
+},
+"crystal of kadavus": {
+"a": 4
+},
+"culling blade": {
+"a": 2
+},
+"cut in half": {
+"a": 2.5
+},
+"dangerous rescue": {
+"a": 2
+},
+"dangerous testing": {
+"a": 3
+},
+"daring raid": {
+"r": 0,
+"rp": 1,
+"a": 5
+},
+"daring sidekick": {
+"a": 1
+},
+"dark foretelling": {
+"a": 4
+},
+"dark strength": {
+"a": 1,
+"ap": 1
+},
+"darkness/light": {
+"div": [
+{
+"a": 3
+},
+{
+"r": 3
+}
+]
+},
+"darwin": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"dazzling glamour": {
+"a": 2,
+"ap": 1
+},
+"deadliest woman in the universe": {},
+"deadpool rage!": {
+"a": 5
+},
+"deck chairs on the titanic": {
+"a": 1.5
+},
+"declaration of war": {
+"a": 2
+},
+"declare galactic threat": {},
+"deep freeze": {
+"r": 0,
+"rp": 1
+},
+"defend the s.h.i.e.l.d. wall": {
+"a": 0,
+"ap": 1
+},
+"defend the weak": {
+"r": 2
+},
+"demon sight": {
+"a": 2,
+"ap": 1
+},
+"destruction is creation": {
+"a": 4
+},
+"destructive whisper": {
+"a": 2,
+"ap": 1
+},
+"determination": {
+"r": 3
+},
+"devoted patriot": {},
+"devour": {
+"a": 2,
+"ap": 1
+},
+"devouring drool": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"devouring frenzy": {
+"r": 2
+},
+"diamond form": {
+"r": 0,
+"rp": 1,
+"a": 5
+},
+"digest that chimichanga": {
+"a": 0,
+"ap": 1
+},
+"dimensional blade": {},
+"dimensional portal": {
+"a": 2,
+"ap": 1
+},
+"dino-roar of triumph": {
+"a": 6
+},
+"dirty work": {
+"a": 2
+},
+"disappearing act": {
+"r": 2
+},
+"disaster survivalist": {
+"r": 2
+},
+"discover the bodies": {
+"r": 3
+},
+"disrupt circuits": {
+"a": 2,
+"ap": 1
+},
+"divine lightning": {
+"a": 3,
+"ap": 1
+},
+"diving block": {
+"a": 4
+},
+"diving catch": {
+"r": 2
+},
+"doctor of beatdown": {
+"a": 2,
+"ap": 1
+},
+"dog show judge": {},
+"dominate the battlefield": {
+"a": 2,
+"ap": 1
+},
+"don't make me angry": {
+"a": 0,
+"ap": 1
+},
+"double agent of s.h.i.e.l.d.": {},
+"double down/bubble up": {
+"div": [
+{},
+{
+"a": 0,
+"ap": 1
+}
+]
+},
+"double-fisted smashing": {
+"a": 0,
+"ap": 1
+},
+"dragonfang": {},
+"draw from the worldmind": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"draw their fire": {
+"a": 3
+},
+"dreams made real": {
+"a": 2
+},
+"driven mad by power": {
+"a": 6,
+"ap": 1
+},
+"drop off a friend": {
+"a": 2,
+"ap": 1
+},
+"dual existence": {},
+"dum dum dugan": {
+"r": 2,
+"a": 1
+},
+"dutiful protector": {},
+"earth, air, fire, and water": {
+"a": 2,
+"ap": 1
+},
+"earthling choices": {},
+"eighth time's a charm": {
+"a": 4,
+"ap": 1
+},
+"electromagnetic eyebeams": {
+"a": 5,
+"ap": 1
+},
+"electromagnetic pulse": {},
+"electromagnetic wave": {
+"r": 0,
+"rp": 1
+},
+"electroplasmic insanity": {
+"a": 5
+},
+"electroshock therapy": {},
+"element guns": {},
+"elemental princess": {
+"a": 3
+},
+"empathic link": {
+"r": 2
+},
+"empyreal force": {
+"a": 3,
+"ap": 1
+},
+"encephalo-ray": {
+"a": 0,
+"ap": 1
+},
+"enchant the senses": {
+"a": 2
+},
+"endless appetite": {
+"a": 3
+},
+"endless invention": {},
+"endless underlings": {},
+"energy drain": {
+"r": 2,
+"rp": 1
+},
+"energy surge": {},
+"engineer": {},
+"enormous implications": {
+"a": 0,
+"ap": 1
+},
+"enormous shapeshifter": {
+"a": 4,
+"ap": 1
+},
+"enslave the will": {
+"a": 2
+},
+"epic destiny": {
+"r": 2
+},
+"epic middle manager": {
+"a": 5
+},
+"escape from mojo world": {
+"a": 5,
+"ap": 1
+},
+"eternity of solitude": {
+"a": 5,
+"ap": 1
+},
+"everything's a weapon": {
+"a": 2
+},
+"expanding neural network": {
+"a": 2
+},
+"experimental geneticist": {},
+"experimental goblin serum": {
+"a": 4
+},
+"extinction blast": {
+"a": 10
+},
+"extrapolate": {
+"r": 1
+},
+"fake but inspiring death": {
+"a": 4,
+"ap": 1
+},
+"false reflection": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"fandral the dashing": {
+"a": 2
+},
+"fastball special": {
+"a": 2,
+"ap": 1
+},
+"fatal blow": {},
+"fateful bridge": {
+"a": 2
+},
+"father of lies": {
+"a": 3
+},
+"feast or famine": {
+"a": 6
+},
+"feed the sharks": {
+"a": 2
+},
+"feeding grounds": {
+"a": 3
+},
+"fight the future": {
+"a": 3,
+"ap": 1
+},
+"final battle": {
+"a": 5,
+"ap": 1
+},
+"find fatal flaw": {
+"r": 0,
+"rp": 1
+},
+"find tiny friends": {},
+"firepower from the future": {
+"a": 4,
+"ap": 1
+},
+"first adventure": {
+"a": 1,
+"ap": 1
+},
+"first strike": {
+"a": 1,
+"ap": 1
+},
+"flame on!": {
+"a": 4,
+"ap": 1
+},
+"flee/fight": {
+"div": [
+{
+"r": 2,
+"rp": 1
+},
+{
+"a": 2,
+"ap": 1
+}
+]
+},
+"flip out": {
+"r": 1
+},
+"flurry of blades": {
+"a": 2,
+"ap": 1
+},
+"fly in a friend": {
+"a": 4,
+"ap": 1
+},
+"flying shield block": {
+"a": 4
+},
+"flying stallion": {
+"a": 2,
+"ap": 1
+},
+"flying steed": {
+"a": 3
+},
+"focus chi": {
+"r": 0,
+"rp": 1
+},
+"focus the old power": {
+"a": 2
+},
+"follow big leads": {
+"r": 2,
+"rp": 1
+},
+"forged by fire": {
+"r": 2
+},
+"forklift driver": {},
+"form from ooze": {
+"a": 0,
+"ap": 1
+},
+"form of solid ruby": {
+"r": 0,
+"rp": 1,
+"a": 4
+},
+"fortune favors the bold": {
+"a": 3
+},
+"fortune teller": {},
+"founding avenger": {
+"a": 4,
+"ap": 1
+},
+"four of a kind": {
+"a": 2,
+"ap": 1
+},
+"freedom never dies": {
+"a": 5
+},
+"frenzied slashing": {
+"a": 2
+},
+"friendship/ferocity": {
+"div": [
+{
+"r": 1
+},
+{
+"a": 1
+}
+]
+},
+"frost spike armor": {
+"a": 3
+},
+"fulfill the contract": {
+"r": 0,
+"rp": 1
+},
+"furry fury": {
+"a": 2,
+"ap": 1
+},
+"g.w. bridge": {
+"r": 2
+},
+"galactic assassin": {
+"a": 3
+},
+"galactic domination": {
+"a": 4
+},
+"galactic rogue": {
+"a": 3
+},
+"gamma bomb disaster": {
+"r": 2
+},
+"gamma ray experiment": {
+"a": 4
+},
+"gamma-draining nanites": {},
+"gathering rain clouds/gathering clues": {
+"div": [
+{
+"r": 1
+},
+{
+"a": 1
+}
+]
+},
+"gathering stormclouds": {
+"r": 2
+},
+"general of the black order": {
+"r": 0,
+"rp": 1,
+"a": 3
+},
+"genetic experimentation": {
+"a": 3
+},
+"ghost in the machine": {
+"a": 0,
+"ap": 1
+},
+"giant ego": {
+"a": 2,
+"ap": 1
+},
+"goblin glider": {
+"a": 2
+},
+"god of mischief": {
+"a": 6
+},
+"god of thunder": {
+"r": 5,
+"a": 0,
+"ap": 1
+},
+"godslayer blade": {},
+"going through a phase": {
+"r": 1,
+"a": 1
+},
+"going underground": {
+"r": 3
+},
+"golden ankh of khonshu": {
+"a": 6
+},
+"golden apples of idunn": {},
+"golden guardian of good": {
+"a": 0,
+"ap": 1
+},
+"government payroll": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"grant ward": {
+"r": 2
+},
+"great responsibility": {
+"a": 1
+},
+"gritty scavenger": {
+"r": 2
+},
+"groot and branches": {},
+"growing anger": {
+"a": 2,
+"ap": 1
+},
+"growing confidence": {
+"a": 2,
+"ap": 1
+},
+"growing nova force": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"growing pains": {
+"a": 2,
+"ap": 1
+},
+"growth industry": {
+"a": 2
+},
+"gruesome feast": {
+"a": 3
+},
+"guerrilla warfare": {
+"a": 2
+},
+"gumshoe's revolver": {
+"a": 1
+},
+"guns on my guns": {
+"a": 3.5
+},
+"hacktivist": {
+"a": 2
+},
+"hail of bullets": {
+"a": 2,
+"ap": 1
+},
+"hairball": {
+"a": 1
+},
+"half-cocked": {
+"r": 1.5,
+"a": 1.5
+},
+"half-kree/half-skrull": {
+"div": [
+{
+"r": 3
+},
+{
+"a": 2
+}
+]
+},
+"happy hogan": {},
+"haunted by loss": {
+"a": 2,
+"ap": 1
+},
+"haunted by the demon bear": {
+"a": 4,
+"ap": 1
+},
+"hawk dive": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"he's the best around": {
+"a": 0,
+"ap": 1
+},
+"headlok": {
+"r": 3,
+"a": 0,
+"ap": 1
+},
+"headstrong": {
+"a": 4
+},
+"healing factor": {
+"a": 2
+},
+"healing factor genome": {
+"a": 2,
+"ap": 1
+},
+"heart of the ocean": {
+"a": 2,
+"ap": 1
+},
+"heir to legends": {
+"r": 2,
+"a": 2
+},
+"heir to the hammer": {
+"a": 4,
+"ap": 1
+},
+"heir to wolverine": {
+"a": 3,
+"ap": 1
+},
+"hell on wheels": {
+"r": 2,
+"rp": 1
+},
+"herculean effort": {
+"r": 3
+},
+"here, hold this for a second": {
+"r": 2
+},
+"hero from another dimension": {
+"a": 0,
+"ap": 1
+},
+"hex bolt": {
+"a": 1
+},
+"hey, can i get a do-over?": {
+"a": 2
+},
+"hey, hold this for a second": {
+"r": 2
+},
+"hidden identity/revealed identity": {
+"div": [
+{
+"r": 3
+},
+{
+"a": 0,
+"ap": 1
+}
+]
+},
+"hidden weapons": {
+"a": 2,
+"ap": 1
+},
+"high stakes jackpot": {
+"a": 4,
+"ap": 1
+},
+"high-speed chase": {},
+"high-tech weaponry": {
+"a": 2,
+"ap": 1
+},
+"higher, further, faster": {
+"a": 0,
+"ap": 1
+},
+"hiroim redeemed": {
+"a": 1,
+"ap": 1
+},
+"hitting rock bottom": {
+"a": 3,
+"ap": 1
+},
+"hive king miek": {
+"a": 6
+},
+"hogun the grim": {
+"r": 2
+},
+"holographic illusion": {
+"a": 0,
+"ap": 1
+},
+"holographic image inducer": {},
+"holographic projection": {
+"r": 0,
+"rp": 1,
+"a": 2,
+"ap": 1
+},
+"hope of the korbinites": {
+"r": 2
+},
+"horrify the populace": {
+"a": 4
+},
+"hostile interrogation": {
+"r": 2,
+"rp": 1
+},
+"hothead": {
+"a": 4
+},
+"how do i get out of here??": {
+"a": 4
+},
+"howard stark": {},
+"howard the duck": {},
+"howl at the moon": {
+"a": 3
+},
+"hulk is king": {
+"a": 3
+},
+"hulk runs this town": {
+"a": 4
+},
+"hulk smash": {
+"a": 5,
+"ap": 1
+},
+"hulk smash!": {
+"a": 5,
+"ap": 1
+},
+"human cannon": {
+"a": 4,
+"ap": 1
+},
+"hungry for action": {
+"a": 2
+},
+"hunt down": {
+"a": 2,
+"ap": 1
+},
+"hurl legal objections": {
+"r": 2
+},
+"hurl trucks": {
+"a": 2,
+"ap": 1
+},
+"hydra half-wit": {
+"a": 1.5
+},
+"hydra operative": {
+"r": 1
+},
+"hydra soldier": {
+"a": 1
+},
+"hyper-cosmic awareness": {
+"a": 0,
+"ap": 1
+},
+"hypersonic cannon": {
+"a": 0,
+"ap": 1
+},
+"hypersonic scream": {
+"a": 3
+},
+"hypnotic charm": {
+"r": 2
+},
+"i am groot": {
+"r": 5
+},
+"i heard keywords are powerful": {
+"a": 2
+},
+"i'll rescue you if i feel like it": {
+"a": 2
+},
+"i'm the best at board games": {
+"a": 5
+},
+"ice magic": {
+"a": 2,
+"ap": 1
+},
+"ice slide": {
+"a": 2,
+"ap": 1
+},
+"identical twin brother": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"illusion device": {
+"a": 2
+},
+"illusionary bindings": {
+"r": 2,
+"rp": 1
+},
+"impeccable planning": {
+"a": 2
+},
+"impenetrable ice wall": {
+"a": 7
+},
+"imperius rex": {},
+"impersonate": {},
+"impetuous dive": {
+"a": 2,
+"ap": 1
+},
+"implanted memory chip": {},
+"import illegal weapons": {
+"a": 3,
+"ap": 1
+},
+"impossible trick shot": {
+"a": 5
+},
+"incoming detector": {},
+"incredible effort/effortless": {
+"div": [
+{
+"a": 1,
+"ap": 1
+},
+{
+"r": 3
+}
+]
+},
+"incredible mind, awesome body": {
+"r": 1
+},
+"infernal chains": {},
+"infiltrate hq": {
+"r": 2
+},
+"infinity formula": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"infrared conversation": {},
+"infrared conversion": {},
+"inhuman mastery": {
+"a": 4,
+"ap": 1
+},
+"insane disregard for danger": {
+"a": 4,
+"ap": 1
+},
+"insatiable hunger": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"inspiration through power": {
+"r": 1,
+"a": 1
+},
+"inspire a nation/inspire a man": {
+"div": [
+{},
+{
+"a": 2
+}
+]
+},
+"inspire the world": {
+"a": 5
+},
+"instinct specialist": {
+"r": 2
+},
+"insubstantial accomplishments": {
+"a": 4
+},
+"intangible qualities": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"international strike force": {
+"a": 0,
+"ap": 1,
+"r": 0,
+"rp": 1
+},
+"interplanetary visitor": {
+"a": 4
+},
+"interstellar hero": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"interstellar hunter": {
+"a": 1,
+"ap": 1
+},
+"interstellar tracker": {
+"r": 2
+},
+"intertwining webs": {
+"a": 0,
+"ap": 1
+},
+"intuitive tactician": {
+"a": 0,
+"ap": 1
+},
+"invade the inferno": {
+"r": 2
+},
+"invisible barrier": {
+"a": 5
+},
+"invulnerability": {
+"r": 2
+},
+"ionic energy": {
+"a": 2,
+"ap": 1
+},
+"irradiated blood": {
+"a": 3
+},
+"irresistible bribe": {
+"r": 3
+},
+"it started on yancy street": {
+"r": 2,
+"rp": 1
+},
+"it'll grow back": {
+"a": 2.5,
+"ap": 1
+},
+"it's clobberin' time!": {
+"a": 5,
+"ap": 1
+},
+"jade giantess": {
+"r": 4,
+"a": 0,
+"ap": 1
+},
+"jane foster": {},
+"jinx": {
+"a": 3
+},
+"jittery impatience": {
+"r": 2,
+"a": 2
+},
+"jurassic america": {
+"r": 1,
+"rp": 1
+},
+"karmic balance": {
+"r": 4
+},
+"keen senses": {
+"a": 1
+},
+"kgb training": {
+"a": 3,
+"ap": 1
+},
+"kick a hole in reality": {
+"a": 3
+},
+"kindly caretaker": {},
+"kinetic blast field": {
+"a": 1,
+"ap": 1
+},
+"kinetic force field": {
+"a": 5
+},
+"king & queen of wakanda": {
+"a": 5
+},
+"king of wakanda": {},
+"knives of the hunter": {},
+"knuckle sandwich": {
+"r": 3,
+"a": 0,
+"ap": 1
+},
+"kree genetics": {
+"r": 2
+},
+"kronan tactician": {
+"a": 0,
+"ap": 1
+},
+"last survivor": {
+"a": 2
+},
+"lawyer": {},
+"layla miller": {
+"a": 1
+},
+"lead the armies of atlantis": {
+"r": 2
+},
+"lead the captain britain corps": {},
+"lead the inhuman elite": {
+"a": 4,
+"ap": 1
+},
+"lead the young avengers": {
+"a": 3
+},
+"leap from above": {
+"a": 3,
+"ap": 1
+},
+"leap of the tiger": {
+"a": 2,
+"ap": 1
+},
+"leaping spider": {
+"a": 0,
+"ap": 1
+},
+"learn from enemies": {
+"a": 3
+},
+"legendary commander": {
+"a": 1,
+"ap": 1
+},
+"legendary game designer": {},
+"legendary outlaw": {
+"r": 2
+},
+"leo fitz & jemma simmons": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"let none escape you": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"liberate the prisoners": {
+"a": 3
+},
+"life & death incarnate": {
+"r": 3
+},
+"light a spark": {
+"r": 0,
+"rp": 1
+},
+"light the way": {
+"a": 3,
+"ap": 1
+},
+"lighter than air/harder than diamond": {
+"div": [
+{
+"r": 3
+},
+{
+"a": 3
+}
+]
+},
+"lightning bolt": {
+"a": 2
+},
+"lightning strike/pouncing strike": {
+"div": [
+{
+"a": 2
+},
+{
+"r": 2
+}
+]
+},
+"like totally smart hulk": {
+"a": 2,
+"ap": 1
+},
+"listen for heartbeats": {
+"a": 2
+},
+"living thunderstorm": {
+"r": 4,
+"a": 0,
+"ap": 1
+},
+"living weapon": {
+"a": 8
+},
+"lockheed": {
+"a": 2,
+"ap": 1
+},
+"lockheed, kitty's dragon": {
+"a": 0,
+"ap": 1
+},
+"lockjaw": {
+"a": 2
+},
+"lockjaw, inhuman's best friend": {
+"r": 2
+},
+"loner": {
+"a": 2,
+"ap": 1
+},
+"long arm of the law": {},
+"long-range spider-sense": {
+"a": 2
+},
+"lord of dragons": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"lord of granite": {
+"a": 0,
+"ap": 1
+},
+"lucky break": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"lunar communion": {
+"a": 2
+},
+"lunar dragon form": {
+"a": 5,
+"ap": 1
+},
+"mach 10": {
+"r": 4,
+"a": 0,
+"ap": 1
+},
+"madame hydra": {
+"r": 2
+},
+"maelstrom of clashing powers": {
+"a": 3,
+"ap": 1
+},
+"maggie lang": {},
+"magnetic levitation": {
+"a": 1,
+"ap": 1
+},
+"make my own luck": {
+"a": 3
+},
+"manifest the soul gem": {},
+"manipulate gravitons": {
+"r": 2
+},
+"manly dullard/boy genius": {
+"div": [
+{
+"a": 3
+},
+{}
+]
+},
+"maria hill": {
+"r": 2
+},
+"martyr": {
+"a": 2
+},
+"marvel team-up": {},
+"marvelous strength": {
+"a": 3,
+"ap": 1
+},
+"master combatant": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"master of depths": {
+"a": 0,
+"ap": 1
+},
+"master of magnetism": {
+"a": 4,
+"ap": 1
+},
+"master of martial arts": {
+"a": 4,
+"ap": 1
+},
+"master the four elements": {
+"r": 1
+},
+"mechanized plate mail": {
+"r": 2
+},
+"mechanized plate-mail": {
+"r": 2
+},
+"melinda may": {
+"r": 2
+},
+"mental discipline": {
+"r": 1
+},
+"mental domination": {
+"r": 2
+},
+"merc's gotta get paid": {
+"r": 0,
+"rp": 1,
+"a": 2.5
+},
+"metamorphosis": {
+"r": 5
+},
+"military-industrial complex": {
+"r": 0,
+"rp": 1,
+"a": 2
+},
+"mind control": {
+"a": 6
+},
+"mind over matter": {
+"a": 4
+},
+"missing person case": {
+"a": 3
+},
+"mission accomplished": {},
+"mjolnir": {},
+"mobilize for war": {
+"a": 4,
+"ap": 1
+},
+"mobilize the nova corps": {},
+"molecular rearrangement": {
+"a": 5,
+"ap": 1
+},
+"monster hunter": {
+"a": 2
+},
+"mood swings": {
+"r": 3
+},
+"mournful sentinel": {
+"r": 2
+},
+"move mountains": {
+"a": 2
+},
+"ms. lion": {},
+"multi-gun": {
+"r": 1,
+"rp": 1,
+"a": 1,
+"ap": 1
+},
+"multi-variable smackulus": {
+"a": 4
+},
+"multi-variate smackulus": {
+"a": 4
+},
+"multifaceted genius": {
+"a": 2,
+"ap": 1
+},
+"multitalented": {
+"r": 1,
+"a": 1
+},
+"muscle memory": {
+"a": 5
+},
+"mutants will rule": {
+"r": 2,
+"rp": 1
+},
+"mysterious identity": {
+"a": 2
+},
+"mysterious origin": {
+"r": 2
+},
+"mystic shadow priest": {
+"a": 2
+},
+"mystic talisman": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"nanite shapeshifter": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"napoleon complex": {
+"r": 2,
+"rp": 1
+},
+"natural leader": {
+"a": 3
+},
+"need to stretch my legs": {
+"a": 2
+},
+"new generation of heroes": {},
+"new recruit": {
+"a": 1
+},
+"news reporter": {},
+"night hunter": {
+"r": 0,
+"rp": 1,
+"a": 2
+},
+"night vision": {
+"a": 2
+},
+"nightmare wolves": {
+"a": 1,
+"ap": 1
+},
+"nighttime is the right time": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"ninjitsu": {
+"r": 0,
+"rp": 1
+},
+"no mercy": {},
+"no more heroes": {
+"a": 5,
+"ap": 1
+},
+"nocturnal savagery": {
+"a": 4,
+"ap": 1
+},
+"northern lights": {
+"a": 2
+},
+"nothing beats rock": {
+"a": 0,
+"ap": 1
+},
+"nova flame": {
+"a": 6,
+"ap": 1
+},
+"nowhere to hide": {
+"a": 3
+},
+"nut punch": {
+"a": 1,
+"ap": 1
+},
+"obliterating fire": {},
+"octo-pulverize": {
+"a": 0,
+"ap": 1
+},
+"oddball": {
+"a": 2,
+"ap": 1
+},
+"odinson": {
+"r": 2,
+"rp": 1
+},
+"officer jim paxton": {},
+"one gigantic hand": {
+"a": 1,
+"ap": 1
+},
+"one-hit wonder": {
+"a": 0,
+"ap": 1
+},
+"opera singer": {},
+"optic blast": {
+"a": 3
+},
+"optimized technology": {
+"a": 2
+},
+"overdrive": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"overwhelming firepower": {
+"a": 5
+},
+"paramedic": {},
+"paramilitary ops": {
+"a": 2,
+"ap": 1
+},
+"part-time pi": {
+"r": 2,
+"rp": 1
+},
+"patriotic chomp": {
+"a": 2,
+"ap": 1
+},
+"peaceful meditation": {
+"r": 2
+},
+"peggy carter": {},
+"penance stare": {
+"a": 3,
+"ap": 1
+},
+"penumbra": {
+"a": 4
+},
+"pepper potts": {},
+"perfect aim": {
+"a": 5,
+"ap": 1
+},
+"perfect hunter": {
+"a": 1
+},
+"perfect teamwork": {
+"a": 0,
+"ap": 1
+},
+"perpetual motion": {
+"a": 2,
+"ap": 1
+},
+"phase out": {
+"a": 2,
+"ap": 1
+},
+"phd in oceanography": {
+"a": 4,
+"ap": 1
+},
+"photographer": {},
+"pickpocket": {
+"a": 0,
+"ap": 1
+},
+"pieces on a chessboard": {
+"a": 3
+},
+"pizza delivery guy": {},
+"planetary-level revenge": {
+"a": 4,
+"ap": 1
+},
+"play to the crowd": {
+"a": 4,
+"ap": 1
+},
+"police officer": {},
+"possessed by the soulsword": {
+"a": 3,
+"ap": 1
+},
+"pound for pound": {
+"a": 0,
+"ap": 1
+},
+"precognition": {
+"r": 2
+},
+"prince of power": {
+"r": 3
+},
+"prismatic cascade": {
+"r": 0,
+"rp": 1,
+"a": 5,
+"ap": 1
+},
+"private investigations": {
+"a": 2
+},
+"private investigator": {},
+"prodigy": {},
+"prodigy of ulysses bloodstone": {
+"a": 6,
+"ap": 1
+},
+"protect my family/hot bowl of soup": {
+"div": [
+{
+"a": 1
+},
+{
+"r": 1
+}
+]
+},
+"protector of the universe": {
+"a": 3,
+"ap": 1
+},
+"prune the growths": {
+"a": 2
+},
+"psionic astral form": {
+"a": 1,
+"ap": 1
+},
+"psionic warning": {
+"a": 1,
+"ap": 1
+},
+"psychedelic mist": {
+"a": 1,
+"ap": 1
+},
+"psychic knife": {},
+"psychic link": {
+"a": 3
+},
+"psychic search": {
+"a": 2
+},
+"psychic trauma": {},
+"psychokinetic blast": {
+"a": 1,
+"ap": 1
+},
+"public speaker": {},
+"pull the strings": {},
+"pumpkin bombs": {
+"a": 1,
+"ap": 1
+},
+"punch evil in the face": {
+"a": 5
+},
+"pure fury": {},
+"pym particles": {
+"a": 5
+},
+"quantum breakthrough": {},
+"quantum sword": {
+"a": 2,
+"ap": 1
+},
+"queen of the inhumans": {
+"a": 1,
+"ap": 1
+},
+"quick draw": {
+"a": 1
+},
+"quiver of thunderbolts": {
+"a": 2
+},
+"race to the rescue": {
+"a": 3
+},
+"radar sense": {
+"a": 2,
+"ap": 1
+},
+"radiant blast": {
+"a": 2,
+"ap": 1
+},
+"radiation focus array": {
+"a": 3,
+"ap": 1
+},
+"radiation scientist": {},
+"radioactive riot": {
+"a": 3
+},
+"radioactive spider": {
+"r": 3
+},
+"rage out": {
+"a": 3,
+"ap": 1
+},
+"raging savage": {
+"a": 3,
+"ap": 1
+},
+"raise the union jack": {
+"a": 2
+},
+"rally kree warriors": {
+"r": 2
+},
+"rally the new mutants": {},
+"random acts of unkindness": {
+"a": 6
+},
+"ranged specialist": {
+"r": 2
+},
+"rapid reinforcements": {
+"r": 2,
+"rp": 1
+},
+"rapid response force": {
+"a": 3,
+"ap": 1
+},
+"ravenous greed": {
+"r": 0,
+"rp": 1,
+"a": 5
+},
+"razor teeth": {
+"r": 0,
+"rp": 1,
+"a": 2
+},
+"read your thoughts": {
+"r": 3,
+"rp": 1
+},
+"ready for anything": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"reanimate into service": {
+"a": 2
+},
+"reassign to civilian duty": {
+"a": 2
+},
+"rebel without a cause": {
+"a": 2
+},
+"reboot": {
+"r": 2
+},
+"reckless abandon": {
+"a": 3
+},
+"reckless rescue attempt": {
+"r": 2
+},
+"recruitment day": {
+"r": 2
+},
+"recursive pummeling": {
+"a": 3,
+"ap": 1
+},
+"redwing": {},
+"regenerative cocoon": {},
+"reincarnate": {},
+"reincarnating phoenix": {},
+"reliable/unpredictable": {
+"div": [
+{
+"r": 2
+},
+{
+"a": 1,
+"ap": 1
+}
+]
+},
+"reluctant celebrity": {
+"a": 2,
+"ap": 1
+},
+"rending claws": {
+"a": 2
+},
+"renegade genius": {
+"a": 0,
+"ap": 1
+},
+"reprocess": {
+"r": 2,
+"rp": 1
+},
+"repulsor rays": {
+"a": 2,
+"ap": 1
+},
+"rescue my family from hell": {
+"a": 5
+},
+"revel in destruction": {
+"r": 2,
+"rp": 1
+},
+"reverse polarity": {
+"r": 4
+},
+"rictus grin": {
+"a": 3,
+"ap": 1
+},
+"ride of the valkyries": {
+"a": 4,
+"ap": 1
+},
+"ride the ants": {
+"a": 1
+},
+"ride the magnetic waves": {
+"r": 2
+},
+"right place, wrong time": {
+"a": 3,
+"ap": 1
+},
+"rise from the ashes": {
+"a": 3
+},
+"rising hope": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"risky science": {
+"a": 2
+},
+"rival personalities": {
+"a": 2,
+"ap": 1
+},
+"rocket test pilot": {},
+"rockslide": {},
+"rockstar": {},
+"roil the earth": {
+"a": 0,
+"ap": 1
+},
+"roundhouse side kick": {
+"a": 2
+},
+"royal command": {
+"a": 3
+},
+"royal decree": {
+"a": 5
+},
+"ruler of the seas": {
+"a": 2,
+"ap": 1
+},
+"runaway train": {
+"a": 4
+},
+"running commentary": {
+"a": 3.5,
+"ap": 1
+},
+"russian heavy tank": {
+"a": 6
+},
+"rusty \"firefist\" collins": {
+"a": 1
+},
+"ruthless cyborg": {
+"r": 2
+},
+"s.h.i.e.l.d. agent": {
+"r": 1
+},
+"s.h.i.e.l.d. officer": {
+"r": 2
+},
+"s.h.i.e.l.d. trooper": {
+"a": 1
+},
+"sai blades": {
+"a": 4,
+"ap": 1
+},
+"saturday morning harpoons": {
+"a": 2.5
+},
+"savage hulk unleashed": {
+"a": 0,
+"ap": 1
+},
+"save from the rubble": {
+"r": 1
+},
+"save the day": {
+"a": 1,
+"ap": 1
+},
+"save the world": {
+"a": 4,
+"ap": 1
+},
+"scarred past": {
+"a": 2,
+"ap": 1
+},
+"scott lang's head": {},
+"scout the battlefield": {
+"a": 0,
+"ap": 1
+},
+"search parallel dimensions": {
+"r": 2
+},
+"second chance at life": {
+"a": 6
+},
+"secret avengers assemble!": {
+"a": 2,
+"ap": 1
+},
+"see future timelines": {
+"a": 2,
+"ap": 1
+},
+"see the center": {},
+"seek redemption": {
+"a": 2
+},
+"seek the center": {},
+"seek the empty mind": {
+"a": 3,
+"ap": 1
+},
+"seek the infinity gems": {
+"a": 4
+},
+"seek the nega-bands": {
+"r": 2
+},
+"seize the throne": {
+"a": 0,
+"ap": 1
+},
+"sentient starship": {},
+"serious overkill": {
+"a": 2
+},
+"shadow of wars past": {
+"a": 2
+},
+"shadow queen": {
+"a": 1
+},
+"shadowed spider": {
+"a": 1,
+"ap": 1
+},
+"shadowed thoughts": {
+"a": 2,
+"ap": 1
+},
+"shadowforged blade": {
+"a": 2,
+"ap": 1
+},
+"shapeshifted copycat": {},
+"shapeshifting symbiote": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"sharon carter": {
+"r": 2
+},
+"shatter the weak point": {
+"a": 0,
+"ap": 1
+},
+"shenanigans": {},
+"shifting decoy": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"shocking robbery": {
+"a": 0,
+"ap": 1
+},
+"show your true colors": {
+"r": 2
+},
+"shrink to nothing": {
+"a": 0,
+"ap": 1
+},
+"shuffling footwork": {
+"r": 2
+},
+"sidekick": {
+"a": 2
+},
+"silence is golden": {
+"r": 0,
+"rp": 1,
+"a": 4,
+"ap": 1
+},
+"silent meditation": {
+"r": 5,
+"rp": 1
+},
+"silent sniper": {
+"a": 4
+},
+"silent statue": {
+"a": 4,
+"ap": 1
+},
+"silk stalking": {
+"a": 1
+},
+"simulated target practice": {
+"a": 2
+},
+"size matters": {
+"a": 2,
+"ap": 1
+},
+"skids": {
+"r": 3
+},
+"sniper nest": {
+"r": 1
+},
+"sniper squad": {
+"r": 1,
+"a": 1
+},
+"solar energy": {
+"a": 1,
+"ap": 1
+},
+"solar-powered": {
+"a": 2,
+"ap": 1
+},
+"solve the crime": {
+"a": 2
+},
+"solve the impossible": {
+"a": 1
+},
+"son of zeus": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"sonar detection": {},
+"sonic blastwave": {
+"r": 3
+},
+"sorcerer supreme": {},
+"sorcerous illusions": {
+"r": 1,
+"rp": 1
+},
+"soul sacrifice": {
+"r": 1,
+"rp": 1
+},
+"soulblast": {},
+"sow rivalry": {
+"a": 2,
+"ap": 1
+},
+"space cop": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"space pirate": {},
+"speak no words": {
+"r": 2,
+"a": 1
+},
+"specialist assassin": {
+"a": 3
+},
+"specialized ammunition": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"speed of sound": {},
+"speedy delivery": {
+"r": 2,
+"a": 1
+},
+"spider-man unmasked": {
+"a": 1
+},
+"spider-sense tingling": {},
+"spider-totem's chosen": {
+"a": 1
+},
+"spinning cyclone": {
+"a": 4
+},
+"split personality/split eardrums": {
+"div": [
+{
+"a": 2
+},
+{}
+]
+},
+"splitting hairs": {
+"a": 2
+},
+"spreading nanovirus": {},
+"spring the trap": {
+"a": 2,
+"ap": 1
+},
+"spy games": {
+"a": 0,
+"ap": 1
+},
+"spy network": {
+"a": 0,
+"ap": 1
+},
+"spymaster": {
+"a": 1,
+"ap": 1
+},
+"squirrelgility": {
+"a": 2,
+"ap": 1
+},
+"stack the deck": {},
+"stalk the prey": {
+"a": 2
+},
+"stalk the urban jungle": {
+"a": 4
+},
+"star power": {
+"a": 1,
+"ap": 1
+},
+"star-spangled hero": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"steal abilities": {
+"a": 4
+},
+"stealthy predator": {},
+"steam-powered arsenal": {
+"a": 3
+},
+"steel interception": {
+"a": 2
+},
+"sting of the spider": {
+"a": 5
+},
+"sting of the stingray's sting": {
+"r": 3
+},
+"stomping shockwave": {
+"a": 2,
+"ap": 1
+},
+"storm of arrows": {
+"a": 0,
+"ap": 1
+},
+"storm the beachhead": {
+"a": 0,
+"ap": 1
+},
+"stormbreaker": {},
+"strength of spirit": {
+"a": 4
+},
+"strength specialist": {
+"r": 2
+},
+"strike at the heart of evil": {
+"a": 2,
+"ap": 1
+},
+"subdermal tracker": {},
+"subtle attunement": {
+"a": 2
+},
+"sudden ambush": {
+"a": 2,
+"ap": 1
+},
+"supercharge": {
+"a": 2,
+"ap": 1
+},
+"superior to others": {
+"r": 2
+},
+"supernatural senses": {
+"a": 2
+},
+"supernova spear": {
+"r": 4,
+"rp": 1,
+"a": 4,
+"ap": 1
+},
+"superpowered swimsuit": {},
+"supersonic flight": {
+"a": 1
+},
+"supersonic spells/supersonic speed": {
+"div": [
+{
+"a": 2
+},
+{}
+]
+},
+"surge of power": {
+"r": 2,
+"a": 0,
+"ap": 1
+},
+"surprise attack": {
+"a": 1
+},
+"surprise chainsaw": {
+"a": 4.5
+},
+"surviving sprig": {
+"a": 1
+},
+"swarm tactics": {
+"a": 2,
+"ap": 1
+},
+"swashbuckler": {
+"a": 3,
+"ap": 1
+},
+"sweep the streets of trash": {
+"r": 1
+},
+"sweet christmas": {
+"a": 3
+},
+"symbiote takeover": {
+"r": 2
+},
+"symbiotic adaptation": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"take a bullet for the team": {
+"r": 1,
+"a": 1
+},
+"take cover": {
+"r": 2
+},
+"take one for the team": {
+"r": 1
+},
+"talk with birds/squawk back": {
+"div": [
+{
+"a": 2
+},
+{}
+]
+},
+"team player": {
+"a": 2,
+"ap": 1
+},
+"tech specialist": {
+"r": 2
+},
+"techno-organic adaptation": {
+"a": 3
+},
+"tectonic wave": {
+"a": 2,
+"ap": 1
+},
+"telekinesis": {
+"a": 3
+},
+"telekinetic mastery": {
+"a": 5,
+"ap": 1
+},
+"telepathic control": {
+"a": 0,
+"ap": 1
+},
+"telepathic ninjutsu": {},
+"telepathic probe": {
+"a": 3
+},
+"temporary possession": {
+"a": 2,
+"ap": 1
+},
+"test of virtue": {
+"r": 2,
+"a": 0,
+"ap": 1
+},
+"the amazing spider-man": {},
+"the destiny force": {},
+"the destroyer": {
+"a": 4
+},
+"the ebony blade": {
+"a": 0,
+"ap": 1
+},
+"the green scar": {
+"a": 3,
+"ap": 1
+},
+"the king's speech": {
+"a": 5
+},
+"the man without fear": {
+"a": 7
+},
+"the power cosmic": {
+"r": 3,
+"a": 0,
+"ap": 1
+},
+"the punisher": {
+"a": 4,
+"ap": 1
+},
+"the quantum bands": {
+"a": 1
+},
+"the star brand": {
+"a": 4,
+"ap": 1
+},
+"the sword of s.h.i.e.l.d.": {
+"r": 2
+},
+"the sword of shield": {
+"r": 2
+},
+"the void unchained": {
+"a": 3
+},
+"the warship skuttlebutt": {
+"a": 4
+},
+"thermokinetic fury": {
+"a": 4,
+"ap": 1
+},
+"this bug smashes you": {
+"a": 2,
+"ap": 1
+},
+"threaten and bribe": {
+"r": 2
+},
+"three stand as one": {
+"a": 4,
+"ap": 1
+},
+"throg": {
+"r": 2,
+"a": 0,
+"ap": 1
+},
+"through solid objects": {
+"r": 2
+},
+"throw over the railing": {
+"a": 2
+},
+"thwip!": {
+"a": 4
+},
+"tidal wave": {
+"a": 5
+},
+"tiny winged justice": {
+"r": 2
+},
+"too fast to see": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"torrent of broodlings": {
+"a": 2
+},
+"tourist couple": {},
+"trample the tiny": {
+"a": 5
+},
+"trample underhoof": {
+"a": 1,
+"ap": 1
+},
+"transatlantic savior": {
+"r": 0,
+"rp": 1
+},
+"transdimensional overlord": {
+"a": 2,
+"ap": 1
+},
+"transmute matter": {},
+"travel the nexus of realities": {
+"r": 3
+},
+"travel through limbo": {
+"a": 1,
+"ap": 1
+},
+"travel to nullspace": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"traveling companion": {
+"r": 2
+},
+"triage nurse": {},
+"trigger happy": {
+"a": 2
+},
+"trust me, i'm a doctor": {
+"r": 1,
+"rp": 1
+},
+"tsunami of water/tsunami of justice": {
+"div": [
+{
+"a": 3
+},
+{
+"a": 3
+}
+]
+},
+"turn the tide": {},
+"turning the tide": {
+"a": 5
+},
+"twin blast": {
+"a": 2,
+"ap": 1
+},
+"twisting equations": {
+"r": 2
+},
+"ultimate nullifier": {
+"a": 4,
+"ap": 1
+},
+"ultimate survivor": {
+"a": 5
+},
+"ultra-massive armor": {
+"a": 0,
+"ap": 1
+},
+"ultraviolet radiation": {
+"a": 3,
+"ap": 1
+},
+"unbeatable squirrel girl": {
+"a": 5
+},
+"unbreakable cage": {
+"a": 4
+},
+"unbreakable skin": {
+"a": 6
+},
+"uncanny x-men": {
+"a": 3,
+"ap": 1
+},
+"uncover hidden evil": {
+"a": 4
+},
+"undercover agent": {},
+"underworld boss": {
+"a": 0,
+"ap": 1
+},
+"unending anguish": {},
+"unending energy": {
+"a": 4
+},
+"unexpected explosion": {
+"a": 3
+},
+"universal weapon": {},
+"unleash havok": {
+"a": 2,
+"ap": 1
+},
+"unseen rescue": {
+"a": 2
+},
+"unstable kidnapper": {
+"r": 3
+},
+"unstable molecules": {},
+"unstoppable force": {
+"a": 5,
+"ap": 1
+},
+"unstoppable hulk": {
+"a": 2,
+"ap": 1
+},
+"untouchable": {
+"r": 5
+},
+"upper hand": {
+"a": 4,
+"ap": 1
+},
+"upside-down thinking": {},
+"usher to valhalla": {
+"a": 2,
+"ap": 1
+},
+"utter annihilation": {},
+"vampiric surge": {
+"a": 0,
+"ap": 1
+},
+"vast unstable power": {
+"a": 0,
+"ap": 1
+},
+"vengeance is rocket": {
+"a": 5,
+"ap": 1
+},
+"vengeful destructor": {},
+"venom blast": {
+"a": 3
+},
+"victoria hand": {
+"r": 2
+},
+"viper": {
+"r": 2
+},
+"visualize the variables": {
+"a": 4
+},
+"volstagg the valiant": {
+"a": 3,
+"ap": 1
+},
+"walking wi-fi": {
+"r": 2
+},
+"warflight": {
+"r": 0,
+"rp": 1,
+"a": 0,
+"ap": 1
+},
+"warlord of open spaces": {
+"a": 3,
+"ap": 1
+},
+"warp speed": {
+"r": 2
+},
+"warp time and space": {
+"a": 0,
+"ap": 1
+},
+"weapons from scrap metal": {
+"a": 3
+},
+"weapons master": {
+"a": 2,
+"ap": 1
+},
+"weave four into one": {
+"a": 4
+},
+"web-shooters": {},
+"web-slinger": {
+"a": 0,
+"ap": 1
+},
+"webs of darkness": {
+"a": 1,
+"ap": 1
+},
+"weight of the world": {
+"a": 5,
+"ap": 1
+},
+"whatever the cost": {},
+"whistling arrow": {},
+"wield the iron fist": {
+"a": 0,
+"ap": 1
+},
+"wield the soulsword": {
+"a": 2,
+"ap": 1
+},
+"window of opportunity": {
+"r": 2
+},
+"winged helm": {},
+"winged salvation": {
+"a": 2,
+"ap": 1
+},
+"witness the end": {
+"r": 2
+},
+"wolf out": {
+"r": 2
+},
+"wordless murmur": {
+"r": 1,
+"a": 3
+},
+"world spanning hunger": {
+"a": 4,
+"ap": 1
+},
+"world-spanning hunger": {
+"a": 4,
+"ap": 1
+},
+"worldess murmur": {
+"r": 1,
+"a": 3
+},
+"wound": {},
+"x-men united": {
+"a": 6,
+"ap": 1
+},
+"you're a slow learner": {
+"a": 2,
+"ap": 1
+},
+"young cassie lang": {},
+"zabu": {}
+},
+"hero": {
+"bishop|absorb energies": {
+"r": 0,
+"rp": 1,
+"a": 2
+},
+"captain marvel|absorb energies": {
+"r": 2,
+"rp": 1
+}
+},
+"by_id": {
+"4403": {
+"r": 1
+},
+"4405": {
+"a": 1
+},
+"4503": {
+"r": 1
+},
+"4505": {
+"a": 1
+},
+"4603": {
+"r": 1
+},
+"4605": {
+"a": 1
+},
+"4703": {
+"r": 1
+},
+"4705": {
+"a": 1
+},
+"4803": {
+"r": 1
+},
+"4805": {
+"a": 1
+}
+}
+}

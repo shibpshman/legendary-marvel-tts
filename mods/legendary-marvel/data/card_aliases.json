@@ -1,0 +1,43 @@
+{
+ "_about": "Hand corrections for build_card_values.py. aliases: base-mod Nickname -> card name in source-text (or a literal entry). extra: cards the text exports do not list. by_id: CardID -> card name or entry, for cards with no Nickname (the starting S.H.I.E.L.D. Agents and Troopers); from a scan of the base mod: decks 44-48 are the Player1-5Starter decks, index 03 = Agent (8 each), 05 = Trooper (4 each).",
+ "aliases": {
+  "A Day Like No Other": "A Day Unlike Any Other",
+  "Adamantium Foot Claws": "Adamantium Footclaws",
+  "Amazing Strength": "Astonishing Strength",
+  "Attune Tectonic Transducer": "Attune Techtonic Transducer",
+  "Blazing Fire // Blazing Fists": "Blazing Flare/Blazing Fists",
+  "Can I Get A Little Gratitude?": "Can I Get a Little Gratitude",
+  "Citywide Mega-Concert": "City-Wide Mega Concert",
+  "Hey, Hold This For A Second": "Here, Hold This for a Second",
+  "Hulk Smash": "Hulk Smash!",
+  "Infrared Conversion": "Infrared Conversation",
+  "Mechanized Plate Mail": "Mechanized Plate-Mail",
+  "Multi-Variate Smackulus": "Multi-Variable Smackulus",
+  "See the Center": "Seek the Center",
+  "Sidekick": "Roundhouse Side Kick",
+  "The Sword Of SHIELD": "The Sword of S.H.I.E.L.D.",
+  "Wordless Murmur": "Worldess Murmur",
+  "World-Spanning Hunger": "World Spanning Hunger",
+  "2 > 4": "2>4"
+ },
+ "extra": {
+  "S.H.I.E.L.D. Agent": {
+   "r": 1
+  },
+  "S.H.I.E.L.D. Trooper": {
+   "a": 1
+  }
+ },
+ "by_id": {
+  "4403": "S.H.I.E.L.D. Agent",
+  "4405": "S.H.I.E.L.D. Trooper",
+  "4503": "S.H.I.E.L.D. Agent",
+  "4505": "S.H.I.E.L.D. Trooper",
+  "4603": "S.H.I.E.L.D. Agent",
+  "4605": "S.H.I.E.L.D. Trooper",
+  "4703": "S.H.I.E.L.D. Agent",
+  "4705": "S.H.I.E.L.D. Trooper",
+  "4803": "S.H.I.E.L.D. Agent",
+  "4805": "S.H.I.E.L.D. Trooper"
+ }
+}

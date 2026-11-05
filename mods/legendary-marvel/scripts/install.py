@@ -43,9 +43,9 @@ for name in sorted(files):
 sys.path.insert(0, DEST)
 try:
     import importlib
-    for mod in ('mat_config', 'counter_lua', 'turn_lua', 'menu_lua', 'lua_patch'):
+    for mod in ('mat_config', 'counter_lua', 'turn_lua', 'played_lua', 'scenario_names', 'scenario_lua', 'villains_set', 'menu_lua', 'lua_patch'):
         importlib.import_module(mod)
-    log('import check: mat_config, counter_lua, turn_lua, menu_lua, lua_patch all load')
+    log('import check: mat_config, counter_lua, turn_lua, played_lua, scenario_names, scenario_lua, villains_set, menu_lua, lua_patch all load')
 except Exception as e:
     bad.append('import check failed: %s' % e); log('import check FAILED: %s' % e)
 
@@ -53,7 +53,9 @@ log('generated files the build needs (make them with the commands shown):')
 need = [(os.path.join(WORK, 'reference_data.json'), 'python %s\\build_reference.py' % DEST),
         (os.path.join(WORK, 'playermat.png'), 'python %s\\make_player_mat.py' % DEST),
         (os.path.join(WORK, 'skins', 'mat_skin_1.jpg'), 'python %s\\make_mat_skins.py' % DEST),
-        (os.path.join(WORK, 'card_text_ocr.csv'), '(already made earlier by card_text_ocr.py)')]
+        (os.path.join(WORK, 'card_text_ocr.csv'), '(already made earlier by card_text_ocr.py)'),
+        (os.path.join(WORK, 'villains_set', 'villains_bag.json'), 'python %s\\build_villains_set.py   (adds the Villains expansion; run it once, then build_reference.py and build_save.py)' % DEST),
+        (os.path.join(WORK, 'scenarios.json'), 'optional: the copy shipped in %s is used. To rebuild from the PDF text: python %s\\build_scenarios.py' % (DEST, DEST))]
 for path, how in need:
     log('   %-60s %s' % (path, 'present' if os.path.exists(path) else 'MISSING -> ' + how))
 if bad:

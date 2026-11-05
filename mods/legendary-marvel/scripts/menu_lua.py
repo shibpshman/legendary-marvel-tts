@@ -3,6 +3,7 @@ import json, os, time
 
 import counter_lua
 import turn_lua
+import played_lua
 import scenario_lua
 import mat_config
 
@@ -35,6 +36,8 @@ REF = __REF__
 __COUNTERS__
 
 __TURN__
+
+__PLAYED__
 
 __SCENARIOS__
 
@@ -538,12 +541,19 @@ UIS = {inGame = nil}
 --[[Play buttons are greyed out until a game is set up; New Game while one is running--]]
 function uiSyncButtons()
     local g = gameInProgress()
+    if g then pcall(plSyncApply) end
     if g == UIS.inGame then return end
     UIS.inGame = g
     for _, id in ipairs({"btnVillain", "btnEndTurn", "btnRefill"}) do
         pcall(function() UI.setAttribute(id, "interactable", tostring(g)) end)
     end
     pcall(function() UI.setAttribute("btnSetup", "interactable", tostring(not g)) end)
+    if not g then
+        PLAYED.text, PLAYED.totals, PLAYED.mats, PLAYED.stale = {}, {}, {}, {}
+        for _, c in ipairs(PLAYED_COLORS) do pcall(function() UI.setAttribute("playP_" .. c, "active", "false") end) end
+    else
+        pcall(plSchedule)
+    end
 end
 
 function uiPoll()
@@ -620,6 +630,7 @@ function buildXml()
     local function add(s) x[#x + 1] = s end
     themeXml(add)
     dockBarXml(add)
+    playedXml(add)
     local heroN = #poolNames(getObjectFromGUID("8c9c24"))
     local villN = #poolNames(getObjectFromGUID("403851"))
     local henN = #poolNames(getObjectFromGUID("e34dbf"))
@@ -920,4 +931,4 @@ def menu_lua(ref_path=None):
         exps.append(VILLAINS_EXPANSION)
         assert len(exps) == scenario_lua.VILLAINS_INDEX, 'VILLAINS_INDEX in scenario_lua.py must equal the position of the Villains expansion'
     ex = '{' + ', '.join('{guid = "%s", name = "%s", tag = "%s"}' % e for e in exps) + '}'
-    return MENU_LUA.replace('__EXPANSIONS__', ex).replace('__REF__', ref_lua(ref_path)).replace('__COUNTERS__', counter_lua.counter_lua()).replace('__TURN__', turn_lua.turn_lua()).replace('__SCENARIOS__', scenario_lua.scenario_lua()).replace('__SKINS__', _skins_lua()).replace('__SKIN0__', str(max(1, int(getattr(mat_config, 'MAT_SKIN', 1)))))
+    return MENU_LUA.replace('__EXPANSIONS__', ex).replace('__REF__', ref_lua(ref_path)).replace('__COUNTERS__', counter_lua.counter_lua()).replace('__TURN__', turn_lua.turn_lua()).replace('__PLAYED__', played_lua.played_lua()).replace('__SCENARIOS__', scenario_lua.scenario_lua()).replace('__SKINS__', _skins_lua()).replace('__SKIN0__', str(max(1, int(getattr(mat_config, 'MAT_SKIN', 1)))))
