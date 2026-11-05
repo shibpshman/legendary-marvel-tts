@@ -2,9 +2,9 @@
 
 # mat objects' printed-area maths must match build_save.py
 PM_BOARD_H = 25.57
-PM_PRINTED = 26.9 / 29.4
 PM_ASPECT = 2400 / 1697.7
 import mat_config as C
+PM_PRINTED = C.PM_PRINTED_FRAC
 PILES = {'draw': C.PM_DRAW_UV, 'victory': C.PM_VICTORY_UV, 'discard': C.PM_DISCARD_UV}
 PLAYED_BOX = C.PM_PLAYED_BOX
 ATTACK_COUNTERS = ['de4eb3', '2a7e51', '2745ea', 'e26e29', '924dcd']

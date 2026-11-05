@@ -123,15 +123,16 @@ if os.path.exists(LOGO):
     lg.putalpha(lg.getchannel('A').point(lambda v: int(v * 0.10)))
     im.alpha_composite(lg, ((bx0 + bx1) // 2 - side // 2, (by0 + by1) // 2 - side // 2 + 30))
 
-# the three counter pads (Attack, Recruit, Shards) sit on these boxes and hide their middle, so each label goes above its box
+# the three counter pads (Attack, Recruit, Shards) sit on these boxes and hide their middle, so each label goes along the box's bottom edge
 PURPLE = (190, 140, 255)
 for uv, label, col in ((C.PM_ATTACK_UV, 'ATTACK', RED), (C.PM_RECRUIT_UV, 'RECRUIT', GOLD), (C.PM_SHARDS_UV, 'SHARDS', PURPLE)):
     cx, cy = px(uv)
+    cy = int(C.PM_BOX_V * H)
     panel((cx - 250, cy - 150, cx + 250, cy + 150), None, accent=col, fill=tint(col, 0.16), r=34)
     _d = ImageDraw.Draw(im)
-    _f = font(46)
+    _f = font(40)
     _w = _d.textlength(label, font=_f)
-    _d.text((cx - _w / 2, cy - 150 - 58), label, font=_f, fill=(255, 255, 255, 240), stroke_width=3, stroke_fill=(0, 0, 0, 255))
+    _d.text((cx - _w / 2, cy + 150 - 62), label, font=_f, fill=(255, 255, 255, 240), stroke_width=3, stroke_fill=(0, 0, 0, 255))   # inside the bottom edge: the pad sits above it
 
 
 # ---- icons: class and team icons cut from the official Player Mat PDF (vector, rendered large), on light tiles so the dark ones show ----
@@ -172,7 +173,7 @@ def tile(icon, size):
 try:
     icons = pdf_icons()
     SZ = 70
-    row_y = int(1235)
+    row_y = int(1212)
     classes = ['Strength', 'Instinct', 'Covert', 'Tech', 'Ranged']
     teams = ['X-Men', 'Avengers', 'S.H.I.E.L.D.', 'Spider Friends']
     gap = 18

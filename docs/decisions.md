@@ -115,3 +115,16 @@ old one as `playermat_official.png`). Same pixel size and aspect, so the placeme
 
 Not confirmed in game: card size against the slots (slots are sized for about 2.2 x 3.1 world units), counter rotation
 and height in their boxes, and whether the Played box is big enough for a long turn.
+
+## Calibration, bags and side mats (2026-11-05)
+
+- **Printed art width.** `IMG_W` was 26.9 and `PM_PRINTED_FRAC` 26.9 / 29.4 (art assumed to be 91.5 % of the object width). In game the
+  decks on the main board and on the player mats sat about 9 % too far toward the centre of their slots (left-hand decks too far right,
+  right-hand decks too far left). Both are now 29.4 / 1.0: the art spans the full reported object width. Inferred from screenshots, not
+  measured: if decks still sit off their slots, tune these two values first.
+- **Counter pads.** Attack, Recruit and Shards pads of a seat were chained with fixed joints; the build now releases them and puts each
+  pad on its own box (`PM_ATTACK_UV`, `PM_RECRUIT_UV`, `PM_SHARDS_UV`). Pads face their seat (mat rotY + 180).
+- **Seats.** Five hand zones (Red, Green, White front; Yellow left; Purple right) beside the mats; Orange, Pink, Blue removed.
+- **Side mats** are both at z 7.25, with their cleanup triggers moved by the same amount.
+- **Bags.** Four core bags stay in the back row; the other 24 are in two rows of 12, 5.0 apart.
+- **Image names** carry a content hash (`playermat_<hash>.png`, `table_<hash>.png`) because TTS caches images by URL.

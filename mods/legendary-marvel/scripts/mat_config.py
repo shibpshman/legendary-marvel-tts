@@ -3,7 +3,7 @@
 # ---- where the mat sits and how big it is (world units) -------------------------------------
 CX, CZ = 0.25, 8.0               # board centre
 BOUNDS_W = 29.4                  # width TTS reports for the whole board object, wooden frame included ("Mat width 29.4 OK")
-IMG_W = 26.9                     # width of the printed image inside the frame; every slot position is computed from this
+IMG_W = 29.4                     # width the printed art spans: the same as the object width (2026-11-05: decks sat about 9 % too far in with 26.9, measured in game)
 ASPECT = 4275 / 2175             # the 28_Inch skins (same aspect as the old universal mat)
 STAGE_Z = 16.4                   # staging strip just above the mat, inside the cleanup zone
 
@@ -45,11 +45,12 @@ ZONE = dict(posX=CX, posZ=8.05, rotY=0, scaleX=31.0, scaleZ=20.4)
 PLAYER_MATS = ['51edf5', '6212f9', '446b40', '17be32', '9d07a8']
 PM_ASPECT = 2400 / 1697.7        # TTS_work\\playermat.png (make_player_mat.py)
 PM_BOARD_H = 25.57               # world height of a Custom_Board at scale 1, frame included (measured from the main board)
-PM_PRINTED_FRAC = 26.9 / 29.4    # printed image / framed object, as measured on the main board
+PM_PRINTED_FRAC = 1.0            # printed art / object width: same finding as IMG_W (the old 26.9 / 29.4 put every deck about 9 % too far in)
 # our own player mat (make_player_mat_v2.py): slot centres and the Played box as fractions of the image (u across, v down)
-PM_VICTORY_UV, PM_DRAW_UV = (.1083, .2238), (.1083, .6243)
-PM_ARTIFACTS_UV, PM_DISCARD_UV = (.8917, .2238), (.8917, .6243)
+PM_VICTORY_UV, PM_DRAW_UV = (.1083, .2032), (.1083, .5890)
+PM_ARTIFACTS_UV, PM_DISCARD_UV = (.8917, .2032), (.8917, .5890)
 PM_PLAYED_BOX = (.2333, .0589, .7667, .6655)    # u0, v0, u1, v1: cards inside count as played and are swept by End Turn
 # the three counter pads (Attack, Recruit, Shards) sit in one row along the bottom edge, 3.03 world units apart like the pads are
-PM_ATTACK_UV, PM_RECRUIT_UV, PM_SHARDS_UV = (.2704, .9011), (.5, .9011), (.7296, .9011)
+PM_ATTACK_UV, PM_RECRUIT_UV, PM_SHARDS_UV = (.2704, .8800), (.5, .8800), (.7296, .8800)    # pads sit high in their boxes so each box's label shows below the pad
+PM_BOX_V = .9011                                          # centre of the three boxes drawn on the mat
 PM_STARTER_DECKS = ['8bff16', '11148f', '973fd9', 'db28dc', 'bcc49a']   # one 12-card starting deck per seat

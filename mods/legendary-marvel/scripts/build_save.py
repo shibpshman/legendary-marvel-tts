@@ -195,6 +195,15 @@ if os.path.exists(PM_PNG):
     from PIL import Image
     with Image.open(PM_PNG) as _im: pm_aspect = _im.size[0] / _im.size[1]
     pm_url = 'file:///' + os.path.join(IMG, PM_NAME).replace(chr(92), '/')
+    # the two side mats were 2.7 units off each other (z 8.6 and 5.9): put both at the same height, and move each one's cleanup trigger with it
+    SIDE_Z = 7.25
+    for mg, zg in (('17be32', 'a6fa1d'), ('9d07a8', '619189')):
+        mo, zo = tops.get(mg), tops.get(zg)
+        if mo is None: continue
+        dz = SIDE_Z - mo['Transform']['posZ']
+        mo['Transform']['posZ'] = SIDE_Z
+        if zo is not None: zo['Transform']['posZ'] = round(zo['Transform']['posZ'] + dz, 2)
+        pm_report.append('side mat %s moved %.2f in z to %.2f (its trigger %s with it)' % (mg, dz, SIDE_Z, zg))
     mats = []
     for g in C.PLAYER_MATS:
         o = tops.get(g)
@@ -316,7 +325,7 @@ CORE_BAGS = {'Heroes', 'Villains', 'Henchmen', 'Masterminds'}
 bags = [o for o in mod['ObjectStates'] if o.get('Name') == 'Bag']
 rest = [o for o in bags if not (o.get('Nickname') in CORE_BAGS and abs(o['Transform']['posZ'] - 20.1) < 0.3)]
 rest.sort(key=lambda o: (o.get('Nickname', '').startswith('Extra'), o.get('Nickname', '').lower()))
-PER_ROW, DX, ROW_Z, DZ = 12, 3.8, 26.0, 3.8
+PER_ROW, DX, ROW_Z, DZ = 12, 5.0, 26.0, 4.0
 for i, o in enumerate(rest):
     r, c = divmod(i, PER_ROW)
     n = min(PER_ROW, len(rest) - r * PER_ROW)
