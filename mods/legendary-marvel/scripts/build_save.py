@@ -20,9 +20,11 @@ ap.add_argument('--work', default=r'E:\Media\Board Games\TTS_work')
 ap.add_argument('--assets', default=r'E:\Legendary_TTS_Assets')
 ap.add_argument('--name', default='Legendary Universal')
 ap.add_argument('--dry', action='store_true', help='report only, write nothing')
+ap.add_argument('--calibrate', action='store_true', help='draw the calibration overlay in game (see cal_lua.py); rebuild without it for the normal save')
 ap.add_argument('--strict', action='store_true', help='stop if the Workshop mod differs from the recorded baseline hash (or none is recorded)')
 ap.add_argument('--record-base', action='store_true', help='record the Workshop mod\'s current hash as the baseline (base_mod_sha256.txt next to this script)')
 a = ap.parse_args()
+if a.calibrate: os.environ['LEGENDARY_CAL'] = '1'
 HERE = os.path.dirname(os.path.abspath(__file__))
 BASE_SHA_CANDIDATES = [os.environ.get('LEGENDARY_BASE_SHA', ''), os.path.join(a.work, 'base_mod_sha256.txt'),
                        os.path.join(HERE, 'base_mod_sha256.txt'), 'base_mod_sha256.txt',
@@ -260,7 +262,7 @@ if os.path.exists(PM_PNG):
             ct['rotY'] = (tr['rotY'] + 180) % 360        # a pad faces its seat when it is turned half a turn from the mat
             ct['posY'] = round(tr['posY'] + 1.2, 2)       # centre was inside the mat slab (0.93 vs 0.98): spawn above it and let it settle
             ct['rotX'] = ct['rotZ'] = 0
-            ct['scaleX'] = ct['scaleY'] = ct['scaleZ'] = 0.8   # at full size a pad covers 90 % of its box and hides the label
+            ct['scaleX'] = ct['scaleY'] = ct['scaleZ'] = 0.85   # at full size a pad covers 90 % of its box and hides the label
             pm_report.append('%s counter %s -> its box on mat %s (%.2f, %.2f)' % (nm, guid, g, ct['posX'], ct['posZ']))
     # Five seats, one hand zone beside each mat on the player's side. The base mod has 8 zones round the table, only some of them near a mat.
     SEATS = {'51edf5': '182660', '6212f9': '5bde5d', '446b40': '248022', '17be32': 'fbc0d5', '9d07a8': 'd02301'}   # mat -> hand zone (Red, Green, White, Yellow, Purple)

@@ -1,9 +1,9 @@
 """Turn flow: Play Villain Card (city advance, escapes, Bystanders, Twists, Strikes) and End Turn (discard, draw 6, reset counters, refill HQ)."""
 
 # mat objects' printed-area maths must match build_save.py
-PM_BOARD_H = 25.57
 PM_ASPECT = 2400 / 1697.7
 import mat_config as C
+PM_BOARD_H = C.PM_BOARD_H
 PM_PRINTED = C.PM_PRINTED_FRAC
 PILES = {'draw': C.PM_DRAW_UV, 'victory': C.PM_VICTORY_UV, 'discard': C.PM_DISCARD_UV}
 PLAYED_BOX = C.PM_PLAYED_BOX
@@ -403,6 +403,8 @@ end
 
 def turn_lua():
     def pair(uv): return '%g, %g' % uv
-    return (TURN_LUA.replace('__PMH__', '%g' % PM_BOARD_H).replace('__PMP__', '%.5f' % PM_PRINTED).replace('__PMA__', '%.5f' % PM_ASPECT)
+    import cal_lua
+    out = (TURN_LUA.replace('__PMH__', '%g' % PM_BOARD_H).replace('__PMP__', '%.5f' % PM_PRINTED).replace('__PMA__', '%.5f' % PM_ASPECT)
             .replace('__DRAW__', pair(PILES['draw'])).replace('__VICT__', pair(PILES['victory'])).replace('__DISC__', pair(PILES['discard']))
             .replace('__BOX__', ', '.join('%g' % v for v in PLAYED_BOX)).replace('__ATT__', ', '.join('"%s"' % g for g in ATTACK_COUNTERS)).replace('__REC__', ', '.join('"%s"' % g for g in RECRUIT_COUNTERS)))
+    return out + cal_lua.cal_lua()

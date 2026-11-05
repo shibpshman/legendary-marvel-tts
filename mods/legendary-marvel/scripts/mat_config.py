@@ -3,7 +3,7 @@
 # ---- where the mat sits and how big it is (world units) -------------------------------------
 CX, CZ = 0.25, 8.0               # board centre
 BOUNDS_W = 29.4                  # width TTS reports for the whole board object, wooden frame included ("Mat width 29.4 OK")
-IMG_W = 29.4                     # width the printed art spans: the same as the object width (2026-11-05: decks sat about 9 % too far in with 26.9, measured in game)
+IMG_W = 27.34                    # printed art width = 93 % of the object width (measured 2026-11-05 from a top-down shot: visible art 31.2 of a 33.62 object); every slot position is computed from this
 ASPECT = 4275 / 2175             # the 28_Inch skins (same aspect as the old universal mat)
 STAGE_Z = 16.4                   # staging strip just above the mat, inside the cleanup zone
 
@@ -15,7 +15,7 @@ NUDGE = {}                       # per slot, e.g. {'wounds': (-0.2, 0.1), 'heroe
 # A board of scale MAT_REF_SCALE measured MAT_REF_WIDTH wide after loading (chat line "Mat fitted: width 31.7").
 # The saved scale is MAT_REF_SCALE * BOUNDS_W / MAT_REF_WIDTH. If the load message ever reports a different width,
 # put that scale and width here and rebuild.
-MAT_REF_SCALE, MAT_REF_WIDTH = 0.6307, 31.7
+MAT_REF_SCALE, MAT_REF_WIDTH = 0.5849, 33.62   # measured in game 2026-11-05 (CAL board bounds); the earlier 0.6307 / 31.7 was stale
 
 # ---- slot centres as fractions of the mat image (u across, v down), read from the gridded 28_Inch_Template mats ---
 # All nine 28_Inch skins share this layout. Horrors uses the unlabelled top-left box; Bindings and Pit are drawn over the logo band by
@@ -44,8 +44,8 @@ ZONE = dict(posX=CX, posZ=8.05, rotY=0, scaleX=31.0, scaleZ=20.4)
 # ---- player mats: the five Custom_Board objects, and where the official Player Mat PDF prints its piles ---------------
 PLAYER_MATS = ['51edf5', '6212f9', '446b40', '17be32', '9d07a8']
 PM_ASPECT = 2400 / 1697.7        # TTS_work\\playermat.png (make_player_mat.py)
-PM_BOARD_H = 25.57               # world height of a Custom_Board at scale 1, frame included (measured from the main board)
-PM_PRINTED_FRAC = 1.0            # printed art / object width: same finding as IMG_W (the old 26.9 / 29.4 put every deck about 9 % too far in)
+PM_BOARD_H = 29.2                # world height of a Custom_Board at scale 1, frame included: board 17.10 / 0.5849 and mat 11.69 / 0.4 (measured in game 2026-11-05; 25.57 was stale)
+PM_PRINTED_FRAC = 0.93           # printed art / object size, from the same top-down measurement as IMG_W (board 31.2 of 33.62 wide, 15.9 of 17.10 high)
 # our own player mat (make_player_mat_v2.py): slot centres and the Played box as fractions of the image (u across, v down)
 PM_VICTORY_UV, PM_DRAW_UV = (.1083, .2032), (.1083, .5890)
 PM_ARTIFACTS_UV, PM_DISCARD_UV = (.8917, .2032), (.8917, .5890)

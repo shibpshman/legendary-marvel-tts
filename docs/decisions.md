@@ -118,10 +118,12 @@ and height in their boxes, and whether the Played box is big enough for a long t
 
 ## Calibration, bags and side mats (2026-11-05)
 
-- **Printed art width.** `IMG_W` was 26.9 and `PM_PRINTED_FRAC` 26.9 / 29.4 (art assumed to be 91.5 % of the object width). In game the
-  decks on the main board and on the player mats sat about 9 % too far toward the centre of their slots (left-hand decks too far right,
-  right-hand decks too far left). Both are now 29.4 / 1.0: the art spans the full reported object width. Inferred from screenshots, not
-  measured: if decks still sit off their slots, tune these two values first.
+- **Board and mat sizes, measured in game (2026-11-05).** The load check printed the real sizes (`--calibrate` build, `cal_lua.py`): board object
+  33.62 x 17.10 at scale 0.5849, mat object 16.53 x 11.69 at scale 0.4. Both give a height of 29.2 per unit of scale, so `PM_BOARD_H` was stale
+  (25.57), as was `MAT_REF_SCALE / MAT_REF_WIDTH` (0.6307 / 31.7). A top-down shot showed the visible art is 93 % of the object on both axes
+  (31.2 of 33.62 wide, 15.9 of 17.10 high), and the computed slot positions then landed on the printed slots within a few pixels.
+  Constants now: `PM_BOARD_H` 29.2, `PM_PRINTED_FRAC` 0.93, `IMG_W` 27.34 (0.93 x the intended 29.4 board width), board scale 0.5115.
+  Earlier guesses (26.9, then 29.4) were partial fixes. Use `python build_save.py --calibrate` to re-measure; rebuild without it for the normal save.
 - **Counter pads.** Attack, Recruit and Shards pads of a seat were chained with fixed joints; the build now releases them and puts each
   pad on its own box (`PM_ATTACK_UV`, `PM_RECRUIT_UV`, `PM_SHARDS_UV`). Pads face their seat (mat rotY + 180).
 - **Seats.** Five hand zones (Red, Green, White front; Yellow left; Purple right) beside the mats; Orange, Pink, Blue removed.
