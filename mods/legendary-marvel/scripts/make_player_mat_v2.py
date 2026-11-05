@@ -107,6 +107,78 @@ for uv, label, col in ((C.PM_ATTACK_UV, 'ATTACK', RED), (C.PM_RECRUIT_UV, 'RECRU
     cx, cy = px(uv)
     panel((cx - 270, cy - 150, cx + 270, cy + 150), label, accent=col, fill=(10, 16, 40, 170), r=34)
 
+
+# ---- icons: class and team icons cut from the official Player Mat PDF (vector, rendered large), on light tiles so the dark ones show ----
+PDF = os.path.join(WORK, 'assets_in', 'LegendaryPlayerMat.pdf')
+
+
+def pdf_icons():
+    """{name: RGBA tile} for the 5 hero classes and 4 teams, from the PDF's legend. Positions are fractions of the 1600 px wide preview."""
+    import numpy as np, pypdfium2 as pdfium
+    pg = pdfium.PdfDocument(PDF)[0].render(scale=8).to_pil().convert('RGB')
+    arr = np.array(pg)
+    blue = (arr[:, :, 2] > 100) & (arr[:, :, 0] < 60) & (arr[:, :, 1] < 120)
+    ys, xs = np.where(blue)
+    mat = pg.crop((xs.min(), ys.min(), xs.max() + 1, ys.max() + 1)).rotate(-90, expand=True)
+    k = 4800 / 1600
+    mat = mat.resize((4800, int(round(4800 * mat.size[1] / mat.size[0]))), Image.LANCZOS)
+    where = {'Strength': (1347, 60), 'Instinct': (1347, 100), 'Covert': (1347, 139), 'Tech': (1347, 178), 'Ranged': (1347, 217),
+             'X-Men': (254, 61), 'Avengers': (254, 113), 'S.H.I.E.L.D.': (254, 163), 'Spider Friends': (254, 216)}
+    out = {}
+    for n, (cx, cy) in where.items():
+        h = 21 * k
+        out[n] = mat.crop((int(cx * k - h), int(cy * k - h), int(cx * k + h), int(cy * k + h)))
+    return out
+
+
+def tile(icon, size):
+    t = Image.new('RGBA', (size, size), (0, 0, 0, 0))
+    ImageDraw.Draw(t).rounded_rectangle((0, 0, size - 1, size - 1), size // 5, fill=(236, 240, 248, 255))
+    ic = icon.convert('RGB').resize((size - 14, size - 14), Image.LANCZOS)
+    # the legend panel behind each icon is white: keep it, it is the tile
+    t.paste(ic, (7, 7))
+    m = Image.new('L', (size, size), 0)
+    ImageDraw.Draw(m).rounded_rectangle((0, 0, size - 1, size - 1), size // 5, fill=255)
+    t.putalpha(m)
+    return t
+
+
+def burst(d, cx, cy, r, col, points=10):
+    import math
+    pts = []
+    for i in range(points * 2):
+        rr = r if i % 2 == 0 else r * 0.62
+        a = math.pi * i / points - math.pi / 2
+        pts.append((cx + rr * math.cos(a), cy + rr * math.sin(a)))
+    d.polygon(pts, fill=col, outline=(255, 255, 255, 255))
+
+
+try:
+    icons = pdf_icons()
+    SZ = 70
+    row_y = int(1243)
+    classes = ['Strength', 'Instinct', 'Covert', 'Tech', 'Ranged']
+    teams = ['X-Men', 'Avengers', 'S.H.I.E.L.D.', 'Spider Friends']
+    gap = 18
+    total = (len(classes) + len(teams)) * SZ + (len(classes) + len(teams) - 2) * gap + 70
+    x = (W - total) // 2
+    for n in classes + [None] + teams:
+        if n is None: x += 70; continue
+        im.alpha_composite(tile(icons[n], SZ), (x, row_y - SZ // 2))
+        x += SZ + gap
+except Exception as e:
+    print('icons skipped:', e)
+
+# Attack and Recruit symbols in their boxes (drawn: the originals are too small to enlarge)
+dr = ImageDraw.Draw(im)
+for uv, col, kind in ((C.PM_ATTACK_UV, (230, 60, 50, 255), 'a'), (C.PM_RECRUIT_UV, (245, 190, 40, 255), 'r')):
+    cx, cy = px(uv)
+    if kind == 'a':
+        burst(dr, cx - 190, cy + 20, 62, col)
+    else:
+        dr.ellipse((cx - 190 - 56, cy + 20 - 56, cx - 190 + 56, cy + 20 + 56), fill=col, outline=(255, 255, 255, 255), width=4)
+        dr.ellipse((cx - 190 - 38, cy + 20 - 38, cx - 190 + 38, cy + 20 + 38), outline=(120, 80, 0, 255), width=5)
+
 os.makedirs(os.path.dirname(a.out) or '.', exist_ok=True)
 official = os.path.join(os.path.dirname(a.out), 'playermat_official.png')
 if os.path.exists(a.out) and not os.path.exists(official): shutil.copy2(a.out, official)
