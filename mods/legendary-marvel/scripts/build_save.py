@@ -213,6 +213,28 @@ if os.path.exists(PM_PNG):
         dt['posX'] = round(tr['posX'] + lx * math.cos(th) + lz * math.sin(th), 2)
         dt['posZ'] = round(tr['posZ'] - lx * math.sin(th) + lz * math.cos(th), 2)
         pm_report.append('starting deck %s -> Draw Deck slot of mat %s (%.2f, %.2f)' % (dg, g, dt['posX'], dt['posZ']))
+        # the starting cards have no Nickname in the base mod; naming them lets the Played count read them inside a stacked deck
+        named = 0
+        for c in d.get('ContainedObjects', []) or []:
+            nm = {3: 'S.H.I.E.L.D. Agent', 5: 'S.H.I.E.L.D. Trooper'}.get(c.get('CardID', -1) % 100)
+            if nm and not c.get('Nickname'): c['Nickname'] = nm; named += 1
+        pm_report.append('starting deck %s: %d cards named' % (dg, named))
+
+    # Attack / Recruit counters onto the boxes printed on the nearest mat
+    import turn_lua as _T
+    def mat_xz(tr, pw, ph, uv):
+        lx, lz = (uv[0] - .5) * pw, -(uv[1] - .5) * ph
+        th = math.radians(tr['rotY'] - 180)
+        return round(tr['posX'] + lx * math.cos(th) + lz * math.sin(th), 2), round(tr['posZ'] - lx * math.sin(th) + lz * math.cos(th), 2)
+    for guids, uv, nm in ((_T.ATTACK_COUNTERS, C.PM_ATTACK_UV, 'Attack'), (_T.RECRUIT_COUNTERS, C.PM_RECRUIT_UV, 'Recruit')):
+        for cg in guids:
+            co = tops.get(cg)
+            if co is None or not mats: pm_report.append('WARNING: %s counter %s not found' % (nm, cg)); continue
+            ct = co['Transform']
+            g, tr, pw, ph = min(mats, key=lambda m: (m[1]['posX'] - ct['posX']) ** 2 + (m[1]['posZ'] - ct['posZ']) ** 2)
+            ct['posX'], ct['posZ'] = mat_xz(tr, pw, ph, uv)
+            ct['rotY'] = tr['rotY']
+            pm_report.append('%s counter %s -> %s box of mat %s (%.2f, %.2f)' % (nm, cg, nm, g, ct['posX'], ct['posZ']))
 else:
     log('no playermat.png in %s, player mats keep their old image (run make_player_mat.py to use the official one)' % a.work)
 

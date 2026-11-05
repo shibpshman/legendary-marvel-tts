@@ -98,3 +98,20 @@ player), 05 = Trooper (4 per player). Inside a stacked Deck on the mat they stil
 because deck entries carry no CardID.
 
 Not yet confirmed in game: the per-colour panels and their placement, and the event chaining.
+
+## Player mat v2 (2026-11-05)
+
+The official PDF mat is replaced by our own (`scripts/make_player_mat_v2.py`, writes `TTS_work\playermat.png`, keeps the
+old one as `playermat_official.png`). Same pixel size and aspect, so the placement maths is unchanged.
+
+- Zones: Victory, Draw, Artifacts (new, outside the sweep), Discard, a big Played box, and Attack / Recruit boxes.
+- The zone positions live in `mat_config.py` (`PM_*`); the art script and `turn_lua.py` both read them.
+- The Played area is now the printed box (`PM_PLAYED_BOX`), not "anywhere on the mat". The Played count and End Turn
+  both use it through `tfPlayedOn`, so cards can be stacked or spread inside it.
+- `build_save.py` moves each Attack / Recruit counter into its box on the nearest mat, and gives the 12 starting cards per
+  seat a Nickname (S.H.I.E.L.D. Agent / Trooper) so they are counted inside a deck. This fixes the "starting cards in a
+  stack show as not in the card list" limit.
+- Background is the Hulk art cropped from `boardA` (the side panels carry baked text, so only the centre is used).
+
+Not confirmed in game: card size against the slots (slots are sized for about 2.2 x 3.1 world units), counter rotation
+and height in their boxes, and whether the Played box is big enough for a long turn.

@@ -4,7 +4,9 @@
 PM_BOARD_H = 25.57
 PM_PRINTED = 26.9 / 29.4
 PM_ASPECT = 2400 / 1697.7
-PILES = {'draw': (.18, .50), 'victory': (.50, .22), 'discard': (.82, .50)}
+import mat_config as C
+PILES = {'draw': C.PM_DRAW_UV, 'victory': C.PM_VICTORY_UV, 'discard': C.PM_DISCARD_UV}
+PLAYED_BOX = C.PM_PLAYED_BOX
 ATTACK_COUNTERS = ['de4eb3', '2a7e51', '2745ea', 'e26e29', '924dcd']
 RECRUIT_COUNTERS = ['82ac8c', 'dfa0d0', '2a6096', '4cf94b', '30a81a']
 
@@ -13,6 +15,7 @@ TURN_LUA = r'''
 TURN = {busy = false}
 PM = {board_h = __PMH__, printed = __PMP__, aspect = __PMA__}
 PILES = {draw = {__DRAW__}, victory = {__VICT__}, discard = {__DISC__}}
+PLAYED_BOX = {__BOX__}
 ATTACK_COUNTERS = {__ATT__}
 RECRUIT_COUNTERS = {__REC__}
 
@@ -288,21 +291,18 @@ end
 function tfPlayedOn(mat)
     local matPos = mat.getPosition()
     local rotY = mat.getRotation().y or 180
-    local draw, vict, disc, pw, ph = tfMatPiles(mat)
-    local keepers = {draw, vict, disc}
+    local _, _, _, pw, ph = tfMatPiles(mat)
     local out = {}
     local th = math.rad(rotY - 180)
+    --[[the printed Played box, in the mat's own frame (lx right, lz up the mat)--]]
+    local x0, x1 = (PLAYED_BOX[1] - 0.5) * pw - 0.2, (PLAYED_BOX[3] - 0.5) * pw + 0.2
+    local z0, z1 = -(PLAYED_BOX[4] - 0.5) * ph - 0.2, -(PLAYED_BOX[2] - 0.5) * ph + 0.2
     for _, o in ipairs(tfAt(matPos.x, matPos.z, pw / 2 + 0.5, pw / 2 + 0.5)) do
         local p = o.getPosition()
         local dx, dz = p.x - matPos.x, p.z - matPos.z
         local lx = dx * math.cos(th) - dz * math.sin(th)
         local lz = dx * math.sin(th) + dz * math.cos(th)
-        local inside = math.abs(lx) <= pw / 2 + 0.3 and math.abs(lz) <= ph / 2 + 0.3
-        local isPile = false
-        for _, k in ipairs(keepers) do
-            if (p.x - k.x) ^ 2 + (p.z - k.z) ^ 2 < 2.8 ^ 2 then isPile = true end
-        end
-        if inside and not isPile then out[#out + 1] = o end
+        if lx >= x0 and lx <= x1 and lz >= z0 and lz <= z1 then out[#out + 1] = o end
     end
     return out
 end
@@ -405,4 +405,4 @@ def turn_lua():
     def pair(uv): return '%g, %g' % uv
     return (TURN_LUA.replace('__PMH__', '%g' % PM_BOARD_H).replace('__PMP__', '%.5f' % PM_PRINTED).replace('__PMA__', '%.5f' % PM_ASPECT)
             .replace('__DRAW__', pair(PILES['draw'])).replace('__VICT__', pair(PILES['victory'])).replace('__DISC__', pair(PILES['discard']))
-            .replace('__ATT__', ', '.join('"%s"' % g for g in ATTACK_COUNTERS)).replace('__REC__', ', '.join('"%s"' % g for g in RECRUIT_COUNTERS)))
+            .replace('__BOX__', ', '.join('%g' % v for v in PLAYED_BOX)).replace('__ATT__', ', '.join('"%s"' % g for g in ATTACK_COUNTERS)).replace('__REC__', ', '.join('"%s"' % g for g in RECRUIT_COUNTERS)))
